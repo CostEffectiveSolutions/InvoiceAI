@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-[100vh] flex-col">
+  <div class="flex min-h-screen flex-col">
     <div class="flex-1">
       <Header />
       <NuxtPage />
