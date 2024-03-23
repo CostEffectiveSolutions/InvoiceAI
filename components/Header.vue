@@ -4,7 +4,7 @@
       <div class="flex lg:flex-1" :class="route.path == '/' ? 'mx-auto' : ''">
         <NuxtLink href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Agora - The election game</span>
-          <img class="w-auto" :class="route.path == '/' ? 'h-16' : 'h-8'" src="/logo.svg" alt="" />
+          <img class="w-auto" :class="route.path == '/' ? 'h-16 lg:h-12' : 'h-8'" src="/logo.svg" alt="" />
         </NuxtLink>
       </div>
       <div class="flex lg:hidden" :class="route.path == '/' ? 'hidden' : ''">
@@ -109,11 +109,11 @@
                 </DisclosurePanel>
               </Disclosure>
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Scoreboard</a>
+              <!-- <a href="#"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a> -->
             </div>
             <div class="py-6">
               <a href="#"
