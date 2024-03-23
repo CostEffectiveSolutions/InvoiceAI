@@ -19,7 +19,7 @@
                 <p class="text-gray-600 max-w-xs mx-auto">Flashy text to show the <br class="sm:hidden"> player this
                     game means BUSINESS</p>
 
-                <img src="/Voting.png" class="mx-auto  lg:max-w-96 h-auto mt-10 p-6">
+                <img src="/Voting.png" class="mx-auto  lg:max-w-96 h-auto mt-10">
                 <div class="mt-10 mb-4 flex items-center justify-center gap-x-6">
                     <a href="#"
                         class="rounded-md bg-gradient-to-tr from-indigo-500 to-indigo-800 px-10 py-3 text-4xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">PLAY</a>

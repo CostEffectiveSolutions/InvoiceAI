@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <Header/>
-    <NuxtPage />
+  <div class="flex min-h-[100vh] flex-col">
+    <div class="flex-1">
+      <Header />
+      <NuxtPage />
+    </div>
+    <Footer />
   </div>
 </template>
 <script setup>
@@ -15,3 +18,8 @@ useHead({
   ],
 })
 </script>
+<style>
+body {
+    font-family: Signika, serif;
+}
+</style>

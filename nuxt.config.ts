@@ -12,7 +12,9 @@ export default defineNuxtConfig({
   googleFonts: {
     // Options
     families: {
-      Signika: true,
+      Signika: {
+        wght: '300..700',
+      },
     }
   },
 

@@ -4,7 +4,7 @@
       <div class="flex lg:flex-1" :class="route.path == '/' ? 'mx-auto' : ''">
         <NuxtLink href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Agora - The election game</span>
-          <img class="w-auto" :class="route.path == '/' ? 'h-10' : 'h-8'" src="/logo.svg" alt="" />
+          <img class="w-auto" :class="route.path == '/' ? 'h-16' : 'h-8'" src="/logo.svg" alt="" />
         </NuxtLink>
       </div>
       <div class="flex lg:hidden" :class="route.path == '/' ? 'hidden' : ''">
@@ -59,8 +59,15 @@
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <NuxtLink href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
-            aria-hidden="true">&rarr;</span></NuxtLink>
+        <NuxtLink href="/login" class="text-lg font-semibold leading-6 text-gray-900 flex ">
+          Log in <span aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-4 h-4 ml-2 mt-1 text-gray-600">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+
+          </span>
+        </NuxtLink>
       </div>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
