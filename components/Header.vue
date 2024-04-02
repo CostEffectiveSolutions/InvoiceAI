@@ -2,9 +2,15 @@
   <header class="bg-white">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1" :class="route.path == '/' ? 'mx-auto' : ''">
-        <NuxtLink href="/" class="-m-1.5 p-1.5">
-          <span class="sr-only">Agora - The election game</span>
-          <img class="w-auto" :class="route.path == '/' ? 'h-16 lg:h-12' : 'h-8'" src="/logo.svg" alt="" />
+        <NuxtLink href="/" class="-m-1.5 p-1.5 text-4xl">
+          <span class="sr-only">bli.do - event comments & polls</span>
+          <span class="font-courier">
+            bli.do
+          </span>
+          <div class="text-base bg-black text-white text-center rounded-xl py-1">
+            Better slido
+          </div>
+          <!-- <img class="w-auto" :class="route.path == '/' ? 'h-16 lg:h-12' : 'h-8'" src="/logo.svg" alt="" /> -->
         </NuxtLink>
       </div>
       <div class="flex lg:hidden" :class="route.path == '/' ? 'hidden' : ''">
@@ -54,7 +60,7 @@
           </transition>
         </Popover> -->
 
-        <a href="#" class="text-lg font-semibold leading-6 text-gray-900 flex">
+        <!-- <a href="#" class="text-lg font-semibold leading-6 text-gray-900 flex">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="w-5 h-5 mr-1.5 text-gray-600">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -62,12 +68,12 @@
           </svg>
 
           Scoreboard
-        </a>
+        </a> -->
         <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <NuxtLink href="/login" class="text-lg font-semibold leading-6 text-gray-900 flex ">
+        <NuxtLink v-if="user" href="/login" class="text-lg font-semibold leading-6 text-gray-900 flex ">
           Log in <span aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor" class="w-4 h-4 ml-2 mt-1 text-gray-600">
@@ -76,6 +82,30 @@
 
           </span>
         </NuxtLink>
+        <Menu v-else as="div" class="relative ml-3">
+            <div>
+              <MenuButton class="relative flex rounded-full text-gray-600 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <span class="absolute -inset-1.5" />
+                <span class="sr-only">Open user menu</span>
+                {{ user && user.email }}
+                <!-- <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> -->
+                <ChevronDownIcon class="size-5" />
+              </MenuButton>
+            </div>
+            <transition enter-active-class="transition ease-out duration-200" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
+              <MenuItems class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <MenuItem v-slot="{ active }">
+                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Your Profile</a>
+                </MenuItem>
+                <MenuItem v-slot="{ active }">
+                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Settings</a>
+                </MenuItem>
+                <MenuItem v-slot="{ active }">
+                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Sign out</a>
+                </MenuItem>
+              </MenuItems>
+            </transition>
+          </Menu>
       </div>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -83,9 +113,10 @@
       <DialogPanel
         class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Agora</span>
-            <img class="h-8 w-auto" src="/logo.svg" alt="" />
+          <a href="#" class="-m-1.5 p-1.5 font-courier text-4xl">
+            <span class="sr-only">bli.do</span>
+            <!-- <img class="h-8 w-auto" src="/logo.svg" alt="" /> -->
+            bli.do
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
@@ -108,8 +139,8 @@
                     {{ item.name }}</DisclosureButton>
                 </DisclosurePanel>
               </Disclosure>
-              <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Scoreboard</a>
+              <!-- <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Scoreboard</a> -->
               <!-- <a href="#"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
               <a href="#"
@@ -166,4 +197,6 @@ const callsToAction = [
 ]
 
 const mobileMenuOpen = ref(false)
+
+const user = useSupabaseUser()
 </script>
