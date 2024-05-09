@@ -1,14 +1,14 @@
 <template>
   <header class="bg-white">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1" :class="route.path == '/' ? 'mx-auto' : ''">
+      <div class="flex lg:flex-1 justify-center" :class="route.path == '/' ? 'mx-auto' : ''">
         <NuxtLink href="/" class="-m-1.5 p-1.5 text-4xl">
           <span class="sr-only">bli.do - event comments & polls</span>
           <span class="font-courier">
-            bli.do
+            microsass.dev
           </span>
           <div class="text-base bg-black text-white text-center rounded-xl py-1">
-            Better slido
+            Coming Soon
           </div>
           <!-- <img class="w-auto" :class="route.path == '/' ? 'h-16 lg:h-12' : 'h-8'" src="/logo.svg" alt="" /> -->
         </NuxtLink>
@@ -72,7 +72,7 @@
         <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
       </PopoverGroup>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <NuxtLink v-if="user" href="/login" class="text-lg font-semibold leading-6 text-gray-900 flex ">
           Log in <span aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -88,7 +88,6 @@
                 <span class="absolute -inset-1.5" />
                 <span class="sr-only">Open user menu</span>
                 {{ user && user.email }}
-                <!-- <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> -->
                 <ChevronDownIcon class="size-5" />
               </MenuButton>
             </div>
@@ -106,7 +105,7 @@
               </MenuItems>
             </transition>
           </Menu>
-      </div>
+      </div> -->
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-10" />
