@@ -1,7 +1,7 @@
 <template>
     <div class="border-t-[1px] border-gray-200 w-screen max-w-7xl mx-auto py-5 flex justify-between px-4">
         <div class="font-light text-xl font-courier">
-            bli.do
+            microsass.dev
         </div>
         <div class="flex gap-x-3">
             <!-- <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-indigo-500 my-0.5">
