@@ -8,7 +8,7 @@
         </div>
         <div class="mx-auto max-w-2xl">
             <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl leading-loose">Microsass = Nuxt.js + Supabase + TailwindCSS   </h1>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl leading-loose">Microsass = Nuxt.js + Supabase + TailwindCSS + HeadlessUI + Plunk + Vercel   </h1>
             </div>
         </div>
     </div>
