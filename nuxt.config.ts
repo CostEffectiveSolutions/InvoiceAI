@@ -3,21 +3,12 @@ export default defineNuxtConfig({
   css: ['~/assets/main.css'],
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/supabase',
+    // '@nuxtjs/supabase',
     'nuxt-headlessui',
     // '@nuxtjs/google-fonts',
     '@nuxtjs/tailwindcss',
     "@nuxt/fonts"
   ],
-
-  // googleFonts: {
-  //   // Options
-  //   families: {
-  //     Signika: {
-  //       wght: '300..700',
-  //     },
-  //   }
-  // },
 
   headlessui: {
     prefix: ''
