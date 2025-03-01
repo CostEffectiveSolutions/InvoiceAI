@@ -1,6 +1,6 @@
 <script setup>
 import BackgroundAnimation from '~/components/BackgroundAnimation.vue'
-import '~/assets/css/animations.css'
+
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
