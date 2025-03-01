@@ -1,201 +1,44 @@
 <template>
-  <header class="bg-white">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1 justify-center" :class="route.path == '/' ? 'mx-auto' : ''">
-        <NuxtLink href="/" class="-m-1.5 p-1.5 text-4xl">
-          <span class="sr-only">bli.do - event comments & polls</span>
-          <span class="font-courier">
-            microsass.dev
-          </span>
-          <div class="text-base bg-black text-white text-center rounded-xl py-1">
-            Coming Soon
-          </div>
-          <!-- <img class="w-auto" :class="route.path == '/' ? 'h-16 lg:h-12' : 'h-8'" src="/logo.svg" alt="" /> -->
+  <header class="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+    <div class="container mx-auto flex h-16 items-center justify-between px-4">
+
+      <!-- Desktop navigation -->
+      <nav class="hidden md:flex md:gap-x-6 lg:gap-x-8" :class="route.path === '/' ? 'hidden' : ''">
+        <NuxtLink 
+          v-for="item in navigationItems" 
+          :key="item.name" 
+          :to="item.href"
+          class="text-sm font-medium text-gray-600 transition-colors hover:text-purple-700"
+        >
+          {{ item.name }}
         </NuxtLink>
-      </div>
-      <div class="flex lg:hidden" :class="route.path == '/' ? 'hidden' : ''">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          @click="mobileMenuOpen = true">
-          <span class="sr-only">Open main menu</span>
-          <Bars3Icon class="h-6 w-6" aria-hidden="true" />
-        </button>
-      </div>
-      <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-        <!-- <Popover class="relative">
-          <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-            Product
-            <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-          </PopoverButton>
+      </nav>
 
-          <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-            enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-            leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-            <PopoverPanel
-              class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-              <div class="p-4">
-                <div v-for="item in products" :key="item.name"
-                  class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                  <div
-                    class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                    <component :is="item.icon" class="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                      aria-hidden="true" />
-                  </div>
-                  <div class="flex-auto">
-                    <a :href="item.href" class="block font-semibold text-gray-900">
-                      {{ item.name }}
-                      <span class="absolute inset-0" />
-                    </a>
-                    <p class="mt-1 text-gray-600">{{ item.description }}</p>
-                  </div>
-                </div>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                <a v-for="item in callsToAction" :key="item.name" :href="item.href"
-                  class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
-                  <component :is="item.icon" class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                  {{ item.name }}
-                </a>
-              </div>
-            </PopoverPanel>
-          </transition>
-        </Popover> -->
-
-        <!-- <a href="#" class="text-lg font-semibold leading-6 text-gray-900 flex">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-            stroke="currentColor" class="w-5 h-5 mr-1.5 text-gray-600">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-          </svg>
-
-          Scoreboard
-        </a> -->
-        <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
-      </PopoverGroup>
-      <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <NuxtLink v-if="user" href="/login" class="text-lg font-semibold leading-6 text-gray-900 flex ">
-          Log in <span aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" class="w-4 h-4 ml-2 mt-1 text-gray-600">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-
-          </span>
-        </NuxtLink>
-        <Menu v-else as="div" class="relative ml-3">
-            <div>
-              <MenuButton class="relative flex rounded-full text-gray-600 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                <span class="absolute -inset-1.5" />
-                <span class="sr-only">Open user menu</span>
-                {{ user && user.email }}
-                <ChevronDownIcon class="size-5" />
-              </MenuButton>
-            </div>
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-              <MenuItems class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Your Profile</a>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Settings</a>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Sign out</a>
-                </MenuItem>
-              </MenuItems>
-            </transition>
-          </Menu>
-      </div> -->
-    </nav>
-    <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-      <div class="fixed inset-0 z-10" />
-      <DialogPanel
-        class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-        <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5 font-courier text-4xl">
-            <span class="sr-only">bli.do</span>
-            <!-- <img class="h-8 w-auto" src="/logo.svg" alt="" /> -->
-            bli.do
-          </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
-            <span class="sr-only">Close menu</span>
-            <XMarkIcon class="h-6 w-6" aria-hidden="true" />
-          </button>
+      <div class="flex items-center gap-4" :class="route.path === '/' ? 'hidden' : ''">
+        <!-- Desktop buttons -->
+        <div class="hidden md:flex md:items-center md:gap-3">
+          <Button variant="ghost" size="sm">
+            Log in
+          </Button>
+          <Button size="sm" class="bg-purple-600 text-white hover:bg-purple-700">
+            Sign up
+          </Button>
         </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <Disclosure as="div" class="-mx-3" v-slot="{ open }">
-                <DisclosureButton
-                  class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Product
-                  <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
-                </DisclosureButton>
-                <DisclosurePanel class="mt-2 space-y-2">
-                  <DisclosureButton v-for="item in [...products, ...callsToAction]" :key="item.name" as="a"
-                    :href="item.href"
-                    class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                    {{ item.name }}</DisclosureButton>
-                </DisclosurePanel>
-              </Disclosure>
-              <!-- <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Scoreboard</a> -->
-              <!-- <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-              <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a> -->
-            </div>
-            <div class="py-6">
-              <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
-                in</a>
-            </div>
-          </div>
-        </div>
-      </DialogPanel>
-    </Dialog>
+      </div>
+    </div>
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from '@headlessui/vue'
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/vue/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
+import { SparklesIcon, MenuIcon } from 'lucide-vue-next'
 
 const route = useRoute()
-
-const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
-const mobileMenuOpen = ref(false)
-
 const user = useSupabaseUser()
+
+const navigationItems = [
+  { name: 'Features', href: '/features' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'About', href: '/about' },
+]
 </script>
