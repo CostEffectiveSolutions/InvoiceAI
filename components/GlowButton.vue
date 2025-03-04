@@ -14,7 +14,7 @@
         ></div>
       </div>
       <div
-        class="rounded-full bg-gradient-to-br from-neutral-900 to-neutral-800 px-4 py-2"
+        class="rounded-full bg-gradient-to-br from-black to-neutral-700 px-4 py-2"
       >
         <div
           class="flex items-center justify-center gap-2 transition-transform duration-100 ease-in-out group-hover:scale-105"

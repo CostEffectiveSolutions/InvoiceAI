@@ -34,7 +34,7 @@
       <div class="pt-44 pb-20">
         <div class="container mx-auto px-4 relative">
           <div class="max-w-4xl mx-auto text-center">
-            <h1 class="bg-gradient-to-br from-zinc-600 via-zinc-800 to-zinc-400 bg-clip-text text-center text-5xl md:text-7xl font-medium mb-6 leading-tight tracking-tight text-transparent">
+            <h1 class="bg-gradient-to-br from-zinc-600 via-zinc-800 to-zinc-400 bg-clip-text text-center text-4xl md:text-7xl font-medium mb-6 leading-tight tracking-tight text-transparent">
               Автоматизирайте бизнес процесите си с изкуствен интелект
             </h1>
             <p class="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-12 leading-relaxed max-w-2xl mx-auto">
@@ -166,51 +166,196 @@
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <h2 class="text-4xl font-bold mb-12 text-center">Резултати на нашите клиенти</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-              <h3 class="text-2xl font-bold mb-2">Humi</h3>
-              <p class="text-neutral-600 dark:text-neutral-400 mb-4">HR платформа за управление на заплати и бонуси.</p>
-              <div class="text-3xl font-bold text-primary-500 mb-4">50%</div>
-              <p class="font-medium">По-ниски разходи за SR&ED обработка</p>
-              <NuxtLink to="/case-studies/humi">
-                <Button variant="link" class="mt-4">
-                  <span class="flex items-center gap-1.5">
-                    Прочетете казуса
-                    <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                  </span>
-                </Button>
-              </NuxtLink>
+          
+          <!-- Bento Grid Layout -->
+          <div class="grid md:auto-rows-[20rem] grid-cols-1 md:grid-cols-3 gap-5 max-w-7xl mx-auto">
+            
+            <!-- MealMaster - Spans 2 columns -->
+            <div class="row-span-1 md:col-span-2 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
+                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-15-22-MealMaster-Home.png" alt="AI Персонализирани хранителни планове" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=MealMaster'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div class="p-4 text-white">
+                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
+                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
+                      <span>45%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="font-bold text-xl text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
+                    AI Персонализирани хранителни планове
+                  </div>
+                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
+                    Персонализирана диета според вашите нужди и предпочитания с акцент върху по-бързо създаване на хранителни планове
+                  </div>
+                </div>
+                
+                <a href="https://www.mealmasterbot.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
+                  <span>Посетете сайта</span>
+                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                </a>
+              </div>
             </div>
             
-            <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-              <h3 class="text-2xl font-bold mb-2">Голяма стрийминг услуга</h3>
-              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Инструмент за идентификация на кампании с автоматично генериране и проследяване на UTM параметри.</p>
-              <div class="text-3xl font-bold text-primary-500 mb-4">100%</div>
-              <p class="font-medium">Елиминирани грешки в отчетите</p>
-              <NuxtLink to="/case-studies/streaming-service">
-                <Button variant="link" class="mt-4">
-                  <span class="flex items-center gap-1.5">
-                    Прочетете казуса
-                    <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                  </span>
-                </Button>
-              </NuxtLink>
+            <!-- Икономически секторен анализ -->
+            <div class="row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
+                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-20-24-Garant-Burgas-Анализи-Оценки-Контрол.png" alt="Икономически секторен анализ" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Economic+Analysis'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div class="p-4 text-white">
+                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
+                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
+                      <span>85%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="font-bold text-lg text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
+                    Икономически секторен анализ
+                  </div>
+                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
+                    По-бързо извличане на данни и инсайти за икономически сектори и компании
+                  </div>
+                </div>
+                
+                <a href="https://borsa.garantburgas.com/sectorRanking?origin_code=bg" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
+                  <span>Посетете сайта</span>
+                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                </a>
+              </div>
             </div>
             
-            <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-              <h3 class="text-2xl font-bold mb-2">Launch Pop</h3>
-              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Агенция за тестване на маркетингови стратегии за различни брандове и продукти.</p>
-              <div class="text-3xl font-bold text-primary-500 mb-4">267%</div>
-              <p class="font-medium">Увеличение на продуктивността на проектните мениджъри</p>
-              <NuxtLink to="/case-studies/launch-pop">
-                <Button variant="link" class="mt-4">
-                  <span class="flex items-center gap-1.5">
-                    Прочетете казуса
-                    <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                  </span>
-                </Button>
-              </NuxtLink>
+            <!-- Социална мрежа за пенсионери -->
+            <div class="row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
+                <img src="https://costeffective.software/wp-content/uploads/2024/09/pensa.png" alt="Социална мрежа за пенсионери" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Pensa+Club'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div class="p-4 text-white">
+                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
+                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
+                      <span>78%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="font-bold text-lg text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
+                    Социална мрежа за пенсионери
+                  </div>
+                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
+                    Увеличение на социалните взаимодействия между възрастни хора
+                  </div>
+                </div>
+                
+                <a href="https://www.pensa.club/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
+                  <span>Посетете сайта</span>
+                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                </a>
+              </div>
             </div>
+            
+            <!-- Рецептурник - Spans 2 columns -->
+            <div class="row-span-1 md:col-span-2 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
+                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-22-29-Kitchen-Helper.png" alt="Рецептурник с ястия" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Kitchen+Helper'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div class="p-4 text-white">
+                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
+                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
+                      <span>42%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="font-bold text-xl text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
+                    Рецептурник с ястия за всеки ден
+                  </div>
+                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
+                    Колекция от рецепти с автоматизирано планиране на храненията, спестяващо време на потребителите
+                  </div>
+                </div>
+                
+                <a href="https://kitchenhelper.eognyanov.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
+                  <span>Посетете сайта</span>
+                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+            
+            <!-- Календар за моторни спортове - Spans 2 columns -->
+            <div class="row-span-1 md:col-span-2 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
+                <img src="https://costeffective.software/wp-content/uploads/2024/03/cars.png" alt="Календар за моторни спортове" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=RaceFanatic'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div class="p-4 text-white">
+                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
+                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
+                      <span>68%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="font-bold text-xl text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
+                    Календар за моторни спортове
+                  </div>
+                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
+                    Агрегатор на състезания и събития от света на моторния спорт, подобряващ информираността на феновете
+                  </div>
+                </div>
+                
+                <a href="https://racefanatic.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
+                  <span>Посетете сайта</span>
+                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+            
+            <!-- Маркетплейс за настолни игри -->
+            <div class="row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
+                <img src="https://costeffective.software/wp-content/uploads/2024/03/cardflow.png" alt="Маркетплейс за настолни игри" class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=CardFlow'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div class="p-4 text-white">
+                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
+                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
+                      <span>93%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="font-bold text-lg text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
+                    Маркетплейс за настолни игри
+                  </div>
+                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
+                    По-ефективна размяна на карти и компоненти от настолни игри
+                  </div>
+                </div>
+                
+                <a href="https://cardflow.market/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
+                  <span>Посетете сайта</span>
+                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -327,7 +472,7 @@
                   <!-- Left Content with enhanced design -->
                   <div class="hidden md:block md:w-1/2 pr-16 text-right transition-all duration-700 opacity-0 translate-x-[-20px] timeline-reveal">
                     <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
-                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 ml-auto shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
+                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
                         <Icon name="lucide:code" class="h-10 w-10 text-zinc-600 dark:text-zinc-300 group-hover/card:text-zinc-800 dark:group-hover/card:text-zinc-100 transition-colors duration-300" />
                       </div>
                       <p class="text-zinc-600 dark:text-zinc-400 group-hover/card:text-zinc-700 dark:group-hover/card:text-zinc-300 transition-colors duration-300">Разработваме персонализирано решение, което отговаря на конкретните нужди на вашия бизнес и измерваме първоначалните резултати</p>
@@ -394,8 +539,8 @@
                       <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Внедряване</h3>
                     </div>
                     <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работния процес на вашия екип, обучаваме служителите и осигуряваме постоянно наблюдение и подобрения</p>
-            </div>
-            
+                  </div>
+                  
                   <!-- Right Content with enhanced design -->
                   <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
                     <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
