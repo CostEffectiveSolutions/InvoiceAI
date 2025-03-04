@@ -14,7 +14,7 @@
           { title: 'Решения', icon: 'lucide:lightbulb', href: '#solutions' },
           { title: 'Примери', icon: 'lucide:folder', href: '#case-studies' },
           { title: 'Процес', icon: 'lucide:git-branch', href: '#process' },
-          { title: 'Заявете Разговор', icon: 'lucide:phone-call', href: '#consultation' }
+          { title: 'Запазете консултация', icon: 'lucide:calendar', href: '#consultation' }
         ]"
         desktop-class-name="w-full"
         mobile-class-name="fixed bottom-4 right-4"
