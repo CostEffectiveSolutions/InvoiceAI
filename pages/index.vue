@@ -115,24 +115,33 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <div class="flex items-start justify-between mb-4">
-                <Icon name="lucide:clock" class="h-8 w-8 text-neutral-600" />
-                <h3 class="text-4xl font-bold">38%</h3>
+                <Icon name="lucide:clock" class="size-10 text-neutral-600 my-auto" />
+                <div class="flex items-center gap-2 items-center">
+                  <h3 class="text-5xl font-bold">38%</h3>
+                  <Icon name="solar:arrow-right-up-bold" class="size-7 mt-1" />
+                </div>
               </div>
               <h4 class="font-medium mb-2 text-lg">Спестено време от рутинни задачи</h4>
               <p class="text-neutral-600 dark:text-neutral-400 text-sm">Автоматизирайте повтарящите се процеси и освободете екипа си за дейности с висока добавена стойност</p>
             </div>
             <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <div class="flex items-start justify-between mb-4">
-                <Icon name="lucide:trending-up" class="h-8 w-8 text-neutral-600" />
-                <h3 class="text-4xl font-bold">23%</h3>
+                <Icon name="lucide:trending-up" class="size-10 text-neutral-600 my-auto" />
+                <div class="flex items-center gap-2 items-center">
+                  <h3 class="text-5xl font-bold">23%</h3>
+                  <Icon name="solar:arrow-right-up-bold" class="size-7 mt-1" />
+                </div>
               </div>
               <h4 class="font-medium mb-2 text-lg">Повишен капацитет на екипа</h4>
               <p class="text-neutral-600 dark:text-neutral-400 text-sm">Генерирайте повече приходи със същия екип чрез интелигентна автоматизация</p>
             </div>
             <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <div class="flex items-start justify-between mb-4">
-                <Icon name="lucide:piggy-bank" class="h-8 w-8 text-neutral-600" />
-                <h3 class="text-4xl font-bold">19%</h3>
+                <Icon name="lucide:piggy-bank" class="size-10 text-neutral-600 my-auto" />
+                <div class="flex items-center gap-2 items-center">
+                  <h3 class="text-5xl font-bold">19%</h3>
+                  <Icon name="solar:arrow-right-up-bold" class="size-7 mt-1" />
+                </div>
               </div>
               <h4 class="font-medium mb-2 text-lg">Намалени разходи</h4>
               <p class="text-neutral-600 dark:text-neutral-400 text-sm">Редуцирайте оперативните разходи чрез повишена ефективност и оптимизиране на софтуерните решения</p>
@@ -229,32 +238,196 @@
     </section>
 
     <!-- Process Section -->
-    <section id="process" ref="processRef" class="py-20 bg-neutral-50 dark:bg-neutral-900">
-      <div class="container mx-auto px-4">
+    <section id="process" ref="processRef" class="py-20 bg-neutral-50 dark:bg-neutral-900 relative overflow-hidden">
+      <!-- Sophisticated spotlight effects in grayscale -->
+      <div class="absolute inset-0 w-full h-full pointer-events-none">
+        <!-- Main spotlight gradient in grayscale -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[50%] rounded-full bg-gradient-to-br from-zinc-200/40 via-zinc-300/30 to-zinc-100/20 dark:from-zinc-800/30 dark:via-zinc-700/20 dark:to-zinc-900/10 blur-[120px] opacity-70"></div>
+        <!-- Secondary diagonal spotlight for added depth -->
+        <div class="absolute top-[30%] right-[20%] w-[40%] h-[30%] rounded-full bg-zinc-200/30 dark:bg-zinc-700/20 blur-[80px] opacity-50"></div>
+        <!-- Subtle noise texture overlay -->
+        <div class="absolute inset-0 backdrop-filter backdrop-contrast-[1.01] mix-blend-overlay opacity-[0.03]" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMjAwdjIwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');"></div>
+      </div>
+        
+      <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-center">Как работим с вас</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="relative">
-              <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-                <div class="text-3xl font-bold mb-4">01</div>
-                <h3 class="text-xl font-bold mb-2">Анализ</h3>
-                <p class="text-neutral-600 dark:text-neutral-400">Задълбочен анализ на ключовите области за подобрение</p>
-              </div>
+          <!-- Sophisticated gradient text with subtle shimmer effect -->
+          <h2 class="text-4xl font-bold mb-16 text-center relative">
+            <span class="bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-800 dark:from-white dark:via-zinc-300 dark:to-zinc-200 inline-block text-transparent bg-clip-text relative z-10">Как работим с вас</span>
+            <!-- Subtle shimmer effect overlay -->
+            <span class="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-transparent via-zinc-300/10 to-transparent dark:from-transparent dark:via-zinc-600/10 dark:to-transparent bg-[length:200%_100%] animate-shimmer-slow z-20"></span>
+          </h2>
+          
+          <div class="relative">
+            <!-- Timeline Line with Sophisticated Effects -->
+            <div class="absolute left-1/2 top-0 bottom-0 w-[1px] -translate-x-1/2 hidden md:block">
+              <!-- Primary line with gradient -->
+              <div class="absolute inset-0 bg-gradient-to-b from-zinc-400/70 via-zinc-500/60 to-zinc-600/50 dark:from-zinc-500/50 dark:via-zinc-400/40 dark:to-zinc-300/30"></div>
+              
+              <!-- Glass effect layer -->
+              <div class="absolute inset-0 w-[2px] -left-[0.5px] backdrop-blur-[1px]"></div>
+              
+              <!-- Animated particle -->
+              <div class="absolute w-[4px] h-[4px] left-1/2 -translate-x-1/2 rounded-full bg-white dark:bg-zinc-200 shadow-[0_0_8px_2px_rgba(255,255,255,0.6),0_0_12px_4px_rgba(0,0,0,0.1)] dark:shadow-[0_0_8px_2px_rgba(255,255,255,0.5),0_0_12px_4px_rgba(255,255,255,0.15)] animate-timelineFlow"></div>
+              
+              <!-- Secondary particles for sophistication -->
+              <div class="absolute w-[3px] h-[3px] left-1/2 -translate-x-1/2 rounded-full bg-white/80 dark:bg-zinc-300/80 shadow-[0_0_6px_rgba(255,255,255,0.4)] dark:shadow-[0_0_6px_rgba(255,255,255,0.3)] animate-timelineFlow animation-delay-1000"></div>
+              <div class="absolute w-[2px] h-[2px] left-1/2 -translate-x-1/2 rounded-full bg-white/60 dark:bg-zinc-400/60 shadow-[0_0_4px_rgba(255,255,255,0.2)] dark:shadow-[0_0_4px_rgba(255,255,255,0.15)] animate-timelineFlow animation-delay-2000"></div>
             </div>
             
-            <div class="relative">
-              <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-                <div class="text-3xl font-bold mb-4">02</div>
-                <h3 class="text-xl font-bold mb-2">Разработка</h3>
-                <p class="text-neutral-600 dark:text-neutral-400">Създаване на първоначално решение и измерване на резултатите</p>
+            <!-- Timeline Steps -->
+            <div class="space-y-12 md:space-y-32">
+              <!-- Step 1 -->
+              <div class="relative group">
+                <div class="flex flex-col md:flex-row items-center">
+                  <!-- Timeline Dot with sophisticated effects -->
+                  <div class="absolute left-1/2 w-12 h-12 bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-900 dark:to-black rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center -translate-x-1/2 z-10 hidden md:flex shadow-[0_0_15px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05),inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.25)] dark:group-hover:shadow-[0_0_25px_rgba(255,255,255,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)]">
+                    <!-- Glass effect rim -->
+                    <div class="absolute inset-0 rounded-full backdrop-blur-[0.5px] opacity-30"></div>
+                    
+                    <!-- Pulse animation with more realistic physics -->
+                    <div class="absolute inset-[2px] rounded-full border border-zinc-200/30 dark:border-zinc-700/30 opacity-0 group-hover:opacity-100 group-hover:animate-pulse-outward"></div>
+                    
+                    <!-- Number with subtle gradient and shadow -->
+                    <span class="text-xl font-bold relative bg-gradient-to-br from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 text-transparent bg-clip-text drop-shadow-sm">01</span>
+                    
+                    <!-- Inner subtle glow -->
+                    <div class="absolute inset-[4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10 dark:to-transparent"></div>
+                  </div>
+                  
+                  <!-- Left Content (for desktop) with slide-in animation and enhanced shadow -->
+                  <div class="hidden md:block md:w-1/2 pr-16 text-right transition-all duration-700 opacity-0 translate-x-[-20px] timeline-reveal">
+                    <h3 class="text-2xl font-bold mb-3 relative">
+                      <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Анализ</span>
+                      <!-- Subtle underline with animation -->
+                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 group-hover:w-full origin-left transition-all duration-500 ease-out"></span>
+                    </h3>
+                    <p class="text-zinc-600 dark:text-zinc-400">Задълбочен анализ на ключовите области за подобрение</p>
+                  </div>
+                  
+                  <!-- Mobile Content -->
+                  <div class="md:hidden w-full p-6 bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black rounded-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover transition-all duration-300 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
+                    <div class="flex items-center gap-4 mb-3">
+                      <div class="w-10 h-10 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_10px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.6)] dark:shadow-[0_0_10px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.1)]">
+                        <span class="text-lg font-bold text-zinc-800 dark:text-zinc-200">01</span>
+                      </div>
+                      <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Анализ</h3>
+                    </div>
+                    <p class="text-zinc-600 dark:text-zinc-400">Задълбочен анализ на ключовите области за подобрение</p>
+                  </div>
+                  
+                  <!-- Right Content with enhanced design -->
+                  <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
+                    <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
+                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
+                        <Icon name="lucide:search" class="h-10 w-10 text-zinc-600 dark:text-zinc-300 group-hover/card:text-zinc-800 dark:group-hover/card:text-zinc-100 transition-colors duration-300" />
+                      </div>
+                      <p class="text-zinc-600 dark:text-zinc-400 group-hover/card:text-zinc-700 dark:group-hover/card:text-zinc-300 transition-colors duration-300">Изследваме вашите работни процеси, идентифицираме проблемните звена и оценяваме възможностите за оптимизация</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            <div class="relative">
-              <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-                <div class="text-3xl font-bold mb-4">03</div>
-                <h3 class="text-xl font-bold mb-2">Внедряване</h3>
-                <p class="text-neutral-600 dark:text-neutral-400">Интегриране на решението в работата на вашия екип и проследяване на ефективността</p>
+              
+              <!-- Step 2 -->
+              <div class="relative group">
+                <div class="flex flex-col md:flex-row items-center">
+                  <!-- Timeline Dot with sophisticated effects -->
+                  <div class="absolute left-1/2 w-12 h-12 bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-900 dark:to-black rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center -translate-x-1/2 z-10 hidden md:flex shadow-[0_0_15px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05),inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.25)] dark:group-hover:shadow-[0_0_25px_rgba(255,255,255,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)]">
+                    <!-- Glass effect rim -->
+                    <div class="absolute inset-0 rounded-full backdrop-blur-[0.5px] opacity-30"></div>
+                    
+                    <!-- Pulse animation with more realistic physics -->
+                    <div class="absolute inset-[2px] rounded-full border border-zinc-200/30 dark:border-zinc-700/30 opacity-0 group-hover:opacity-100 group-hover:animate-pulse-outward"></div>
+                    
+                    <!-- Number with subtle gradient and shadow -->
+                    <span class="text-xl font-bold relative bg-gradient-to-br from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 text-transparent bg-clip-text drop-shadow-sm">02</span>
+                    
+                    <!-- Inner subtle glow -->
+                    <div class="absolute inset-[4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10 dark:to-transparent"></div>
+                  </div>
+                  
+                  <!-- Left Content with enhanced design -->
+                  <div class="hidden md:block md:w-1/2 pr-16 text-right transition-all duration-700 opacity-0 translate-x-[-20px] timeline-reveal">
+                    <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
+                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 ml-auto shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
+                        <Icon name="lucide:code" class="h-10 w-10 text-zinc-600 dark:text-zinc-300 group-hover/card:text-zinc-800 dark:group-hover/card:text-zinc-100 transition-colors duration-300" />
+                      </div>
+                      <p class="text-zinc-600 dark:text-zinc-400 group-hover/card:text-zinc-700 dark:group-hover/card:text-zinc-300 transition-colors duration-300">Разработваме персонализирано решение, което отговаря на конкретните нужди на вашия бизнес и измерваме първоначалните резултати</p>
+                    </div>
+                  </div>
+                  
+                  <!-- Mobile Content -->
+                  <div class="md:hidden w-full p-6 bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black rounded-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover transition-all duration-300 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
+                    <div class="flex items-center gap-4 mb-3">
+                      <div class="w-10 h-10 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_10px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.6)] dark:shadow-[0_0_10px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.1)]">
+                        <span class="text-lg font-bold text-zinc-800 dark:text-zinc-200">02</span>
+                      </div>
+                      <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Разработка</h3>
+                    </div>
+                    <p class="text-zinc-600 dark:text-zinc-400">Създаване на първоначално решение и измерване на резултатите</p>
+                  </div>
+                  
+                  <!-- Right Content (for desktop) with slide-in animation and enhanced shadow -->
+                  <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
+                    <h3 class="text-2xl font-bold mb-3 relative">
+                      <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Разработка</span>
+                      <!-- Subtle underline with animation -->
+                      <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 group-hover:w-full origin-left transition-all duration-500 ease-out"></span>
+                    </h3>
+                    <p class="text-zinc-600 dark:text-zinc-400">Създаване на първоначално решение и измерване на резултатите</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 3 -->
+              <div class="relative group">
+                <div class="flex flex-col md:flex-row items-center">
+                  <!-- Timeline Dot with sophisticated effects -->
+                  <div class="absolute left-1/2 w-12 h-12 bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-900 dark:to-black rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center -translate-x-1/2 z-10 hidden md:flex shadow-[0_0_15px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05),inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.25)] dark:group-hover:shadow-[0_0_25px_rgba(255,255,255,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)]">
+                    <!-- Glass effect rim -->
+                    <div class="absolute inset-0 rounded-full backdrop-blur-[0.5px] opacity-30"></div>
+                    
+                    <!-- Pulse animation with more realistic physics -->
+                    <div class="absolute inset-[2px] rounded-full border border-zinc-200/30 dark:border-zinc-700/30 opacity-0 group-hover:opacity-100 group-hover:animate-pulse-outward"></div>
+                    
+                    <!-- Number with subtle gradient and shadow -->
+                    <span class="text-xl font-bold relative bg-gradient-to-br from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 text-transparent bg-clip-text drop-shadow-sm">03</span>
+                    
+                    <!-- Inner subtle glow -->
+                    <div class="absolute inset-[4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10 dark:to-transparent"></div>
+                  </div>
+                  
+                  <!-- Left Content (for desktop) with slide-in animation and enhanced shadow -->
+                  <div class="hidden md:block md:w-1/2 pr-16 text-right transition-all duration-700 opacity-0 translate-x-[-20px] timeline-reveal">
+                    <h3 class="text-2xl font-bold mb-3 relative">
+                      <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Внедряване</span>
+                      <!-- Subtle underline with animation -->
+                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 group-hover:w-full origin-left transition-all duration-500 ease-out"></span>
+                    </h3>
+                    <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работата на вашия екип и проследяване на ефективността</p>
+                  </div>
+                  
+                  <!-- Mobile Content -->
+                  <div class="md:hidden w-full p-6 bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black rounded-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover transition-all duration-300 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
+                    <div class="flex items-center gap-4 mb-3">
+                      <div class="w-10 h-10 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_10px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.6)] dark:shadow-[0_0_10px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.1)]">
+                        <span class="text-lg font-bold text-zinc-800 dark:text-zinc-200">03</span>
+                      </div>
+                      <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Внедряване</h3>
+                    </div>
+                    <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работата на вашия екип и проследяване на ефективността</p>
+                  </div>
+                  
+                  <!-- Right Content with enhanced design -->
+                  <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
+                    <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
+                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
+                        <Icon name="lucide:upload" class="h-10 w-10 text-zinc-600 dark:text-zinc-300 group-hover/card:text-zinc-800 dark:group-hover/card:text-zinc-100 transition-colors duration-300" />
+                      </div>
+                      <p class="text-zinc-600 dark:text-zinc-400 group-hover/card:text-zinc-700 dark:group-hover/card:text-zinc-300 transition-colors duration-300">Внедряваме решението в работния процес на вашия екип, обучаваме служителите и осигуряваме постоянно наблюдение и подобрения</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -266,7 +439,7 @@
     <section id="consultation" class="py-24">
       <div class="container mx-auto px-5 md:px-10">
         <div class="max-w-4xl mx-auto mb-16">
-          <Badge variant="secondary" class="mb-4">ЗАПОЧНЕТЕ</Badge>
+          <Badge variant="secondary" class="mb-4 mx-auto flex justify-center rounded-full w-24">ЗАПОЧНЕТЕ</Badge>
           <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 text-center">
             Трансформирайте бизнеса си с интелигентна автоматизация
           </h2>
@@ -355,6 +528,16 @@ onMounted(() => {
       }
     })
   })
+  
+  // Initialize timeline reveal animations
+  document.querySelectorAll('.timeline-reveal').forEach((el) => {
+    useIntersectionObserver(el as HTMLElement, ([{ isIntersecting }]) => {
+      if (isIntersecting) {
+        (el as HTMLElement).style.opacity = '1'
+        ;(el as HTMLElement).style.transform = 'translateX(0)'
+      }
+    }, { threshold: 0.2 })
+  })
 })
 </script>
 
@@ -384,6 +567,66 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Timeline animations */
+@keyframes timelineFlow {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-timelineFlow {
+  animation: timelineFlow 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Новите анимации за сивата цветова схема */
+@keyframes pulse-outward {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+.group-hover\:animate-pulse-outward:hover {
+  animation: pulse-outward 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shimmer-slow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer-slow {
+  animation: shimmer-slow 8s linear infinite;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2000ms;
 }
 
 /* Button hover effects */
