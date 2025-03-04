@@ -153,28 +153,7 @@
 
     <!-- Problem Section -->
     <section id="problems" ref="problemRef" class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-4xl font-bold mb-8 text-center">Вашият бизнес расте, но системите ви не успяват да го следват</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
-              <Icon name="lucide:users" class="h-8 w-8 mb-4" />
-              <h3 class="text-xl font-bold mb-2">Ограничен човешки ресурс за растеж</h3>
-              <p class="text-neutral-600 dark:text-neutral-400">Екипът ви е претоварен и потенциалните клиенти остават необслужени.</p>
-            </div>
-            <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
-              <Icon name="lucide:eye-off" class="h-8 w-8 mb-4" />
-              <h3 class="text-xl font-bold mb-2">Липса на прозрачност</h3>
-              <p class="text-neutral-600 dark:text-neutral-400">Проектите се забавят, сроковете не се спазват и нямате яснота за причините.</p>
-            </div>
-            <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
-              <Icon name="lucide:repeat" class="h-8 w-8 mb-4" />
-              <h3 class="text-xl font-bold mb-2">Времеемки ръчни процеси</h3>
-              <p class="text-neutral-600 dark:text-neutral-400">Рутинната административна работа отнема часове, които биха могли да се инвестират в обслужване на клиенти.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BusinessProblemsCarousel />
     </section>
 
     <!-- Solution Section -->
@@ -258,21 +237,20 @@
             <span class="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-transparent via-zinc-300/10 to-transparent dark:from-transparent dark:via-zinc-600/10 dark:to-transparent bg-[length:200%_100%] animate-shimmer-slow z-20"></span>
           </h2>
           
-          <div class="relative">
-            <!-- Timeline Line with Sophisticated Effects -->
-            <div class="absolute left-1/2 top-0 bottom-0 w-[1px] -translate-x-1/2 hidden md:block">
+            <div class="relative">
+            <!-- Timeline Line with Sophisticated Effects - Modified to start at first dot and end at last dot -->
+            <div class="absolute left-1/2 -translate-x-1/2 hidden md:block" style="top: 90px; bottom: 90px;">
               <!-- Primary line with gradient -->
-              <div class="absolute inset-0 bg-gradient-to-b from-zinc-400/70 via-zinc-500/60 to-zinc-600/50 dark:from-zinc-500/50 dark:via-zinc-400/40 dark:to-zinc-300/30"></div>
+              <div class="absolute inset-0 bg-gradient-to-b from-zinc-400/70 via-zinc-500/60 to-zinc-600/50 dark:from-zinc-500/50 dark:via-zinc-400/40 dark:to-zinc-300/30" style="width: 1px; left: 50%; transform: translateX(-50%);"></div>
               
               <!-- Glass effect layer -->
               <div class="absolute inset-0 w-[2px] -left-[0.5px] backdrop-blur-[1px]"></div>
               
-              <!-- Animated particle -->
-              <div class="absolute w-[4px] h-[4px] left-1/2 -translate-x-1/2 rounded-full bg-white dark:bg-zinc-200 shadow-[0_0_8px_2px_rgba(255,255,255,0.6),0_0_12px_4px_rgba(0,0,0,0.1)] dark:shadow-[0_0_8px_2px_rgba(255,255,255,0.5),0_0_12px_4px_rgba(255,255,255,0.15)] animate-timelineFlow"></div>
-              
-              <!-- Secondary particles for sophistication -->
-              <div class="absolute w-[3px] h-[3px] left-1/2 -translate-x-1/2 rounded-full bg-white/80 dark:bg-zinc-300/80 shadow-[0_0_6px_rgba(255,255,255,0.4)] dark:shadow-[0_0_6px_rgba(255,255,255,0.3)] animate-timelineFlow animation-delay-1000"></div>
-              <div class="absolute w-[2px] h-[2px] left-1/2 -translate-x-1/2 rounded-full bg-white/60 dark:bg-zinc-400/60 shadow-[0_0_4px_rgba(255,255,255,0.2)] dark:shadow-[0_0_4px_rgba(255,255,255,0.15)] animate-timelineFlow animation-delay-2000"></div>
+              <!-- Single, refined animated particle -->
+              <div class="absolute w-[8px] h-[8px] left-1/2 -translate-x-1/2 rounded-full bg-white dark:bg-zinc-100 
+                shadow-[0_0_15px_5px_rgba(255,255,255,0.8),0_0_20px_8px_rgba(125,125,128,0.3)] 
+                dark:shadow-[0_0_15px_5px_rgba(255,255,255,0.7),0_0_20px_8px_rgba(200,200,220,0.3)] 
+                animate-timelineFlow z-10"></div>
             </div>
             
             <!-- Timeline Steps -->
@@ -300,7 +278,7 @@
                     <h3 class="text-2xl font-bold mb-3 relative">
                       <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Анализ</span>
                       <!-- Subtle underline with animation -->
-                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 group-hover:w-full origin-left transition-all duration-500 ease-out"></span>
+                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 origin-left transition-all duration-500 ease-out"></span>
                     </h3>
                     <p class="text-zinc-600 dark:text-zinc-400">Задълбочен анализ на ключовите области за подобрение</p>
                   </div>
@@ -372,7 +350,7 @@
                     <h3 class="text-2xl font-bold mb-3 relative">
                       <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Разработка</span>
                       <!-- Subtle underline with animation -->
-                      <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 group-hover:w-full origin-left transition-all duration-500 ease-out"></span>
+                      <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 origin-left transition-all duration-500 ease-out"></span>
                     </h3>
                     <p class="text-zinc-600 dark:text-zinc-400">Създаване на първоначално решение и измерване на резултатите</p>
                   </div>
@@ -402,7 +380,7 @@
                     <h3 class="text-2xl font-bold mb-3 relative">
                       <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Внедряване</span>
                       <!-- Subtle underline with animation -->
-                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 group-hover:w-full origin-left transition-all duration-500 ease-out"></span>
+                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 origin-left transition-all duration-500 ease-out"></span>
                     </h3>
                     <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работата на вашия екип и проследяване на ефективността</p>
                   </div>
@@ -415,9 +393,9 @@
                       </div>
                       <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Внедряване</h3>
                     </div>
-                    <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работата на вашия екип и проследяване на ефективността</p>
-                  </div>
-                  
+                    <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работния процес на вашия екип, обучаваме служителите и осигуряваме постоянно наблюдение и подобрения</p>
+            </div>
+            
                   <!-- Right Content with enhanced design -->
                   <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
                     <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
@@ -575,7 +553,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     opacity: 1;
   }
-  95% {
+  80% {
     opacity: 1;
   }
   100% {
@@ -585,40 +563,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-timelineFlow {
-  animation: timelineFlow 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: timelineFlow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Новите анимации за сивата цветова схема */
-@keyframes pulse-outward {
-  0% {
-    opacity: 0.6;
-    transform: scale(0.95);
-  }
-  50% {
-    opacity: 0.2;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
+/* Animation delays for smooth particle flow */
+.animation-delay-100 {
+  animation-delay: 100ms;
 }
 
-.group-hover\:animate-pulse-outward:hover {
-  animation: pulse-outward 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.animation-delay-300 {
+  animation-delay: 300ms;
 }
 
-@keyframes shimmer-slow {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.animate-shimmer-slow {
-  animation: shimmer-slow 8s linear infinite;
+.animation-delay-600 {
+  animation-delay: 600ms;
 }
 
 .animation-delay-1000 {
