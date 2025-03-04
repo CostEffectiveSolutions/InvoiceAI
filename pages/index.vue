@@ -34,10 +34,10 @@
         <div class="container mx-auto px-4 relative">
           <div class="max-w-4xl mx-auto text-center">
             <h1 class="bg-gradient-to-br from-zinc-600 via-zinc-800 to-zinc-400 bg-clip-text text-center text-5xl md:text-7xl font-medium mb-6 leading-tight tracking-tight text-transparent">
-              Автоматизирайте бизнес процесите си с AI
+              Автоматизирайте бизнес процесите си с изкуствен интелект
             </h1>
             <p class="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-12 leading-relaxed max-w-2xl mx-auto">
-              Помагаме на бизнесите да спестят време и да намалят разходите чрез автоматизиране на повтарящи се задачи с персонализирани AI решения.
+              Помагаме на бизнесите да спестят време и да намалят разходите чрез автоматизиране на рутинни задачи с персонализирани решения, базирани на изкуствен интелект.
             </p>
             <GlowButton 
               color="#silver" 
@@ -48,7 +48,7 @@
                 <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                   <Icon name="lucide:calendar" class="h-3 w-3" />
                 </div>
-                <span class="text-sm font-medium">Запазете Безплатна Консултация</span>
+                <span class="text-sm font-medium">Заявете безплатна консултация</span>
               </a>
             </GlowButton>
           </div>
@@ -84,24 +84,24 @@
                 <Icon name="lucide:clock" class="h-8 w-8 text-neutral-600" />
                 <h3 class="text-4xl font-bold">38%</h3>
               </div>
-              <h4 class="font-medium mb-2 text-lg">Спестено време от повтарящи се задачи</h4>
-              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Автоматизирайте рутинните работни процеси и освободете времето на екипа си за работа с висока стойност</p>
+              <h4 class="font-medium mb-2 text-lg">Спестено време от рутинни задачи</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Автоматизирайте повтарящите се процеси и освободете екипа си за дейности с висока добавена стойност</p>
             </div>
             <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <div class="flex items-start justify-between mb-4">
                 <Icon name="lucide:trending-up" class="h-8 w-8 text-neutral-600" />
                 <h3 class="text-4xl font-bold">23%</h3>
               </div>
-              <h4 class="font-medium mb-2 text-lg">Подобрения в капацитета на екипа</h4>
-              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Управлявайте повече приходи със същия размер екип чрез интелигентна автоматизация</p>
+              <h4 class="font-medium mb-2 text-lg">Повишен капацитет на екипа</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Генерирайте повече приходи със същия екип чрез интелигентна автоматизация</p>
             </div>
             <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <div class="flex items-start justify-between mb-4">
                 <Icon name="lucide:piggy-bank" class="h-8 w-8 text-neutral-600" />
                 <h3 class="text-4xl font-bold">19%</h3>
               </div>
-              <h4 class="font-medium mb-2 text-lg">Спестени разходи</h4>
-              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Намалете разходите чрез екипна ефективност и консолидирани разходи за софтуер</p>
+              <h4 class="font-medium mb-2 text-lg">Намалени разходи</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Редуцирайте оперативните разходи чрез повишена ефективност и оптимизиране на софтуерните решения</p>
             </div>
           </div>
         </div>
@@ -112,22 +112,22 @@
     <section id="problems" ref="problemRef" class="py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-4xl font-bold mb-8 text-center">Вашият бизнес расте, но системите ви изостават.</h2>
+          <h2 class="text-4xl font-bold mb-8 text-center">Вашият бизнес расте, но системите ви не успяват да го следват</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
               <Icon name="lucide:users" class="h-8 w-8 mb-4" />
-              <h3 class="text-xl font-bold mb-2">Ограничения от хора за растеж</h3>
-              <p class="text-neutral-600 dark:text-neutral-400">Вашият екип е претоварен и клиентите се изплъзват между пръстите ви.</p>
+              <h3 class="text-xl font-bold mb-2">Ограничен човешки ресурс за растеж</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">Екипът ви е претоварен и потенциалните клиенти остават необслужени.</p>
             </div>
             <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
               <Icon name="lucide:eye-off" class="h-8 w-8 mb-4" />
-              <h3 class="text-xl font-bold mb-2">Липса на видимост</h3>
-              <p class="text-neutral-600 dark:text-neutral-400">Проектите спират, крайните срокове се пропускат и винаги сте на тъмно.</p>
+              <h3 class="text-xl font-bold mb-2">Липса на прозрачност</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">Проектите се забавят, сроковете не се спазват и нямате яснота за причините.</p>
             </div>
             <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
               <Icon name="lucide:repeat" class="h-8 w-8 mb-4" />
-              <h3 class="text-xl font-bold mb-2">Повтарящи се ръчни задачи</h3>
-              <p class="text-neutral-600 dark:text-neutral-400">Рутинната административна работа отнема часове, които трябва да бъдат прекарани в обслужване на клиенти.</p>
+              <h3 class="text-xl font-bold mb-2">Времеемки ръчни процеси</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">Рутинната административна работа отнема часове, които биха могли да се инвестират в обслужване на клиенти.</p>
             </div>
           </div>
         </div>
@@ -143,13 +143,13 @@
     <section id="case-studies" ref="caseStudiesRef" class="py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-center">Резултати на клиенти</h2>
+          <h2 class="text-4xl font-bold mb-12 text-center">Резултати на нашите клиенти</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <h3 class="text-2xl font-bold mb-2">Humi</h3>
-              <p class="text-neutral-600 dark:text-neutral-400 mb-4">HR платформа, която управлява заплати и бонуси.</p>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">HR платформа за управление на заплати и бонуси.</p>
               <div class="text-3xl font-bold text-primary-500 mb-4">50%</div>
-              <p class="font-medium">По-малко разходи за SR&ED претенцAI</p>
+              <p class="font-medium">По-ниски разходи за SR&ED обработка</p>
               <NuxtLink to="/case-studies/humi">
                 <Button variant="link" class="mt-4">
                   <span class="flex items-center gap-1.5">
@@ -162,9 +162,9 @@
             
             <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <h3 class="text-2xl font-bold mb-2">Голяма стрийминг услуга</h3>
-              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Инструмент за ID на кампанAI за UTM генериране и проследяване.</p>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Инструмент за идентификация на кампании с автоматично генериране и проследяване на UTM параметри.</p>
               <div class="text-3xl font-bold text-primary-500 mb-4">100%</div>
-              <p class="font-medium">Премахнати грешки от отчетите</p>
+              <p class="font-medium">Елиминирани грешки в отчетите</p>
               <NuxtLink to="/case-studies/streaming-service">
                 <Button variant="link" class="mt-4">
                   <span class="flex items-center gap-1.5">
@@ -177,9 +177,9 @@
             
             <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
               <h3 class="text-2xl font-bold mb-2">Launch Pop</h3>
-              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Агенция за тестване на сигнали за различни марки и продукти.</p>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Агенция за тестване на маркетингови стратегии за различни брандове и продукти.</p>
               <div class="text-3xl font-bold text-primary-500 mb-4">267%</div>
-              <p class="font-medium">Повишаване на продуктивността за проектни мениджъри</p>
+              <p class="font-medium">Увеличение на продуктивността на проектните мениджъри</p>
               <NuxtLink to="/case-studies/launch-pop">
                 <Button variant="link" class="mt-4">
                   <span class="flex items-center gap-1.5">
@@ -198,29 +198,29 @@
     <section id="process" ref="processRef" class="py-20 bg-neutral-50 dark:bg-neutral-900">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-center">Как работим</h2>
+          <h2 class="text-4xl font-bold mb-12 text-center">Как работим с вас</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="relative">
               <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
                 <div class="text-3xl font-bold mb-4">01</div>
-                <h3 class="text-xl font-bold mb-2">Одит</h3>
-                <p class="text-neutral-600 dark:text-neutral-400">Одит на ключовите области за подобрения</p>
+                <h3 class="text-xl font-bold mb-2">Анализ</h3>
+                <p class="text-neutral-600 dark:text-neutral-400">Задълбочен анализ на ключовите области за подобрение</p>
               </div>
             </div>
             
             <div class="relative">
               <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
                 <div class="text-3xl font-bold mb-4">02</div>
-                <h3 class="text-xl font-bold mb-2">Изграждане</h3>
-                <p class="text-neutral-600 dark:text-neutral-400">Изграждане на първоначален продукт за започване на измерване</p>
+                <h3 class="text-xl font-bold mb-2">Разработка</h3>
+                <p class="text-neutral-600 dark:text-neutral-400">Създаване на първоначално решение и измерване на резултатите</p>
               </div>
             </div>
             
             <div class="relative">
               <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
                 <div class="text-3xl font-bold mb-4">03</div>
-                <h3 class="text-xl font-bold mb-2">Проследяване</h3>
-                <p class="text-neutral-600 dark:text-neutral-400">Внедряване и проследяване на нашето решение във вашия екип</p>
+                <h3 class="text-xl font-bold mb-2">Внедряване</h3>
+                <p class="text-neutral-600 dark:text-neutral-400">Интегриране на решението в работата на вашия екип и проследяване на ефективността</p>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@
             Трансформирайте бизнеса си с интелигентна автоматизация
           </h2>
           <p class="text-xl text-center text-neutral-700">
-            Растете по-бързо с AI решения от корпоративен клас, които ви спестяват време и пари.
+            Развивайте бизнеса си по-бързо с решения на базата на изкуствен интелект от корпоративен клас, които ви спестяват време и средства.
           </p>
         </div>
         
