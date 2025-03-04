@@ -2,13 +2,27 @@
   <div class="flex min-h-screen flex-col">
     <div class="flex-1">
       <NuxtLayout>
-        <NuxtPage />
+
+        <VueLenis root>
+          <!-- content -->
+          <NuxtPage />
+        </VueLenis>
       </NuxtLayout>
     </div>
     <Footer />
   </div>
 </template>
 <script setup>
+import { VueLenis, useLenis } from 'lenis/vue'
+import { watch } from 'vue'
+
+const lenis = useLenis(({ scroll }) => {
+  // called every scroll
+})
+
+watch(lenis, (lenis) => {
+  // lenis instance
+})
 useHead({
   link: [
     // {
@@ -21,9 +35,10 @@ useHead({
 </script>
 <style>
 body {
-    font-family: Inter, serif;
-    font-weight: 500;
+  font-family: Inter, serif;
+  font-weight: 500;
 }
+
 .font-courier {
   font-family: Courier Prime;
 }

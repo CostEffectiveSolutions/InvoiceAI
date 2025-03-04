@@ -278,9 +278,17 @@ onMounted(() => {
   targetSections.value = document.querySelectorAll('.animate-on-scroll')
   targetSections.value.forEach(section => observer.observe(section))
 })
+
+const { scrollTo } = useScrollTo()
+
+const handleClick = (e, hash) => {
+  e.preventDefault()
+  scrollTo(hash)
+}
 </script>
 
 <template>
+      <Header></Header>
     <VueLenis>
   <main class="relative min-h-screen bg-transparent text-white overflow-hidden">
     <BackgroundAnimation />
@@ -304,21 +312,20 @@ onMounted(() => {
             class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center"
             :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-10': !isVisible }"
           >
-            <Button 
-              size="lg" 
-              class="min-w-[200px] h-14 bg-white hover:bg-white/90 text-black text-lg font-medium transition-all duration-300 hover:scale-105"
-              @click="scrollToSection(featuresRef)"
+            <a 
+              href="#services"
+              class="min-w-[200px] h-14 bg-white hover:bg-white/90 text-black text-lg font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center rounded-md"
+              @click="(e) => handleClick(e, '#services')"
             >
               Как?
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              class="min-w-[200px] h-14 border-white/20 hover:border-white/40 hover:bg-gray-800 hover:text-white bg-black text-lg font-medium transition-all duration-300 backdrop-blur-sm hover:scale-105"
-              @click="scrollToSection(processRef)"
+            </a>
+            <a 
+              href="#projects"
+              class="min-w-[200px] h-14 border border-white/20 hover:border-white/40 hover:bg-gray-800 hover:text-white bg-black text-lg font-medium transition-all duration-300 backdrop-blur-sm hover:scale-105 text-gray-300 flex items-center justify-center rounded-md"
+              @click="(e) => handleClick(e, '#projects')"
             >
               Вижте проектите
-            </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -352,6 +359,7 @@ onMounted(() => {
 
     <!-- Features Section -->
     <section 
+      id="services"
       ref="featuresRef"
       class="relative z-10 py-32 bg-gradient-to-b from-black/95 to-black/80 backdrop-blur-lg animate-on-scroll overflow-hidden"
     >
@@ -405,6 +413,7 @@ onMounted(() => {
 
     <!-- Process Section -->
     <section 
+      id="how"
       ref="processRef"
       class="relative z-10 py-24 bg-gradient-to-b from-black/90 to-black/70 backdrop-blur-lg animate-on-scroll"
     >
@@ -812,7 +821,10 @@ onMounted(() => {
     </section>
 
     <!-- Portfolio Section -->
-    <section class="relative z-10 py-24 bg-gradient-to-b from-black/70 to-black/50 backdrop-blur-lg animate-on-scroll overflow-hidden">
+    <section 
+      id="projects"
+      class="relative z-10 py-24 bg-gradient-to-b from-black/70 to-black/50 backdrop-blur-lg animate-on-scroll overflow-hidden"
+    >
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute -top-1/4 right-1/4 w-full h-full bg-blue-500/5 rounded-full blur-3xl animate-blob"/>
@@ -1006,7 +1018,10 @@ onMounted(() => {
     </section>
 
     <!-- Contact Form Section -->
-    <section class="relative z-10 py-32 bg-gradient-to-b from-black/90 to-black/70 backdrop-blur-lg animate-on-scroll overflow-hidden">
+    <section 
+      id="contact"
+      class="relative z-10 py-32 bg-gradient-to-b from-black/90 to-black/70 backdrop-blur-lg animate-on-scroll overflow-hidden"
+    >
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute -top-1/2 right-1/4 w-full h-full bg-blue-500/5 rounded-full blur-3xl animate-blob animation-delay-3000"/>

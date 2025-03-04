@@ -1,314 +1,420 @@
 <template>
-    <Button>
-        <NuxtLink to="/">
-            Home
-        </NuxtLink>
-    </Button>
-  <main class="min-h-screen">
-    <!-- Hero Section -->
-    <section class="relative py-32 overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-background">
+  <main class="min-h-screen bg-white relative">
+    <!-- Light Bar -->
+    <div class="absolute inset-0 w-full overflow-hidden pointer-events-none -translate-y-5">
+      <!-- <LightBar /> -->
+    </div>
+
+    <!-- Navigation -->
+    <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50">
+      <FloatingDock
+        :items="[
+          { title: 'Stats', icon: 'lucide:chart-bar', href: '#stats' },
+          { title: 'Problems', icon: 'lucide:alert-circle', href: '#problems' },
+          { title: 'Solutions', icon: 'lucide:lightbulb', href: '#solutions' },
+          { title: 'Case Studies', icon: 'lucide:folder', href: '#case-studies' },
+          { title: 'Process', icon: 'lucide:git-branch', href: '#process' },
+          { title: 'Book a Call', icon: 'lucide:phone-call', href: '#contact' }
+        ]"
+        desktop-class-name="w-full"
+        mobile-class-name="fixed bottom-4 right-4"
+      />
+    </div>
+
+    <!-- Hero and Video Combined Section -->
+    <section class="relative z-10 overflow-hidden">
       <!-- Background Pattern -->
-      <div class="absolute inset-0 w-full h-full dark:opacity-50">
-        <div class="absolute inset-0 bg-grid-white/10 bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
-      </div>
-      
-      <!-- Floating Elements -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div v-for="i in 3" :key="i" 
-             class="absolute w-[40rem] h-[40rem] bg-primary/5 rounded-full mix-blend-multiply animate-blob"
-             :style="{
-               animation: `blob ${6 + i}s infinite`,
-               left: `${-20 + i * 30}%`,
-               top: `${-50 + i * 20}%`
-             }" />
+      <div class="absolute inset-0 w-full h-full">
+        <DotPattern :width="18" :height="18" :cy="1.5" :cr="1.5" class="opacity-[0.2] fill-zinc-400" />
+        <div class="absolute inset-0 h-[80%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0.95)_40%,rgba(255,255,255,0)_80%)]"></div>
       </div>
 
-      <div class="container relative px-4 md:px-6">
-        <div class="flex flex-col items-center space-y-8 text-center">
-          <div v-motion-slide-visible-once-bottom class="relative">
-            <span class="absolute -top-8 left-1/2 -translate-x-1/2 px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
-              Бъдещето на Бизнес Автоматизацията
-            </span>
-            <h1 class="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-              Empower Studio
+      <!-- Hero Content -->
+      <div class="pt-44 pb-20">
+        <div class="container mx-auto px-4 relative">
+          <div class="max-w-4xl mx-auto text-center">
+            <h1 class="bg-gradient-to-br from-zinc-600 via-zinc-800 to-zinc-400 bg-clip-text text-center text-5xl md:text-7xl font-medium mb-6 leading-tight tracking-tight text-transparent">
+              Automate your business processes with AI
             </h1>
+            <p class="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-12 leading-relaxed max-w-2xl mx-auto">
+              We help businesses save time and reduce costs by automating repetitive tasks with custom AI solutions.
+            </p>
+            <GlowButton 
+              color="#silver" 
+              class="hover:scale-105 transition-transform duration-300"
+              @click="scrollToSection('consultation')"
+            >
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+                  <Icon name="lucide:calendar" class="h-3 w-3" />
+                </div>
+                <span class="text-sm font-medium">Book a Free Strategy Call</span>
+              </div>
+            </GlowButton>
           </div>
-          <p v-motion-slide-visible-once-bottom class="mx-auto max-w-[700px] text-zinc-500 md:text-2xl dark:text-zinc-400 font-medium">
-            Автоматизирайте. Оптимизирайте. Спестете.
-          </p>
-          <p v-motion-slide-visible-once-bottom class="mx-auto max-w-[800px] text-3xl font-bold text-primary md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-            Превърнете Вашия Бизнес в Машина за Печалба с AI и Автоматизация
-          </p>
-          <p v-motion-slide-visible-once-bottom class="mx-auto max-w-[700px] text-zinc-500 md:text-xl dark:text-zinc-400">
-            Ние създаваме AI-базирани и персонализирани софтуерни решения, които оптимизират операциите, намаляват разходите и увеличават ефективността—за да можете да се фокусирате върху това, което наистина има значение: растежа.
-          </p>
-          <div v-motion-slide-visible-once-bottom class="flex gap-4">
-            <Button size="lg" class="mt-6 text-lg px-8 h-12 bg-gradient-to-r from-primary to-primary-foreground hover:opacity-90 transition-all duration-300">
-              Започнете Безплатна Консултация
-              <ArrowRight class="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" class="mt-6 text-lg px-8 h-12 border-primary/20 hover:bg-primary/5">
-              Научете Повече
-              <ChevronRight class="ml-2 h-5 w-5" />
-            </Button>
+        </div>
+      </div>
+
+      <!-- Trusted By Section -->
+      <div class="py-12">
+        <div class="container mx-auto px-4">
+          <div class="max-w-6xl mx-auto">
+            <Marquee :pause-on-hover="true" class="py-4">
+              <img src="/images/logos/mercedes-benz-9-logo-svgrepo-com.svg" alt="Mercedes Benz" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/google-icon-logo-svgrepo-com.svg" alt="Google" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/apple-black-logo-svgrepo-com.svg" alt="Apple" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/youtube-icon-logo-svgrepo-com.svg" alt="YouTube" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/gmail-icon-logo-svgrepo-com.svg" alt="Gmail" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/tiktok-icon-white-1-logo-svgrepo-com.svg" alt="TikTok" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+            </Marquee>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="py-24 bg-background relative overflow-hidden">
-      <div class="container px-4 md:px-6">
-        <div v-motion-slide-visible-once-bottom class="text-center space-y-4 mb-16">
-          <h2 class="text-4xl font-bold">
-            Защо да Изберете Empower Studio?
-          </h2>
-          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Трансформирайте вашия бизнес с нашите иновативни решения
-          </p>
-        </div>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div v-for="(card, index) in cards" :key="index"
-               v-motion-slide-visible-once-bottom
-               :style="{ '--motion-delay': `${index * 100}ms` }">
-            <Card class="group relative overflow-hidden border-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
-              <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <CardHeader>
-                <CardTitle class="flex items-center text-xl">
-                  <component :is="card.icon" class="w-6 h-6 mr-3 text-primary" />
-                  {{ card.title }}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p class="text-zinc-500 dark:text-zinc-400">
-                  {{ card.content }}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How We Do It Section -->
-    <section class="py-24 bg-gradient-to-br from-primary/5 via-background to-background relative">
-      <div class="container px-4 md:px-6">
-        <div v-motion-slide-visible-once-bottom class="text-center space-y-4 mb-16">
-          <h2 class="text-4xl font-bold">
-            Как го Правим
-          </h2>
-          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Нашият процес е проектиран за максимална ефективност
-          </p>
-        </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          <div v-for="(step, index) in steps" :key="index"
-               v-motion-slide-visible-once-bottom
-               :style="{ '--motion-delay': `${index * 100}ms` }"
-               class="relative group">
-            <div class="flex flex-col items-center text-center p-8 rounded-2xl bg-card border border-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
-              <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-              <component :is="step.icon" class="w-16 h-16 mb-6 text-primary" />
-              <h3 class="text-2xl font-semibold mb-4">{{ step.title }}</h3>
-              <p class="text-zinc-500 dark:text-zinc-400">
-                {{ step.content }}
-              </p>
+    <!-- Stats Section -->
+    <section id="stats" ref="statsRef" class="py-20 bg-neutral-50 dark:bg-neutral-900">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+              <div class="flex items-start justify-between mb-4">
+                <Icon name="lucide:clock" class="h-8 w-8 text-neutral-600" />
+                <h3 class="text-4xl font-bold">38%</h3>
+              </div>
+              <h4 class="font-medium mb-2 text-lg">Time saved from doing repetitive tasks</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Automate routine workflows and free up your team's time for high-value work</p>
+            </div>
+            <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+              <div class="flex items-start justify-between mb-4">
+                <Icon name="lucide:trending-up" class="h-8 w-8 text-neutral-600" />
+                <h3 class="text-4xl font-bold">23%</h3>
+              </div>
+              <h4 class="font-medium mb-2 text-lg">Team Capacity Improvements</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Handle more revenue with the same team size through intelligent automation</p>
+            </div>
+            <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+              <div class="flex items-start justify-between mb-4">
+                <Icon name="lucide:piggy-bank" class="h-8 w-8 text-neutral-600" />
+                <h3 class="text-4xl font-bold">19%</h3>
+              </div>
+              <h4 class="font-medium mb-2 text-lg">Cost Savings</h4>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Reduce expenses through team efficiency and consolidated software costs</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-24 bg-primary relative overflow-hidden">
-      <div class="absolute inset-0 bg-grid-white/[0.05] bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
-      <div class="container relative px-4 md:px-6">
-        <div v-motion-slide-visible-once-bottom class="flex flex-col items-center text-center space-y-6 text-primary-foreground">
-          <h2 class="text-4xl md:text-5xl font-bold">Готови ли сте да Автоматизирате и Спестите?</h2>
-          <p class="max-w-[800px] text-xl text-primary-foreground/90">
-            Получете Вашата Безплатна AI и Автоматизационна Стратегическа Консултация Днес!
-          </p>
-          <div class="flex gap-4 mt-8">
-            <Button variant="secondary" size="lg" class="text-lg px-8 h-12 bg-white text-primary hover:bg-white/90">
-              Запазете Безплатна Консултация
-              <ArrowRight class="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" class="text-lg px-8 h-12 border-white text-white hover:bg-white/10">
-              Вижте Демо
-              <Play class="ml-2 h-5 w-5" />
-            </Button>
+    <!-- Problem Section -->
+    <section id="problems" ref="problemRef" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold mb-8 text-center">Your business is scaling, but your systems aren't.</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
+              <Icon name="lucide:users" class="h-8 w-8 mb-4" />
+              <h3 class="text-xl font-bold mb-2">Limited by people to scale</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">Your team is overwhelmed, and clients are slipping through the cracks.</p>
+            </div>
+            <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
+              <Icon name="lucide:eye-off" class="h-8 w-8 mb-4" />
+              <h3 class="text-xl font-bold mb-2">Lack of visibility</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">Projects stall, deadlines are missed, and you're always in the dark.</p>
+            </div>
+            <div class="p-6 rounded-xl border border-neutral-200 dark:border-white/10 card-hover" @mousemove="cardHover">
+              <Icon name="lucide:repeat" class="h-8 w-8 mb-4" />
+              <h3 class="text-xl font-bold mb-2">Repetitive manual tasks</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">Routine admin work is eating up hours that should be spent serving clients.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-24 bg-background">
-      <div class="container px-4 md:px-6">
-        <div v-motion-slide-visible-once-bottom class="text-center space-y-4 mb-16">
-          <h2 class="text-4xl font-bold">
-            Какво Казват Нашите Клиенти
+    <!-- Solution Section -->
+    <section id="solutions">
+      <ServicesSection />
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" ref="caseStudiesRef" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold mb-12 text-center">Client Results</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+              <h3 class="text-2xl font-bold mb-2">Humi</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">HR platform that manages payroll and benefits.</p>
+              <div class="text-3xl font-bold text-primary-500 mb-4">50%</div>
+              <p class="font-medium">Less SR&ED claim costs</p>
+              <Button variant="link" class="mt-4">Read Case Study</Button>
+            </div>
+            
+            <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+              <h3 class="text-2xl font-bold mb-2">Major Streaming Service</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Campaign ID tool for UTM generation and tracking.</p>
+              <div class="text-3xl font-bold text-primary-500 mb-4">100%</div>
+              <p class="font-medium">Errors removed from reporting</p>
+              <Button variant="link" class="mt-4">Read Case Study</Button>
+            </div>
+            
+            <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+              <h3 class="text-2xl font-bold mb-2">Launch Pop</h3>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-4">Signal-testing agency for diverse brands and products.</p>
+              <div class="text-3xl font-bold text-primary-500 mb-4">267%</div>
+              <p class="font-medium">Productivity Gain for Project Managers</p>
+              <Button variant="link" class="mt-4">Read Case Study</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" ref="processRef" class="py-20 bg-neutral-50 dark:bg-neutral-900">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold mb-12 text-center">How we work</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="relative">
+              <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+                <div class="text-3xl font-bold mb-4">01</div>
+                <h3 class="text-xl font-bold mb-2">Audit</h3>
+                <p class="text-neutral-600 dark:text-neutral-400">Audit the key areas for improvements</p>
+              </div>
+            </div>
+            
+            <div class="relative">
+              <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+                <div class="text-3xl font-bold mb-4">02</div>
+                <h3 class="text-xl font-bold mb-2">Build</h3>
+                <p class="text-neutral-600 dark:text-neutral-400">Build an initial product to start measuring</p>
+              </div>
+            </div>
+            
+            <div class="relative">
+              <div class="p-6 bg-white dark:bg-black rounded-xl shadow-lg card-hover" @mousemove="cardHover">
+                <div class="text-3xl font-bold mb-4">03</div>
+                <h3 class="text-xl font-bold mb-2">Track</h3>
+                <p class="text-neutral-600 dark:text-neutral-400">Deploy & track our solution in your team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="consultation" class="py-24">
+      <div class="container mx-auto px-5 md:px-10">
+        <div class="max-w-4xl mx-auto mb-16">
+          <Badge variant="secondary" class="mb-4">GET STARTED</Badge>
+          <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 text-center">
+            Transform Your Business with Intelligent Automation
           </h2>
-          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Реални резултати от реални клиенти
+          <p class="text-xl text-center text-neutral-700">
+            Grow faster with enterprise-grade AI solutions that save you time and money.
           </p>
         </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          <div v-for="(testimonial, index) in testimonials" :key="index"
-               v-motion-slide-visible-once-bottom
-               :style="{ '--motion-delay': `${index * 100}ms` }">
-            <Card class="group h-full transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
-              <CardContent class="p-8">
-                <div class="mb-4 flex items-center">
-                  <Star class="w-5 h-5 text-yellow-400" v-for="i in 5" :key="i" />
-                </div>
-                <blockquote class="space-y-4">
-                  <p class="text-lg text-zinc-500 dark:text-zinc-400">
-                    {{ testimonial.content }}
-                  </p>
-                  <footer class="flex items-center gap-4">
-                    <Avatar>
-                      <AvatarImage :src="testimonial.avatar" />
-                      <AvatarFallback>{{ testimonial.initials }}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div class="font-semibold">{{ testimonial.name }}</div>
-                      <div class="text-sm text-zinc-500">{{ testimonial.role }}</div>
-                    </div>
-                  </footer>
-                </blockquote>
-              </CardContent>
-            </Card>
+        
+        <div class="max-w-5xl mx-auto">
+          <div class="bg-white rounded-3xl overflow-hidden">
+            <ClientOnly>
+              <iframe
+                src="https://calendly.com/gkkirilov/30?embed_domain=microsass&embed_type=Inline&hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=2563eb"
+                width="100%"
+                height="700"
+                frameborder="0"
+                title="Select a Date & Time - Empower Studio"
+                data-ready="true"
+              ></iframe>
+            </ClientOnly>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Contact Section -->
-    <section class="py-24 bg-gradient-to-br from-primary/5 via-background to-background relative">
-      <div class="container px-4 md:px-6">
-        <div v-motion-slide-visible-once-bottom class="flex flex-col items-center text-center space-y-8">
-          <h2 class="text-4xl font-bold">Свържете се с Нас</h2>
-          <p class="text-xl text-muted-foreground max-w-2xl">
-            Готови сме да отговорим на всички ваши въпроси
-          </p>
-          <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
-            <Button variant="outline" size="lg" class="min-w-[200px] h-12 border-primary/20 hover:bg-primary/5">
-              <Phone class="mr-2 h-5 w-5" />
-              +359 888 123 456
-            </Button>
-            <Button variant="outline" size="lg" class="min-w-[200px] h-12 border-primary/20 hover:bg-primary/5">
-              <Mail class="mr-2 h-5 w-5" />
-              contact@empowerstudio.bg
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Floating Contact Button -->
-    <Button class="fixed bottom-8 right-8 rounded-full w-16 h-16 shadow-xl shadow-primary/20 bg-primary hover:bg-primary/90 transition-all duration-300">
-      <MessageSquare class="h-6 w-6" />
-    </Button>
   </main>
 </template>
 
-<script setup>
-const { 
-  ArrowRight, Bot, Clock, Code2, Coins, Mail, Phone, 
-  Rocket, Settings, TrendingUp, ChevronRight, Play,
-  Star, MessageSquare 
-} = await import('lucide-vue-next')
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 
-const cards = [
-  {
-    icon: Rocket,
-    title: 'AI на Ваше Разположение',
-    content: 'Създаваме интелигентна автоматизация, която поема вашето работно натоварване.'
-  },
-  {
-    icon: Coins,
-    title: 'Големи Спестявания',
-    content: 'Намалете разходите чрез елиминиране на неефективността и ръчната работа.'
-  },
-  {
-    icon: Clock,
-    title: 'Ускорете Операциите',
-    content: 'Изпълнявайте задачи за секунди, а не за часове.'
-  },
-  {
-    icon: TrendingUp,
-    title: 'Мащабируемост без Граници',
-    content: 'Автоматизирайте процесите си и отключете огромни възможности за растеж.'
-  }
+// Navigation menu state
+const isMenuOpen = ref(false)
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+// Mobile menu items with animation
+const menuItems = [
+  { label: 'Our Work', href: '/work' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
-const steps = [
-  {
-    icon: Bot,
-    title: 'AI-Базирана Автоматизация',
-    content: 'Автоматизирайте работни процеси, обслужване на клиенти и обработка на данни.'
-  },
-  {
-    icon: Code2,
-    title: 'Персонализирани Решения',
-    content: 'Софтуер, създаден специално за нуждите на вашия бизнес.'
-  },
-  {
-    icon: Settings,
-    title: 'Оптимизация на Процеси',
-    content: 'Идентифицираме и елиминираме неефективността за намаляване на разходите.'
-  }
-]
+// Intersection observer for animations
+const targetRef = ref<HTMLElement | null>(null)
+const isVisible = ref(false)
 
-const testimonials = [
-  {
-    content: 'Empower Studio ни спести над 50 000 лева годишно чрез автоматизация на операциите. Най-добрата инвестиция!',
-    name: 'Иван Петров',
-    role: 'Изпълнителен Директор',
-    avatar: '/avatars/georgi.png',
-    initials: 'ИП'
-  },
-  {
-    content: 'Увеличихме бизнеса си 3 пъти за една година—благодарение на AI системите, създадени от Empower Studio.',
-    name: 'Мария Димитрова',
-    role: 'Оперативен Директор',
-    avatar: '/avatars/georgi.png',
-    initials: 'МД'
-  },
-  {
-    content: 'Не мога да си представя да управляваме компанията без инструментите за автоматизация, които създадоха.',
-    name: 'Георги Иванов',
-    role: 'Технически Директор',
-    avatar: '/avatars/georgi.png',
-    initials: 'ГИ'
+useIntersectionObserver(targetRef, ([{ isIntersecting }]) => {
+  isVisible.value = isIntersecting
+  if (isIntersecting) {
+    targetRef.value?.classList.add('animate-in')
   }
-]
+})
+
+// Hover effects for cards
+const cardHover = (event: MouseEvent) => {
+  const card = event.currentTarget as HTMLElement
+  const rect = card.getBoundingClientRect()
+  const x = event.clientX - rect.left
+  const y = event.clientY - rect.top
+
+  card.style.setProperty('--mouse-x', `${x}px`)
+  card.style.setProperty('--mouse-y', `${y}px`)
+}
+
+// Scroll to section smoothly
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+// Add intersection observer to elements
+onMounted(() => {
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    useIntersectionObserver(el as HTMLElement, ([{ isIntersecting }]) => {
+      if (isIntersecting) {
+        (el as HTMLElement).classList.add('animate-in')
+      }
+    })
+  })
+})
 </script>
 
 <style>
-.bg-grid-pattern {
-  background-size: 30px 30px;
-  background-image: linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+/* Base styles */
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-@keyframes blob {
-  0% {
-    transform: translate(0, 0) scale(1);
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+/* Animations */
+.animate-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
+/* Button hover effects */
+.button-hover {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.button-hover:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* Card hover effects */
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card-hover:hover::before {
+  opacity: 1;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+}
+
+/* Link hover effects */
+.link-hover {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.link-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+.dark ::selection {
+  background: rgba(255, 255, 255, 0.1);
 }
 </style>

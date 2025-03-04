@@ -23,9 +23,13 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
+    "@tsparticles/engine": "^3.2.1",
+    "@tsparticles/slim": "^3.2.1",
     "@vueuse/core": "^12.7.0",
+    "@vueuse/motion": "^2.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "colord": "^2.9.3",
     "embla-carousel-vue": "^8.5.2",
     "gsap": "^3.12.7",
     "lenis": "^1.1.22",

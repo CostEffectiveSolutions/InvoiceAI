@@ -1,210 +1,834 @@
 <template>
-    <main>
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32">
-            <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-                Empower<!-- --> <span class="relative whitespace-nowrap text-blue-600"><svg aria-hidden="true"
-                        viewBox="0 0 418 42" class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70"
-                        preserveAspectRatio="none">
-                        <path
-                            d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z">
-                        </path>
-                    </svg><span class="relative">Studio</span></span></h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Автоматизирайте. Оптимизирайте. Спестете.</p>
-            <p class="mx-auto mt-3 max-w-2xl text-xl tracking-tight text-slate-700 font-semibold">Превърнете бизнеса си в машина за печалба с ИИ и автоматизация</p>
-            <p class="mx-auto mt-3 max-w-2xl text-lg tracking-tight text-slate-700">Изграждаме решения, базирани на изкуствен интелект и персонализиран софтуер, които оптимизират операциите, намаляват разходите и увеличават ефективността — така че да можете да се съсредоточите върху това, което наистина има значение: растежа.</p>
-            <div class="mt-10 flex justify-center gap-x-6"><a
-                    class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
-                    variant="solid" color="slate" href="/register">Започнете безплатно</a><a
-                    class="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-hidden ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
-                    variant="outline" color="slate" href="#contact"><span>Свържете се с нас</span></a></div>
+  <!-- Combined Header and Hero Background -->
+  <div class="bg-gradient-to-b from-blue-50 to-white relative">
+    <!-- Dot pattern background -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0" style="background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 16px 16px;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-transparent py-6 relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-center">
+          <img src="/logo.png" alt="Empower Studio" class="h-12 w-auto rounded-xl" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+      <div class="container mx-auto px-4 py-20">
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-6">
+            <Icon name="lucide:zap" class="w-4 h-4 mr-1" /> ENTERPRISE AI SOLUTIONS
+          </Badge>
+          
+          <h1 class="text-5xl md:text-6xl font-bold mb-6 text-navy-900">
+            The Future of<br />
+            Business Starts with<br />
+            AI & Automation
+            <Icon name="sparkles" class="inline-block w-8 h-8 text-blue-500 ml-2" />
+          </h1>
+          
+          <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Save time, improve efficiency, and make smarter decisions<br />
+            with AI solutions customized for your business
+          </p>
+
+          <div class="mb-20">
+            <Button size="lg" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
+              Schedule Enterprise Consultation
+            </Button>
+          </div>
+
+          <div class="text-center">
+            <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">TRUSTED BY INDUSTRY LEADERS</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
+              <img src="/images/snowflake.svg" alt="Snowflake" class="h-6 rounded-lg" />
+              <img src="/images/cactus.svg" alt="Cactus" class="h-6 rounded-lg" />
+              <img src="/images/vision.svg" alt="Vision" class="h-6 rounded-lg" />
+              <img src="/images/luminous.svg" alt="Luminous" class="h-6 rounded-lg" />
+              <img src="/images/pronature.svg" alt="ProNature" class="h-6 rounded-lg" />
+              <img src="/images/recharge.svg" alt="Recharge" class="h-6 rounded-lg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Why Empower Studio Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:rocket" class="w-4 h-4 mr-1" /> ACCELERATED DEVELOPMENT
+          </Badge>
+          <h2 class="text-4xl font-bold text-navy-900">
+            Why Empower Studio?<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Unmatched Speed & Precision</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="glass-card p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                <Icon name="lucide:timer" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-3">Accelerated Development</h3>
+              <p class="text-gray-600">
+                Our advanced AI-powered development process delivers enterprise solutions at unprecedented speeds, setting new standards in the industry.
+              </p>
+            </div>
+            <div class="mt-auto">
+              <div class="flex items-center text-sm text-blue-600">
+                <Icon name="lucide:trending-up" class="w-4 h-4 mr-2" />
+                <span>Traditional: Months | Us: Weeks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                <Icon name="lucide:target" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-3">Enterprise Precision</h3>
+              <p class="text-gray-600">
+                AI-enhanced development ensures both speed and quality, delivering solutions that meet the highest enterprise standards.
+              </p>
+            </div>
+            <div class="mt-auto">
+              <div class="flex items-center text-sm text-blue-600">
+                <Icon name="lucide:shield-check" class="w-4 h-4 mr-2" />
+                <span>Enterprise-Grade Quality</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-2xl">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <h4 class="text-3xl font-bold mb-2">2x</h4>
+              <p class="text-sm opacity-90">Development Velocity</p>
+            </div>
+            <div class="text-center">
+              <h4 class="text-3xl font-bold mb-2">50%</h4>
+              <p class="text-sm opacity-90">Resource Optimization</p>
+            </div>
+            <div class="text-center">
+              <h4 class="text-3xl font-bold mb-2">24/7</h4>
+              <p class="text-sm opacity-90">Enterprise Support</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-lg font-medium text-gray-600 mb-6">
+            Ready to accelerate your digital transformation?
+          </p>
+          <Button size="lg" class="bg-black text-white hover:bg-gray-900" @click="scrollToSection('book-consultation')">
+            Schedule Enterprise Consultation
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section class="py-24 bg-white" id="services">
+    <div class="container mx-auto px-4">
+      <div class="relative z-10 text-center max-w-4xl mx-auto">
+        <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+          <Icon name="lucide:boxes" class="w-4 h-4 mr-1" /> ENTERPRISE SOLUTIONS
+        </Badge>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+          Strategic AI Implementation<br/>
+          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">For Enterprise Excellence</span>
+        </h2>
+        
+        <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+          Transform your business operations with our enterprise-grade AI solutions,<br/>
+          engineered for seamless integration and maximum efficiency
+        </p>
+
+        <div class="grid gap-8">
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:workflow" class="w-8 h-8 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6 text-left">
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">AI-Powered Workflow Automation</h3>
+                <p class="text-gray-600">Transform business processes with intelligent automation systems.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:code-2" class="w-8 h-8 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6 text-left">
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">Custom Software Development</h3>
+                <p class="text-gray-600">Enterprise-grade solutions engineered for your specific needs.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:git-merge" class="w-8 h-8 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6 text-left">
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">System Integration</h3>
+                <p class="text-gray-600">Seamless integration with your existing enterprise infrastructure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-20">
+          <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+            <div class="flex items-center justify-center mb-8">
+              <Icon name="lucide:clock" class="w-8 h-8 mr-3" />
+              <h3 class="text-2xl font-bold">Rapid Enterprise Deployment</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4">
+                  <Icon name="lucide:clipboard-check" class="w-8 h-8" />
+                </div>
+                <h4 class="font-bold mb-2">Discovery Phase</h4>
+                <p class="text-sm opacity-90">Strategic Analysis</p>
+              </div>
+              
+              <div class="text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4">
+                  <Icon name="lucide:code-2" class="w-8 h-8" />
+                </div>
+                <h4 class="font-bold mb-2">Development</h4>
+                <p class="text-sm opacity-90">Agile Implementation</p>
+              </div>
+              
+              <div class="text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4">
+                  <Icon name="lucide:check-circle" class="w-8 h-8" />
+                </div>
+                <h4 class="font-bold mb-2">Deployment</h4>
+                <p class="text-sm opacity-90">Enterprise Integration</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <Button size="lg" class="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
+              <Icon name="lucide:calendar" class="w-6 h-6 mr-2" />
+              Schedule Enterprise Consultation
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem We Solve Section -->
+  <section class="py-24 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="relative z-10 text-center max-w-4xl mx-auto">
+        <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+          <Icon name="lucide:lightbulb" class="w-4 h-4 mr-1" /> OPTIMIZATION OPPORTUNITIES
+        </Badge>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+          Transform Your Enterprise<br/>
+          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Maximize ROI with AI</span>
+        </h2>
+        
+        <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+          Legacy systems and manual processes are holding your business back.<br/>
+          It's time to embrace the future of enterprise automation.
+        </p>
+
+        <div class="glass-card p-8 mb-12 hover:scale-[1.02] transition-transform duration-300">
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="text-left">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl mb-6 flex items-center justify-center">
+                <Icon name="lucide:alert-circle" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-2xl font-bold text-navy-900 mb-6">Current Challenges</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Resource-intensive manual processes reducing productivity</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Inefficient data management and processing systems</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Limited scalability with current infrastructure</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Operational bottlenecks affecting business growth</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="text-left">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl mb-6 flex items-center justify-center">
+                <Icon name="lucide:sparkles" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-2xl font-bold text-navy-900 mb-6">Our Solution</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>AI-powered automation of repetitive tasks</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Intelligent data processing and analytics</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Cloud-native scalable architecture</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Streamlined workflows and processes</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center flex flex-col items-center">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Icon name="lucide:alert-circle" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 class="text-3xl font-bold mb-2">50%</h4>
+              <p class="text-sm opacity-90">Cost Reduction</p>
+            </div>
+            <div class="text-center flex flex-col items-center">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Icon name="lucide:zap" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 class="text-3xl font-bold mb-2">10x</h4>
+              <p class="text-sm opacity-90">Faster Processing</p>
+            </div>
+            <div class="text-center flex flex-col items-center">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Icon name="lucide:clock" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 class="text-3xl font-bold mb-2">24/7</h4>
+              <p class="text-sm opacity-90">AI Support</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <Button size="lg" class="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
+            <Icon name="lucide:calendar" class="w-6 h-6 mr-2" />
+            Transform Your Enterprise Today
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-24 bg-white" id="how-it-works">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:git-branch" class="w-4 h-4 mr-1" /> IMPLEMENTATION PROCESS
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Enterprise Implementation<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Streamlined for Success</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Our proven methodology ensures rapid deployment while maintaining enterprise-grade quality standards
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:search" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Strategic Assessment</h3>
+                <p class="text-gray-600">Comprehensive analysis of your enterprise requirements and existing infrastructure.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Duration: 2-3 Days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:clipboard-list" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Solution Architecture</h3>
+                <p class="text-gray-600">Detailed technical planning and system design optimized for your needs.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Duration: 2-3 Days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center">
+                  <Icon name="lucide:code-2" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Development & Testing</h3>
+                <p class="text-gray-600">Rapid development with continuous testing and quality assurance.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Duration: 5-7 Days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center">
+                  <Icon name="lucide:rocket" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Deployment & Integration</h3>
+                <p class="text-gray-600">Seamless implementation with comprehensive system optimization.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Duration: 2-3 Days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center">
+          <div class="flex items-center justify-center mb-6">
+            <Icon name="lucide:clock-3" class="w-8 h-8 mr-3" />
+            <h3 class="text-2xl font-bold">Enterprise Implementation Timeline</h3>
+          </div>
+          <p class="text-lg mb-8 opacity-90">From initial assessment to full deployment in just 2 weeks</p>
+          <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50" @click="scrollToSection('book-consultation')">
+            <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
+            Schedule Implementation Call
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Can Benefit Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:users" class="w-4 h-4 mr-1" /> INDUSTRY SOLUTIONS
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Enterprise Solutions<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Across All Industries</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Tailored AI solutions designed for enterprise-scale implementation across diverse sectors
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:shopping-cart" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">E-commerce & Retail</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Automated inventory management
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Order processing optimization
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Customer service automation
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:landmark" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Financial Services</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Risk assessment automation
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Transaction processing
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Compliance monitoring
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:heart-pulse" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Healthcare</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Patient data management
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Administrative automation
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                HIPAA compliance
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:factory" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Manufacturing</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Production optimization
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Supply chain management
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Quality control automation
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+          <div class="text-center mb-8">
+            <Icon name="lucide:zap" class="w-12 h-12 mx-auto mb-4" />
+            <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Industry?</h3>
+            <p class="text-lg opacity-90 mb-8">Get started with enterprise-grade AI solutions tailored for your sector</p>
+            <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50" @click="scrollToSection('book-consultation')">
+              <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
+              Schedule Industry Consultation
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-white" id="faq">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:help-circle" class="w-4 h-4 mr-1" /> ENTERPRISE FAQ
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Common Questions<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">About Enterprise AI</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Get answers to frequently asked questions about our enterprise AI solutions
+          </p>
+        </div>
+
+        <div class="space-y-6 mb-16">
+          <div class="glass-card">
+            <Accordion type="single" collapsible class="divide-y divide-gray-100">
+              <AccordionItem value="item-1" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:git-merge" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">Integration Process</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">Our solutions seamlessly integrate with your existing enterprise infrastructure through our proven integration framework. We handle all aspects of the integration process, from initial assessment to final deployment, ensuring minimal disruption to your operations.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:clock" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">Implementation Timeline</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">Enterprise implementation is typically completed within 2 weeks, following our streamlined methodology. This includes assessment, development, testing, and deployment phases, with clear milestones and deliverables at each stage.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:trending-up" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">ROI & Performance</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">Our enterprise clients typically see ROI within the first quarter through increased efficiency and reduced operational costs. We provide detailed analytics and reporting to track performance improvements and cost savings.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:shield" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">Security & Compliance</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">We maintain the highest security standards with enterprise-grade protection measures. Our solutions are fully compliant with industry regulations including GDPR, HIPAA, and SOC 2, ensuring your data remains secure and protected.</p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 text-center">
+          <div class="flex items-center justify-center mb-6">
+            <Icon name="lucide:message-circle" class="w-8 h-8 text-blue-600 mr-3" />
+            <h3 class="text-2xl font-bold text-navy-900">Still Have Questions?</h3>
+          </div>
+          <p class="text-lg text-gray-600 mb-8">Our enterprise solutions team is here to help</p>
+          <Button size="lg" class="bg-gradient-to-r from-blue-600 to-blue-400 text-white" @click="scrollToSection('book-consultation')">
+            <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
+            Schedule Consultation
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-24 bg-gradient-to-b from-blue-50 to-white" id="book-consultation">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="mb-12">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:rocket" class="w-4 h-4 mr-1" /> GET STARTED
+          </Badge>
+          <h2 class="text-4xl font-bold text-navy-900">
+            Transform Your Enterprise<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">With Intelligent Automation</span>
+          </h2>
         </div>
         
-        <!-- Why Work With Empower Studio Section -->
-        <section id="features" aria-label="Features" class="relative overflow-hidden bg-blue-600 pt-20 pb-28 sm:py-32">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-                <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-                    <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">Защо да работите с Empower Studio?</h2>
-                    <p class="mt-6 text-lg tracking-tight text-blue-100">Губите часове всяка седмица за повтарящи се задачи. Вашият екип е претоварен, а неефективността изяжда печалбите ви. Ние оправяме това.</p>
-                </div>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white/10 p-6 rounded-xl ring-1 ring-white/10">
-                        <div class="text-2xl font-bold text-white mb-4">🚀</div>
-                        <h3 class="text-xl font-semibold text-white mb-2">ИИ, който работи за вас</h3>
-                        <p class="text-blue-100">Създаваме интелигентна автоматизация, която се справя с работното ви натоварване, от обработка на данни до взаимодействия с клиенти.</p>
-                    </div>
-                    <div class="bg-white/10 p-6 rounded-xl ring-1 ring-white/10">
-                        <div class="text-2xl font-bold text-white mb-4">💰</div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Спестете значително</h3>
-                        <p class="text-blue-100">Намалете разходите, като премахнете неефективността и ръчната работа.</p>
-                    </div>
-                    <div class="bg-white/10 p-6 rounded-xl ring-1 ring-white/10">
-                        <div class="text-2xl font-bold text-white mb-4">⏳</div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Ускорете операциите</h3>
-                        <p class="text-blue-100">Завършвайте задачи за секунди, а не за часове.</p>
-                    </div>
-                    <div class="bg-white/10 p-6 rounded-xl ring-1 ring-white/10">
-                        <div class="text-2xl font-bold text-white mb-4">📈</div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Мащабирайте без ограничения</h3>
-                        <p class="text-blue-100">Автоматизирайте процесите си и отключете огромни възможности за растеж.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <p class="text-xl mb-12 flex items-center justify-center">
+          <Icon name="lucide:trending-up" class="w-6 h-6 text-blue-600 mr-2" />
+          Accelerate growth with enterprise-grade AI solutions
+        </p>
 
-        <!-- How We Do It Section -->
-        <section id="how-we-do-it" class="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl md:text-center">
-                    <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Как го правим</h2>
-                    <p class="mt-4 text-lg tracking-tight text-slate-700">Не просто изграждаме софтуер — ние създаваме системи, генериращи печалба.</p>
-                </div>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-slate-50 p-6 rounded-xl shadow-lg">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                            <span class="text-white text-2xl">🔹</span>
-                        </div>
-                        <h3 class="font-display text-xl text-slate-900 mb-2">ИИ-базирана автоматизация</h3>
-                        <p class="text-slate-700">Автоматизирайте работни процеси, обслужване на клиенти и обработка на данни.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-xl shadow-lg">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                            <span class="text-white text-2xl">🔹</span>
-                        </div>
-                        <h3 class="font-display text-xl text-slate-900 mb-2">Персонализирани софтуерни решения</h3>
-                        <p class="text-slate-700">Персонализиран софтуер, създаден за конкретните нужди на вашия бизнес.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-xl shadow-lg">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                            <span class="text-white text-2xl">🔹</span>
-                        </div>
-                        <h3 class="font-display text-xl text-slate-900 mb-2">Оптимизация на бизнес процеси</h3>
-                        <p class="text-slate-700">Идентифициране и премахване на неефективност за намаляване на разходите и повишаване на производителността.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="glass-card">
+          <iframe
+            src="https://calendly.com/gkkirilov/30?embed_domain=microsass&embed_type=Inline&hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=2563eb"
+            width="100%"
+            height="700"
+            frameborder="0"
+            title="Schedule Enterprise Consultation - Empower Studio"
+            data-ready="true"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Who Is This For Section -->
-        <section id="who-is-this-for" class="py-16 bg-slate-50">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl md:text-center">
-                    <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">За кого е това?</h2>
-                </div>
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 text-green-500 mr-4">✅</div>
-                        <p class="text-slate-700">Бизнес собственици, уморени от оперативните главоболия</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 text-green-500 mr-4">✅</div>
-                        <p class="text-slate-700">Компании, които търсят намаляване на разходите чрез автоматизация</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 text-green-500 mr-4">✅</div>
-                        <p class="text-slate-700">Лидери, които искат да използват ИИ за мащабиране</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 text-green-500 mr-4">✅</div>
-                        <p class="text-slate-700">Предприемачи, търсещи конкурентно предимство</p>
-                    </div>
-                </div>
-                <div class="mt-10 text-center">
-                    <p class="text-lg text-slate-700 font-medium">Ако все още разчитате на ръчни процеси, вече изоставате. Нека оправим това.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Floating Bottom Navigation -->
+  <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-transform duration-300 hover:-translate-y-1">
+    <div class="bg-white/80 backdrop-blur-lg shadow-lg rounded-full py-3 px-4 flex items-center space-x-2">
+      <div class="flex items-center">
+        <NuxtLink to="#" class="hover:opacity-80 transition-opacity">
+          <img src="/logo.png" alt="Empower Studio" class="h-6 w-auto mr-2" />
+        </NuxtLink>
+      </div>
 
-        <!-- Our Grand Slam Offer Section -->
-        <section id="offer" class="py-20 bg-blue-600 text-white">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <h2 class="font-display text-3xl tracking-tight sm:text-4xl md:text-5xl mb-6">Нашето изключително предложение 🚀</h2>
-                    <p class="text-xl text-blue-100 mb-12">Правим невъзможно да откажете да работите с нас.</p>
-                </div>
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white/10 p-6 rounded-xl flex items-start">
-                        <div class="text-blue-300 mr-4">✔</div>
-                        <p class="text-blue-50">Персонализирана ИИ автоматизация и софтуер, създадени за вас</p>
-                    </div>
-                    <div class="bg-white/10 p-6 rounded-xl flex items-start">
-                        <div class="text-blue-300 mr-4">✔</div>
-                        <p class="text-blue-50">Нулев риск—ние доставяме или не плащате</p>
-                    </div>
-                    <div class="bg-white/10 p-6 rounded-xl flex items-start">
-                        <div class="text-blue-300 mr-4">✔</div>
-                        <p class="text-blue-50">Гаранция за спестявания—ако не намалите разходите, получавате безплатен план за оптимизация</p>
-                    </div>
-                    <div class="bg-white/10 p-6 rounded-xl flex items-start">
-                        <div class="text-blue-300 mr-4">✔</div>
-                        <p class="text-blue-50">Изцяло изпълнена настройка—ние се грижим за всичко от начало до край</p>
-                    </div>
-                </div>
-                <div class="mt-10 text-center">
-                    <p class="text-xl text-blue-100">Спрете да губите пари заради неефективност. Започнете да автоматизирате и спестявате днес.</p>
-                </div>
-            </div>
-        </section>
+      <div class="h-4 w-px bg-gray-300 mx-2"></div>
 
-        <!-- Testimonials -->
-        <section id="testimonials" class="py-16">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl md:text-center mb-16">
-                    <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Какво казват нашите клиенти</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-slate-50 p-6 rounded-xl shadow-md">
-                        <p class="text-slate-700 mb-4">💬 "Empower Studio ни спести над 50 000 лева годишно чрез автоматизиране на операциите ни. Най-добрата инвестиция, която някога сме правили!"</p>
-                        <p class="font-medium text-slate-900">– [Име на клиент]</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-xl shadow-md">
-                        <p class="text-slate-700 mb-4">💬 "Ние мащабирахме бизнеса си 3 пъти за една година—всичко благодарение на системите, базирани на ИИ, изградени от Empower Studio."</p>
-                        <p class="font-medium text-slate-900">– [Име на клиент]</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-xl shadow-md">
-                        <p class="text-slate-700 mb-4">💬 "Не мога да си представя да управляваме компанията си без инструментите за автоматизация, които те изградиха. Най-накрая имаме време да се съсредоточим върху растежа."</p>
-                        <p class="font-medium text-slate-900">– [Име на клиент]</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <nav class="flex items-center space-x-6">
+        <button @click="scrollToSection('services')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">SERVICES</button>
+        <button @click="scrollToSection('how-it-works')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">HOW WE WORK</button>
+        <button @click="scrollToSection('faq')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">FAQ</button>
+      </nav>
 
-        <!-- Call to Action -->
-        <section id="cta" class="py-20 bg-blue-600 text-white">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <h2 class="font-display text-3xl tracking-tight sm:text-4xl md:text-5xl mb-6">Готови ли сте да автоматизирате и спестите?</h2>
-                    <p class="text-xl text-blue-100 mb-8">🚀 Вземете своя безплатен разговор за стратегия за ИИ и автоматизация днес!</p>
-                    <p class="text-lg text-blue-100 mb-12">Ще анализираме вашите процеси, ще открием неефективност и ще ви покажем точно как да спестите време и пари с автоматизация.</p>
-                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition duration-150">
-                        👉 Запазете безплатен разговор сега (ограничени места)
-                    </a>
-                </div>
-            </div>
-        </section>
+      <div class="h-4 w-px bg-gray-300 mx-2"></div>
 
-        <!-- Final Message -->
-        <section id="final-message" class="py-16">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl mb-6">Не изоставайте. ИИ и автоматизацията са бъдещето.</h2>
-                    <p class="text-lg text-slate-700 mb-12">Компаниите, които не успеят да автоматизират, ще изостанат. Тези, които го направят, ще доминират.</p>
-                    <p class="text-xl font-medium text-slate-900 mb-12">Empower Studio изгражда бъдещето—включвате ли се?</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="py-16 bg-slate-50">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl text-center">
-                    <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl mb-8">Свържете се с нас</h2>
-                    <div class="flex flex-col items-center space-y-4">
-                        <p class="text-slate-700">📞 Обадете ни се: [Вашия номер]</p>
-                        <p class="text-slate-700">📧 Имейл: [Вашия имейл]</p>
-                        <p class="text-slate-700">🌐 Уебсайт: [Вашия уебсайт]</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+      <Button variant="default" class="bg-black text-white hover:bg-gray-900 text-xs px-4 py-2 transition-all duration-300 hover:scale-105" @click="scrollToSection('book-consultation')">
+        <Icon name="lucide:calendar" class="w-4 h-4 mr-1" />
+        Let's talk
+      </Button>
+    </div>
+  </div>
 </template>
+
+<script setup>
+// Initialize smooth scroll
+const { lenis } = useSmooth()
+
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    lenis.value?.scrollTo(element, {
+      offset: -100, // Offset to account for the floating navbar
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    })
+  }
+}
+</script>
+
+<style>
+/* Move scroll-behavior from html to body for better compatibility */
+body {
+  scroll-behavior: smooth;
+  overflow-y: scroll; /* Ensure scrollbar is always present to prevent layout shifts */
+}
+
+.text-navy-900 {
+  color: #0A2540;
+}
+
+.glass-card {
+  @apply bg-white/50 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-3xl;
+}
+
+Badge {
+  @apply rounded-full;
+}
+
+Button {
+  @apply rounded-full;
+}
+
+.bg-blue-100\/50 {
+  @apply rounded-2xl;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Add responsive styles */
+@screen sm {
+  .container {
+    @apply px-6;
+  }
+}
+
+@screen md {
+  .container {
+    @apply px-8;
+  }
+}
+
+@screen lg {
+  .container {
+    @apply px-0;
+  }
+}
+
+/* Hide floating navigation when footer is in view */
+@media (max-height: 800px) {
+  .floating-nav {
+    display: none;
+  }
+}
+
+/* Floating navbar animations */
+.floating-nav {
+  transition: all 0.3s ease-in-out;
+}
+
+.floating-nav:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fixed.bottom-8 {
+  animation: slideIn 0.5s ease-out;
+}
+</style>
