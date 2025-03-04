@@ -24,8 +24,6 @@ useHead({
   ]
 })
 
-// Initialize smooth scroll
-const { lenis } = useSmooth()
 
 // Hero section animation
 const heroText = ref('Защо да чакате месеци? Създаваме за дни! ⚡')
@@ -35,15 +33,6 @@ const isVisible = ref(false)
 // Section refs for scrolling
 const featuresRef = ref(null)
 const processRef = ref(null)
-
-// Scroll to section function
-const scrollToSection = (ref) => {
-  lenis.value?.scrollTo(ref.$el, {
-    offset: -50,
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-  })
-}
 
 // Initialize animations
 const initAnimations = () => {

@@ -731,18 +731,6 @@
 
 <script setup>
 // Initialize smooth scroll
-const { lenis } = useSmooth()
-
-const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    lenis.value?.scrollTo(element, {
-      offset: -100, // Offset to account for the floating navbar
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-    })
-  }
-}
 </script>
 
 <style>
