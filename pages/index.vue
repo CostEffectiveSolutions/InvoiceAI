@@ -171,9 +171,9 @@
           <div class="grid md:auto-rows-[20rem] grid-cols-1 md:grid-cols-3 gap-5 max-w-7xl mx-auto">
             
             <!-- MealMaster - Spans 2 columns -->
-            <div class="row-span-1 md:col-span-2 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+            <div class="row-span-1 md:col-span-2 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
               <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-15-22-MealMaster-Home.png" alt="AI Персонализирани хранителни планове" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=MealMaster'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-15-22-MealMaster-Home.png" alt="AI Персонализирани хранителни планове" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=MealMaster'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div class="p-4 text-white">
                     <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
@@ -202,9 +202,9 @@
             </div>
             
             <!-- Икономически секторен анализ -->
-            <div class="row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+            <div class="row-span-1 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
               <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-20-24-Garant-Burgas-Анализи-Оценки-Контрол.png" alt="Икономически секторен анализ" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Economic+Analysis'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-20-24-Garant-Burgas-Анализи-Оценки-Контрол.png" alt="Икономически секторен анализ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Economic+Analysis'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div class="p-4 text-white">
                     <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
@@ -233,9 +233,9 @@
             </div>
             
             <!-- Социална мрежа за пенсионери -->
-            <div class="row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+            <div class="row-span-1 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
               <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/09/pensa.png" alt="Социална мрежа за пенсионери" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Pensa+Club'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <img src="https://costeffective.software/wp-content/uploads/2024/09/pensa.png" alt="Социална мрежа за пенсионери" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Pensa+Club'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div class="p-4 text-white">
                     <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
@@ -264,9 +264,9 @@
             </div>
             
             <!-- Рецептурник - Spans 2 columns -->
-            <div class="row-span-1 md:col-span-2 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+            <div class="row-span-1 md:col-span-2 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
               <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-22-29-Kitchen-Helper.png" alt="Рецептурник с ястия" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Kitchen+Helper'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-22-29-Kitchen-Helper.png" alt="Рецептурник с ястия" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Kitchen+Helper'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div class="p-4 text-white">
                     <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
@@ -295,9 +295,9 @@
             </div>
             
             <!-- Календар за моторни спортове - Spans 2 columns -->
-            <div class="row-span-1 md:col-span-2 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+            <div class="row-span-1 md:col-span-2 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
               <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/03/cars.png" alt="Календар за моторни спортове" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=RaceFanatic'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <img src="https://costeffective.software/wp-content/uploads/2024/03/cars.png" alt="Календар за моторни спортове" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=RaceFanatic'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div class="p-4 text-white">
                     <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
@@ -326,9 +326,9 @@
             </div>
             
             <!-- Маркетплейс за настолни игри -->
-            <div class="row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
+            <div class="row-span-1 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
               <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/03/cardflow.png" alt="Маркетплейс за настолни игри" class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=CardFlow'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
+                <img src="https://costeffective.software/wp-content/uploads/2024/03/cardflow.png" alt="Маркетплейс за настолни игри" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=CardFlow'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div class="p-4 text-white">
                     <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">

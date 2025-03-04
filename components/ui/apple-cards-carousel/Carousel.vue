@@ -235,7 +235,7 @@ const handleMouseUp = (e) => {
     </div>
     
     <!-- Navigation Controls -->
-    <div class="flex justify-end gap-2 mr-10">
+    <div class="max-w-7xl mx-auto px-4 flex justify-end gap-2">
       <button
         class="relative z-40 h-10 w-10 rounded-full bg-zinc-100 flex items-center justify-center disabled:opacity-50 transition-all duration-300 hover:bg-zinc-200 active:scale-95"
         @click="scrollCarouselLeft"
