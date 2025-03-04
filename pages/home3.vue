@@ -241,6 +241,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
+import { useLenis } from 'lenis/vue'
 
 // Navigation menu state
 const isMenuOpen = ref(false)
@@ -256,6 +257,9 @@ const menuItems = [
   { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
 ]
+
+// Get Lenis instance
+const lenis = useLenis()
 
 // Intersection observer for animations
 const targetRef = ref<HTMLElement | null>(null)
@@ -281,10 +285,10 @@ const cardHover = (event: MouseEvent) => {
 
 // Scroll to section smoothly
 const scrollToSection = (id: string) => {
-  const element = document.getElementById(id)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
+  lenis.value?.scrollTo(`#${id}`, {
+    offset: -100,
+    duration: 1.2,
+  })
 }
 
 // Add intersection observer to elements
