@@ -263,7 +263,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
-import { useLenis } from 'lenis/vue'
 
 // Navigation menu state
 const isMenuOpen = ref(false)
@@ -279,9 +278,6 @@ const menuItems = [
   { label: 'Блог', href: '/blog' },
   { label: 'Свържете се с нас', href: '/contact' },
 ]
-
-// Get Lenis instance
-const lenis = useLenis()
 
 // Intersection observer for animations
 const targetRef = ref<HTMLElement | null>(null)
@@ -307,28 +303,17 @@ const cardHover = (event: MouseEvent) => {
 
 // Scroll to section smoothly
 const scrollToSection = (id: string) => {
-  if (lenis.value) {
-    lenis.value.scrollTo(`#${id}`, {
-      offset: -100,
-      duration: 1.2,
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
     })
-  } else {
-    // Fallback to standard scrollIntoView if lenis is not available
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
   }
 }
 
 // Add intersection observer to elements
 onMounted(() => {
-  // Initialize scrolling functionality
-  if (!lenis.value) {
-    // If lenis isn't ready when component mounts, we can initialize it here if needed
-    // or at least ensure the scrollToSection function will work with native scrolling
-  }
-  
   document.querySelectorAll('.animate-on-scroll').forEach((el) => {
     useIntersectionObserver(el as HTMLElement, ([{ isIntersecting }]) => {
       if (isIntersecting) {
