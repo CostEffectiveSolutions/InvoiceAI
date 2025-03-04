@@ -4,7 +4,6 @@
       <NuxtLayout>
 
         <VueLenis root>
-          <!-- content -->
           <NuxtPage />
         </VueLenis>
       </NuxtLayout>
@@ -13,16 +12,6 @@
   </div>
 </template>
 <script setup>
-import { VueLenis, useLenis } from 'lenis/vue'
-import { watch } from 'vue'
-
-const lenis = useLenis(({ scroll }) => {
-  // called every scroll
-})
-
-watch(lenis, (lenis) => {
-  // lenis instance
-})
 useHead({
   link: [
     // {
