@@ -14,7 +14,7 @@
           { title: 'Solutions', icon: 'lucide:lightbulb', href: '#solutions' },
           { title: 'Case Studies', icon: 'lucide:folder', href: '#case-studies' },
           { title: 'Process', icon: 'lucide:git-branch', href: '#process' },
-          { title: 'Book a Call', icon: 'lucide:phone-call', href: '#contact' }
+          { title: 'Book a Call', icon: 'lucide:phone-call', href: '#consultation' }
         ]"
         desktop-class-name="w-full"
         mobile-class-name="fixed bottom-4 right-4"
@@ -26,7 +26,7 @@
       <!-- Background Pattern -->
       <div class="absolute inset-0 w-full h-full">
         <DotPattern :width="18" :height="18" :cy="1.5" :cr="1.5" class="opacity-[0.2] fill-zinc-400" />
-        <div class="absolute inset-0 h-[80%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0.95)_40%,rgba(255,255,255,0)_80%)]"></div>
+        <div class="absolute inset-0 h-[100%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0.95)_40%,rgba(255,255,255,0)_80%)]"></div>
       </div>
 
       <!-- Hero Content -->
@@ -42,19 +42,20 @@
             <GlowButton 
               color="#silver" 
               class="hover:scale-105 transition-transform duration-300"
-              @click="scrollToSection('consultation')"
+              @click.prevent="scrollToSection('consultation')"
             >
-              <div class="flex items-center gap-2">
+              <a href="#consultation" class="flex items-center gap-2">
                 <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                   <Icon name="lucide:calendar" class="h-3 w-3" />
                 </div>
                 <span class="text-sm font-medium">Book a Free Strategy Call</span>
-              </div>
+              </a>
             </GlowButton>
           </div>
         </div>
       </div>
 
+      <ParticlesEffectSlim id="particles" />
       <!-- Trusted By Section -->
       <div class="py-12">
         <div class="container mx-auto px-4">
@@ -149,7 +150,14 @@
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">HR platform that manages payroll and benefits.</p>
               <div class="text-3xl font-bold text-primary-500 mb-4">50%</div>
               <p class="font-medium">Less SR&ED claim costs</p>
-              <Button variant="link" class="mt-4">Read Case Study</Button>
+              <NuxtLink to="/case-studies/humi">
+                <Button variant="link" class="mt-4">
+                  <span class="flex items-center gap-1.5">
+                    Read Case Study
+                    <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                  </span>
+                </Button>
+              </NuxtLink>
             </div>
             
             <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
@@ -157,7 +165,14 @@
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">Campaign ID tool for UTM generation and tracking.</p>
               <div class="text-3xl font-bold text-primary-500 mb-4">100%</div>
               <p class="font-medium">Errors removed from reporting</p>
-              <Button variant="link" class="mt-4">Read Case Study</Button>
+              <NuxtLink to="/case-studies/streaming-service">
+                <Button variant="link" class="mt-4">
+                  <span class="flex items-center gap-1.5">
+                    Read Case Study
+                    <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                  </span>
+                </Button>
+              </NuxtLink>
             </div>
             
             <div class="bg-white dark:bg-black p-6 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
@@ -165,7 +180,14 @@
               <p class="text-neutral-600 dark:text-neutral-400 mb-4">Signal-testing agency for diverse brands and products.</p>
               <div class="text-3xl font-bold text-primary-500 mb-4">267%</div>
               <p class="font-medium">Productivity Gain for Project Managers</p>
-              <Button variant="link" class="mt-4">Read Case Study</Button>
+              <NuxtLink to="/case-studies/launch-pop">
+                <Button variant="link" class="mt-4">
+                  <span class="flex items-center gap-1.5">
+                    Read Case Study
+                    <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                  </span>
+                </Button>
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -285,14 +307,28 @@ const cardHover = (event: MouseEvent) => {
 
 // Scroll to section smoothly
 const scrollToSection = (id: string) => {
-  lenis.value?.scrollTo(`#${id}`, {
-    offset: -100,
-    duration: 1.2,
-  })
+  if (lenis.value) {
+    lenis.value.scrollTo(`#${id}`, {
+      offset: -100,
+      duration: 1.2,
+    })
+  } else {
+    // Fallback to standard scrollIntoView if lenis is not available
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
 }
 
 // Add intersection observer to elements
 onMounted(() => {
+  // Initialize scrolling functionality
+  if (!lenis.value) {
+    // If lenis isn't ready when component mounts, we can initialize it here if needed
+    // or at least ensure the scrollToSection function will work with native scrolling
+  }
+  
   document.querySelectorAll('.animate-on-scroll').forEach((el) => {
     useIntersectionObserver(el as HTMLElement, ([{ isIntersecting }]) => {
       if (isIntersecting) {

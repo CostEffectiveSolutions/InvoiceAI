@@ -1,114 +1,90 @@
 <template>
-  <div :id="id"></div>
+  <div :id="id" class="absolute inset-0 z-0" />
 </template>
 
 <script setup lang="ts">
-import {
-  tsParticles,
-  type Container,
-  type ISourceOptions
-} from '@tsparticles/engine'
+import { onMounted } from 'vue'
+import { type Container, type Engine, tsParticles } from '@tsparticles/engine'
 import { loadSlim } from '@tsparticles/slim'
-import { onMounted, onUnmounted } from 'vue'
 
-let container: Container | undefined = undefined
-
-const props = withDefaults(
-  defineProps<{
-    id: string
-    size: number
-    minSize: number
-    density: number
-    speed: number
-    minSpeed: number
-    opacity: number
-    minOpacity: number
-    color: string
-    background: string
-    opacitySpeed: number
-    options: ISourceOptions
-  }>(),
-  {
-    id: () => `sparkles-${Math.round(Math.random() * 9999)}`,
-    size: 1.2,
-    minSize: 0.4,
-    density: 1000,
-    speed: 1,
-    minSpeed: 0,
-    opacity: 1,
-    minOpacity: 0.1,
-    color: '#FFFFFF',
-    background: 'transparent',
-    opacitySpeed: 3,
-    options: () => ({})
-  }
-)
-
-const defaultOptions: ISourceOptions = {
-  background: {
-    color: {
-      value: props.background
-    }
-  },
-  fullScreen: {
-    enable: false,
-    zIndex: 1
-  },
-  fpsLimit: 120,
-  particles: {
-    color: {
-      value: props.color
-    },
-    move: {
-      enable: true,
-      direction: 'none',
-      speed: {
-        min: props.minSpeed || props.speed / 10,
-        max: props.speed
-      },
-      straight: false
-    },
-    number: {
-      value: props.density
-    },
-    opacity: {
-      value: {
-        min: props.minOpacity || props.opacity / 10,
-        max: props.opacity
-      },
-      animation: {
-        enable: true,
-        sync: false,
-        speed: props.speed
-      }
-    },
-    size: {
-      value: {
-        min: props.minSize || props.size / 2.5,
-        max: props.size
-      }
-    }
-  },
-  detectRetina: true
-}
+const props = defineProps<{
+  id?: string
+  density?: number
+}>()
 
 onMounted(async () => {
   await loadSlim(tsParticles)
 
-  const customOptions = props.options
-
-  container = await tsParticles.load({
-    id: props.id,
-    options:
-      Object.keys(customOptions).length > 0 ? customOptions : defaultOptions
+  await tsParticles.load({
+    id: props.id || 'tsparticles',
+    options: {
+      fpsLimit: 120,
+      particles: {
+        number: {
+          value: props.density || 80,
+          density: {
+            enable: true,
+            width: 1920,
+            height: 1080
+          }
+        },
+        color: {
+          value: '#ffffff'
+        },
+        shape: {
+          type: 'circle'
+        },
+        opacity: {
+          value: { min: 0.1, max: 0.5 },
+          animation: {
+            enable: true,
+            speed: 3,
+            sync: false
+          }
+        },
+        size: {
+          value: { min: 1, max: 3 },
+          animation: {
+            enable: true,
+            speed: 2,
+            sync: false
+          }
+        },
+        links: {
+          enable: false
+        },
+        move: {
+          enable: true,
+          direction: 'none',
+          outModes: {
+            default: 'out'
+          },
+          random: true,
+          speed: 0.1,
+          straight: false
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: 'bubble'
+          },
+          resize: {
+            enable: true,
+            delay: 0.5
+          }
+        },
+        modes: {
+          bubble: {
+            distance: 200,
+            size: 2,
+            duration: 0.4
+          }
+        }
+      },
+      detectRetina: true
+    }
   })
-})
-
-onUnmounted(() => {
-  if (!container) {
-    return
-  }
-
-  container.destroy()
 })
 </script> 

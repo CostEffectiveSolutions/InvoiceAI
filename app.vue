@@ -3,24 +3,14 @@
     <div class="flex-1">
       <NuxtLayout>
 
-        <VueLenis root>
+        <!-- <VueLenis root> -->
           <NuxtPage />
-        </VueLenis>
+        <!-- </VueLenis> -->
       </NuxtLayout>
     </div>
-    <Footer />
   </div>
 </template>
 <script setup>
-useHead({
-  link: [
-    // {
-    //   rel: 'icon',
-    //   type: 'image/png',
-    //   href: '/favicon.png',
-    // },
-  ],
-})
 </script>
 <style>
 body {
