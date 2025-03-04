@@ -27,6 +27,7 @@
       <div class="absolute inset-0 w-full h-full">
         <DotPattern :width="18" :height="18" :cy="1.5" :cr="1.5" class="opacity-[0.2] fill-zinc-400" />
         <div class="absolute inset-0 h-[100%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0.95)_40%,rgba(255,255,255,0)_80%)]"></div>
+        <div class="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-zinc-100/80 to-transparent"></div>
       </div>
 
       <!-- Hero Content -->
@@ -61,13 +62,46 @@
         <div class="container mx-auto px-4">
           <div class="max-w-6xl mx-auto">
             <Marquee :pause-on-hover="true" class="py-4">
-              <img src="/images/logos/mercedes-benz-9-logo-svgrepo-com.svg" alt="Mercedes Benz" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              <img src="/images/logos/google-icon-logo-svgrepo-com.svg" alt="Google" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <a href="https://www.suera.com" target="_blank">
+                <img src="/images/logos/logo-stroke.svg" alt="suera" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.bezbroker.com" target="_blank">
+                <img src="/images/logos/bezbroker.svg" alt="bezbroker" class="h-6 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+
+              <a href="https://www.srv.bg" target="_blank">
+                <img src="/images/logos/srv.svg" alt="srv" class="h-6 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.midland.bg" target="_blank">
+                <img src="/images/logos/midland.png" alt="midland" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.mck.bg" target="_blank">
+                <img src="/images/logos/mck.png" alt="mck" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.diana-ltd.com" target="_blank">
+                <img src="/images/logos/diana.png" alt="diana" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.flataway.com" target="_blank">
+                <img src="/images/logos/flataway.svg" alt="flataway" class="h-6 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.nibnab.ai" target="_blank">
+                <img src="/images/logos/nibnab.svg" alt="nibnab" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.intercars.eu" target="_blank">
+                <img src="/images/logos/intercars.svg" alt="intercars" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <a href="https://www.garantburgas.com" target="_blank">
+                <span class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" >Garant Burgas </span>
+              </a>
+              <a href="https://www.zazemiata.org" target="_blank">
+                <img src="/images/logos/zazemiata.png" alt="zazemiata" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              </a>
+              <!-- 
               <img src="/images/logos/apple-black-logo-svgrepo-com.svg" alt="Apple" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
               <img src="/images/logos/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
               <img src="/images/logos/youtube-icon-logo-svgrepo-com.svg" alt="YouTube" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
               <img src="/images/logos/gmail-icon-logo-svgrepo-com.svg" alt="Gmail" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              <img src="/images/logos/tiktok-icon-white-1-logo-svgrepo-com.svg" alt="TikTok" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/tiktok-icon-white-1-logo-svgrepo-com.svg" alt="TikTok" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /> -->
             </Marquee>
           </div>
         </div>
