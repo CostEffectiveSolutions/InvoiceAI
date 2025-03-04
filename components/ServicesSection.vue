@@ -8,10 +8,10 @@
       <!-- Section Header -->
       <div class="max-w-3xl mx-auto text-center mb-20">
         <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neutral-950 to-neutral-500 dark:from-white dark:to-neutral-400">
-          Our Services
+          Нашите Услуги
         </h2>
         <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400">
-          We build custom solutions that help your business scale efficiently and effectively.
+          Изграждаме персонализирани решения, които помагат на вашия бизнес да се развива ефективно.
         </p>
       </div>
 
@@ -30,23 +30,23 @@
               <Icon name="lucide:cpu" class="h-8 w-8 text-neutral-900 dark:text-white" />
             </div>
             
-            <h3 class="text-2xl font-bold mb-4">AI Workflows</h3>
+            <h3 class="text-2xl font-bold mb-4">AI Работни Процеси</h3>
             <p class="text-neutral-600 dark:text-neutral-400 mb-6">
-              Automate repetitive tasks and streamline your processes with AI-powered workflows.
+              Автоматизирайте повтарящи се задачи и оптимизирайте процесите си с помощта на AI.
             </p>
             
             <ul class="space-y-3 mb-8">
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Process Automation
+                Автоматизация на процеси
               </li>
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Smart Integrations
+                Интелигентни интеграции
               </li>
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Custom AI Models
+                Персонализирани AI модели
               </li>
             </ul>
             
@@ -69,23 +69,23 @@
               <Icon name="lucide:layout" class="h-8 w-8 text-neutral-900 dark:text-white" />
             </div>
             
-            <h3 class="text-2xl font-bold mb-4">Frontend Development</h3>
+            <h3 class="text-2xl font-bold mb-4">Frontend Разработка</h3>
             <p class="text-neutral-600 dark:text-neutral-400 mb-6">
-              Beautiful, responsive interfaces that your users will love. Built with modern frameworks and best practices.
+              Красиви, отзивчиви интерфейси, които вашите потребители ще харесат. Изградени с модерни технологии и добри практики.
             </p>
             
             <ul class="space-y-3 mb-8">
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Responsive Design
+                Отзивчив дизайн
               </li>
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Modern Frameworks
+                Модерни фреймуърки
               </li>
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Performance Optimized
+                Оптимизирана производителност
               </li>
             </ul>
             
@@ -109,23 +109,23 @@
               <Icon name="lucide:bar-chart" class="h-8 w-8 text-neutral-900 dark:text-white" />
             </div>
             
-            <h3 class="text-2xl font-bold mb-4">Data Analytics</h3>
+            <h3 class="text-2xl font-bold mb-4">Данни и Анализи</h3>
             <p class="text-neutral-600 dark:text-neutral-400 mb-6">
-              Turn your data into actionable insights with powerful analytics and visualization tools.
+              Превърнете данните си в практически идеи с мощни инструменти за анализ и визуализация.
             </p>
             
             <ul class="space-y-3 mb-8">
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Real-time Dashboards
+                Табла в реално време
               </li>
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Custom Reports
+                Персонализирани отчети
               </li>
               <li class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
                 <Icon name="lucide:check" class="h-5 w-5 mr-2 text-emerald-500" />
-                Predictive Analytics
+                Прогнозни анализи
               </li>
             </ul>
             
@@ -139,10 +139,12 @@
 
       <!-- CTA Section -->
       <div class="mt-20 text-center">
-        <Button size="lg" variant="default" class="group rounded-full">
-          Schedule a Consultation
-          <Icon name="lucide:arrow-right" class="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-        </Button>
+        <NuxtLink to="#consultation">
+          <Button size="lg" variant="default" class="group rounded-full">
+            Планирайте консултация
+            <Icon name="lucide:arrow-right" class="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+          </Button>
+        </NuxtLink>
       </div>
     </div>
   </section>
