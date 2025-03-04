@@ -278,7 +278,6 @@ const handleClick = (e, hash) => {
 
 <template>
       <Header></Header>
-    <VueLenis>
   <main class="relative min-h-screen bg-transparent text-white overflow-hidden">
     <BackgroundAnimation />
     
@@ -1041,5 +1040,4 @@ const handleClick = (e, hash) => {
       </div>
     </section>
   </main>
-</VueLenis>
 </template>
