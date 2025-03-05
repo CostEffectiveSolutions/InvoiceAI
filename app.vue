@@ -1,18 +1,27 @@
 <template>
-  <div class="flex min-h-screen flex-col">
-    <div class="flex-1">
-      <NuxtLayout>
-
-        <!-- <VueLenis root> -->
-          <NuxtPage />
-        <!-- </VueLenis> -->
+  <vue-lenis root>
+    <div class="flex min-h-screen flex-col">
+      <div class="flex-1">
+        <NuxtLayout>
+        <NuxtPage />
       </NuxtLayout>
+      </div>
     </div>
-  </div>
+  </vue-lenis>
 </template>
 <script setup>
+import { useLenis } from 'lenis/vue'
+
+const lenis = useLenis((lenis) => {
+  console.log('page callback', lenis)
+})
+
+watch(lenis, (lenis) => {
+  console.log('page', lenis)
+})
 </script>
 <style>
+
 body {
   font-family: Inter, serif;
   font-weight: 500;

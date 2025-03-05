@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', 'lenis/nuxt', 'v-gsap-nuxt', '@nuxtjs/seo'],
+  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', 'lenis/nuxt', '@nuxtjs/seo'],
 
   css: [
     '~/assets/css/transitions.css',
@@ -10,6 +10,17 @@ export default defineNuxtConfig({
     name: 'Empower Studio',
     description: 'Автоматизирайте бизнес процесите си с изкуствен интелект. Спестете време и намалете разходи с персонализирани AI решения.',
     defaultLocale: 'bg',
+  },
+
+  // @ts-ignore - Lenis module configuration
+  lenis: {
+    root: true,
+    options: {
+      smooth: true,
+      smoothWheel: true,
+      autoRaf:true
+    }
+
   },
 
   shadcn: {
