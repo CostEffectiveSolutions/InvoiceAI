@@ -368,7 +368,7 @@ const handleClick = (e, hash) => {
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card 
+          <div 
             v-for="(feature, index) in features" 
             :key="feature.title" 
             class="group relative rounded-xl bg-[#0a0c0e] p-6 border-0 shadow-none
@@ -394,7 +394,7 @@ const handleClick = (e, hash) => {
                 {{ feature.description }}
               </CardDescription>
             </div>
-          </Card>
+          </div> 
         </div>
       </div>
     </section>
@@ -419,7 +419,7 @@ const handleClick = (e, hash) => {
             :style="{ animationDelay: `${(index + 1) * 200}ms` }"
             class="animate-fade-in"
           >
-            <Card class=" border-white/10 backdrop-blur-sm p-6 transition-all duration-500 hover:shadow-2xl group h-full">
+            <div class=" border-white/10 backdrop-blur-sm p-6 transition-all duration-500 hover:shadow-2xl group h-full">
               <CardHeader>
                 <div class="flex items-center justify-between mb-4">
                   <div :class="[step.icon, 'text-4xl text-blue-400 group-hover:scale-110 transition-transform duration-500']" />
@@ -432,7 +432,7 @@ const handleClick = (e, hash) => {
               <CardContent>
                 <p class="text-gray-400">{{ step.description }}</p>
               </CardContent>
-            </Card>
+            </div> 
           </div>
         </div>
       </div>
@@ -459,7 +459,7 @@ const handleClick = (e, hash) => {
         <div class="grid md:grid-cols-2 gap-10">
           <!-- Software Development -->
           <div class="animate-fade-in" style="animation-delay: 200ms">
-            <Card class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xlhover:-translate-y-2">
+            <div class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xlhover:-translate-y-2">
               <CardHeader>
                 <div class="flex items-center mb-8">
                   <div class="relative">
@@ -506,12 +506,12 @@ const handleClick = (e, hash) => {
                   </li>
                 </ul>
               </CardContent>
-            </Card>
+            </div> 
           </div>
 
           <!-- AI Solutions -->
           <div class="animate-fade-in" style="animation-delay: 400ms">
-            <Card class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xlhover:-translate-y-2">
+            <div class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xlhover:-translate-y-2">
               <CardHeader>
                 <div class="flex items-center mb-8">
                   <div class="relative">
@@ -558,12 +558,12 @@ const handleClick = (e, hash) => {
                   </li>
                 </ul>
               </CardContent>
-            </Card>
+            </div> 
           </div>
 
           <!-- UX/UI Design -->
           <div class="animate-fade-in" style="animation-delay: 600ms">
-            <Card class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xlhover:-translate-y-2">
+            <div class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xlhover:-translate-y-2">
               <CardHeader>
                 <div class="flex items-center mb-8">
                   <div class="relative">
@@ -610,12 +610,12 @@ const handleClick = (e, hash) => {
                   </li>
                 </ul>
               </CardContent>
-            </Card>
+            </div> 
           </div>
 
           <!-- DevOps & Support -->
           <div class="animate-fade-in" style="animation-delay: 800ms">
-            <Card class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xl">
+            <div class="group h-full border-white/10 backdrop-blur-sm p-10 transition-all duration-500 hover:shadow-2xl rounded-xl">
               <CardHeader>
                 <div class="flex items-center mb-8">
                   <div class="relative">
@@ -662,7 +662,7 @@ const handleClick = (e, hash) => {
                   </li>
                 </ul>
               </CardContent>
-            </Card>
+            </div> 
           </div>
         </div>
       </div>
@@ -834,7 +834,7 @@ const handleClick = (e, hash) => {
           <!-- Project 1 -->
           <div class="animate-fade-in" style="animation-delay: 200ms">
             <div class="group/card h-full">
-              <Card class="relative from-white/[0.075] to-white/[0.025] border-0 shadow-lg shadow-black/20 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-900/20  h-full w-full">
+              <div class="relative from-white/[0.075] to-white/[0.025] border-0 shadow-lg shadow-black/20 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-900/20  h-full w-full">
                 <div class="rounded-t-lg rounded-b-sm relative h-56 overflow-hidden">
                   <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80 opacity-60 group-hover/card:opacity-40 transition-opacity duration-500 z-10"/>
                   <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80')] bg-cover bg-center transform transition-transform duration-700 group-hover/card:scale-110"/>
@@ -854,14 +854,14 @@ const handleClick = (e, hash) => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </div> 
             </div>
           </div>
 
           <!-- Project 2 -->
           <div class="animate-fade-in" style="animation-delay: 400ms">
             <div class="group/card h-full">
-              <Card class="relative from-white/[0.075] to-white/[0.025] border-0 shadow-lg shadow-black/20 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-900/20  h-full w-full">
+              <div class="relative from-white/[0.075] to-white/[0.025] border-0 shadow-lg shadow-black/20 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-900/20  h-full w-full">
                 <div class="rounded-t-lg rounded-b-sm relative h-56 overflow-hidden">
                   <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80 opacity-60 group-hover/card:opacity-40 transition-opacity duration-500 z-10"/>
                   <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80')] bg-cover bg-center transform transition-transform duration-700 group-hover/card:scale-110"/>
@@ -881,14 +881,14 @@ const handleClick = (e, hash) => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </div> 
             </div>
           </div>
 
           <!-- Project 3 -->
           <div class="animate-fade-in" style="animation-delay: 600ms">
             <div class="group/card h-full">
-              <Card class="relative from-white/[0.075] to-white/[0.025] border-0 shadow-lg shadow-black/20 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-900/20  h-full w-full">
+              <div class="relative from-white/[0.075] to-white/[0.025] border-0 shadow-lg shadow-black/20 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:shadow-blue-900/20  h-full w-full">
                 <div class="rounded-t-lg rounded-b-sm relative h-56 overflow-hidden">
                   <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80 opacity-60 group-hover/card:opacity-40 transition-opacity duration-500 z-10"/>
                   <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1594882645126-14020914d58d?q=80')] bg-cover bg-center transform transition-transform duration-700 group-hover/card:scale-110"/>
@@ -908,7 +908,7 @@ const handleClick = (e, hash) => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </div> 
             </div>
           </div>
         </div>
@@ -1027,15 +1027,15 @@ const handleClick = (e, hash) => {
             </p>
           </div>
 
-          <Card class="max-w-4xl relative border-white/10 from-white/[0.08] to-white/[0.02] shadow-lg shadow-black/20 backdrop-blur-sm animate-fade-in overflow-hidden" style="animation-delay: 600ms">
+          <div class="max-w-5xl relative border-white/10 from-white/[0.08] to-white/[0.02] shadow-lg shadow-black/20 backdrop-blur-sm animate-fade-in overflow-hidden mx-auto" style="animation-delay: 600ms">
             <CardContent>
               <div 
                 class="calendly-inline-widget" 
                 data-url="https://calendly.com/gkkirilov/30"
-                style="height:830px;"
+                style="height:830px; margin: 0 auto; width: 100%;"
               ></div>
             </CardContent>
-          </Card>
+          </div> 
         </div>
       </div>
     </section>
