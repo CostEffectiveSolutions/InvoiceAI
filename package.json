@@ -6,8 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "@nuxt/fonts": "^0.10.3",
@@ -31,7 +30,7 @@
     "colord": "^2.9.3",
     "embla-carousel-vue": "^8.5.2",
     "gsap": "^3.12.7",
-    "lenis": "^1.2",
+    "lenis": "^1.2.1",
     "lucide-vue-next": "^0.477.0",
     "nodemailer": "^6.10.0",
     "reka-ui": "^2.0.2",

@@ -1,5 +1,14 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/seo'],
+  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/seo', 'lenis/nuxt'],
+
+  lenis: {
+    options: {
+      root: true,
+      smooth: true,
+      smoothWheel: true,
+      autoRaf: true,
+    },
+  },
 
   ssr: false,
 
@@ -23,6 +32,9 @@ export default defineNuxtConfig({
       autoRaf:true
     }
 
+  },
+  ogImage: {
+    enabled: false,
   },
 
   shadcn: {

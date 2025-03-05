@@ -152,7 +152,7 @@
     </section>
 
     <!-- Problem Section -->
-    <section id="problems" ref="problemRef" class="py-20">
+    <section id="problems" ref="problemRef">
       <BusinessProblemsCarousel />
     </section>
 
