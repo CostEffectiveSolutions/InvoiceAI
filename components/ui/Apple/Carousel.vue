@@ -72,7 +72,7 @@ const { pause: pauseRaf, resume: resumeRaf } = useRafFn(() => {
     snapToNearestCard()
     return
   }
-  
+
   carouselRef.value.scrollLeft += momentum.value
   momentum.value *= props.decelerationRate
   checkScrollability()
@@ -87,15 +87,15 @@ const startMomentumScroll = () => {
 // Snap to nearest card
 const snapToNearestCard = () => {
   if (!carouselRef.value) return
-  
+
   const { scrollLeft } = carouselRef.value
   const targetPosition = Math.round(scrollLeft / cardWidth.value) * cardWidth.value
-  
+
   carouselRef.value.scrollTo({
     left: targetPosition,
     behavior: 'smooth'
   })
-  
+
   setTimeout(checkScrollability, 300)
 }
 
@@ -142,19 +142,19 @@ const handleCardClose = (index) => {
 // Enhanced mouse drag event handlers
 const handleMouseDown = (e) => {
   if (!carouselRef.value) return
-  
+
   // Stop any ongoing momentum scrolling
   pauseRaf()
   isAnimating.value = false
   momentum.value = 0
-  
+
   isDragging.value = true
   startX.value = e.pageX
   startScrollLeft.value = carouselRef.value.scrollLeft
-  
+
   document.addEventListener('mousemove', handleMouseMove)
   document.addEventListener('mouseup', handleMouseUp)
-  
+
   // Prevent text selection during drag
   document.body.style.userSelect = 'none'
   carouselRef.value.style.cursor = 'grabbing'
@@ -178,7 +178,7 @@ const handleMouseMove = (e) => {
   // Calculate how far the mouse has moved
   const x = e.pageX
   const walk = (startX.value - x) * props.scrollMultiplier
-  
+
   // Scroll the container
   carouselRef.value.scrollLeft = startScrollLeft.value + walk
   checkScrollability()
@@ -186,18 +186,18 @@ const handleMouseMove = (e) => {
 
 const handleMouseUp = (e) => {
   isDragging.value = false
-  
+
   document.removeEventListener('mousemove', handleMouseMove)
   document.removeEventListener('mouseup', handleMouseUp)
-  
+
   document.body.style.userSelect = ''
   if (carouselRef.value) {
     carouselRef.value.style.cursor = 'grab'
   }
-  
+
   // Apply momentum based on final velocity
   momentum.value = velocityX * 25
-  
+
   if (Math.abs(momentum.value) > 1) {
     startMomentumScroll()
   } else {
@@ -211,45 +211,36 @@ const handleMouseUp = (e) => {
 <template>
   <div class="relative w-full">
     <!-- Carousel Container -->
-    <div
-      ref="carouselRef"
+    <div ref="carouselRef"
       class="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth hide-scrollbar cursor-grab transition-all duration-300"
-      @scroll="checkScrollability"
-      @mousedown="handleMouseDown"
-    >
+      @scroll="checkScrollability" @mousedown="handleMouseDown">
       <div class="absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"></div>
-      <div class="flex flex-row justify-start gap-4 pl-4 max-w-7xl mx-auto">
-        <div
-          v-for="(item, index) in items"
-          :key="`card-${index}`"
-          class="last:pr-[5%] md:last:pr-[33%] rounded-3xl transition-all duration-500 select-none"
-          :style="{
+      <div class="flex flex-row justify-start gap-4 pl-4 md:pl-0 max-w-6xl mx-auto">
+        <div v-for="(item, index) in items" :key="`card-${index}`"
+          class="last:pr-[5%] md:last:pr-[33%] rounded-3xl transition-all duration-500 select-none" :style="{
             opacity: 1,
             transform: 'translateY(0px)',
             transition: `all 0.5s ease-out ${0.2 * index}s`,
-          }"
-        >
+          }">
           <component :is="item" />
         </div>
       </div>
     </div>
-    
+
     <!-- Navigation Controls -->
-    <div class="flex justify-end gap-2 mr-10">
-      <button
-        class="relative z-40 h-10 w-10 rounded-full bg-zinc-100 flex items-center justify-center disabled:opacity-50 transition-all duration-300 hover:bg-zinc-200 active:scale-95"
-        @click="scrollCarouselLeft"
-        :disabled="!canScrollLeft"
-      >
-        <Icon name="lucide:arrow-left" class="h-5 w-5 text-zinc-500" />
-      </button>
-      <button
-        class="relative z-40 h-10 w-10 rounded-full bg-zinc-100 flex items-center justify-center disabled:opacity-50 transition-all duration-300 hover:bg-zinc-200 active:scale-95"
-        @click="scrollCarouselRight"
-        :disabled="!canScrollRight"
-      >
-        <Icon name="lucide:arrow-right" class="h-5 w-5 text-zinc-500" />
-      </button>
+    <div class="gap-2 max-w-6xl mx-auto">
+      <div class="flex flex-row justify-between text-end justify-self-end gap-2 mr-4">
+        <button
+          class="relative z-40 h-10 w-10 rounded-full bg-zinc-100 flex items-center justify-center disabled:opacity-50 transition-all duration-300 hover:bg-zinc-200 active:scale-95"
+          @click="scrollCarouselLeft" :disabled="!canScrollLeft">
+          <Icon name="lucide:arrow-left" class="h-5 w-5 text-zinc-500" />
+        </button>
+        <button
+          class="relative z-40 h-10 w-10 rounded-full bg-zinc-100 flex items-center justify-center disabled:opacity-50 transition-all duration-300 hover:bg-zinc-200 active:scale-95"
+          @click="scrollCarouselRight" :disabled="!canScrollRight">
+          <Icon name="lucide:arrow-right" class="h-5 w-5 text-zinc-500" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -258,8 +249,10 @@ const handleMouseUp = (e) => {
 .hide-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS devices */
 }
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -278,4 +271,4 @@ const handleMouseUp = (e) => {
     transform: translateY(-5px);
   }
 }
-</style> 
+</style>

@@ -4,7 +4,7 @@
     <div class="absolute inset-0 bg-grid-neutral-100/25 dark:bg-grid-neutral-900/25 bg-neutral-50 dark:bg-neutral-950" />
     <div class="absolute inset-0 bg-gradient-to-t from-neutral-50 via-neutral-50/80 to-neutral-50/0 dark:from-neutral-950 dark:via-neutral-950/80 dark:to-neutral-950/0" />
     
-    <div class="container relative mx-auto px-4 max-w-6xl">
+    <div class="container relative mx-auto px-4 md:px-0 max-w-6xl">
       <!-- Section Header -->
       <div class="max-w-3xl mx-auto text-center mb-20">
         <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neutral-950 to-neutral-500 dark:from-white dark:to-neutral-400">

@@ -80,7 +80,7 @@ const cards = carouselData.map((card, index) => {
 
 <template>
   <div class="w-full h-full py-20 bg-white dark:bg-neutral-950">
-    <h2 class="max-w-7xl pl-4 mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+    <h2 class="max-w-6xl pl-4 md:pl-0 mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
       Вашият бизнес расте, но системите ви не успяват да го следват
     </h2>
     <Carousel :items="cards" />
