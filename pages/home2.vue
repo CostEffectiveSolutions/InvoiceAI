@@ -44,12 +44,12 @@
           <div class="text-center">
             <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">TRUSTED BY INDUSTRY LEADERS</p>
             <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
-              <img src="/images/snowflake.svg" alt="Snowflake" class="h-6 rounded-lg" />
-              <img src="/images/cactus.svg" alt="Cactus" class="h-6 rounded-lg" />
-              <img src="/images/vision.svg" alt="Vision" class="h-6 rounded-lg" />
-              <img src="/images/luminous.svg" alt="Luminous" class="h-6 rounded-lg" />
-              <img src="/images/pronature.svg" alt="ProNature" class="h-6 rounded-lg" />
-              <img src="/images/recharge.svg" alt="Recharge" class="h-6 rounded-lg" />
+              <Icon name="logos:snowflake" class="h-6 w-auto mx-3" />
+              <Icon name="logos:cactus" class="h-6 w-auto mx-3" />
+              <Icon name="logos:vision" class="h-6 w-auto mx-3" />
+              <Icon name="logos:luminous" class="h-6 w-auto mx-3" />
+              <Icon name="logos:pronature" class="h-6 w-auto mx-3" />
+              <Icon name="logos:recharge" class="h-6 w-auto mx-3" />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 <script setup>
-import { Card, Carousel } from '@/components/ui/apple-cards-carousel'
+import { Card, Carousel } from '~/components/ui/Apple'
 import { ref, h } from 'vue'
 
 // Data for the carousel
