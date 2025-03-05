@@ -1,9 +1,16 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', 'lenis/nuxt', 'v-gsap-nuxt'],
+  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', 'lenis/nuxt', 'v-gsap-nuxt', '@nuxtjs/seo'],
 
   css: [
     '~/assets/css/transitions.css',
   ],
+
+  site: {
+    url: 'https://empowerstudio.eu',
+    name: 'Empower Studio',
+    description: 'Автоматизирайте бизнес процесите си с изкуствен интелект. Спестете време и намалете разходи с персонализирани AI решения.',
+    defaultLocale: 'bg',
+  },
 
   shadcn: {
     prefix: '',
