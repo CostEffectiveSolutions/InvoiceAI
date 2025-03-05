@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', 'lenis/nuxt', '@nuxtjs/seo'],
+  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/seo'],
+
+  ssr: false,
 
   css: [
     '~/assets/css/transitions.css',

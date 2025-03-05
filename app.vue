@@ -10,15 +10,15 @@
   </vue-lenis>
 </template>
 <script setup>
-import { useLenis } from 'lenis/vue'
+// import { useLenis } from 'lenis/vue'
 
-const lenis = useLenis((lenis) => {
-  console.log('page callback', lenis)
-})
+// const lenis = useLenis((lenis) => {
+//   console.log('page callback', lenis)
+// })
 
-watch(lenis, (lenis) => {
-  console.log('page', lenis)
-})
+// watch(lenis, (lenis) => {
+//   console.log('page', lenis)
+// })
 </script>
 <style>
 
