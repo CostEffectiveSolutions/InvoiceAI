@@ -695,11 +695,11 @@
           Ускорете растежа с AI решения от най-високо ниво
         </p>
 
-        <div class="glass-card">
+        <div>
           <iframe
             src="https://calendly.com/gkkirilov/30?embed_domain=microsass&embed_type=Inline&hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=2563eb"
             width="100%"
-            height="700"
+            class="md:h-[700px] h-[1100px]"
             frameborder="0"
             title="Планирайте Бизнес Консултация - Empower Studio"
             data-ready="true"
@@ -710,7 +710,7 @@
   </section>
 
   <!-- Floating Bottom Navigation -->
-  <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-transform duration-300 hover:-translate-y-1">
+  <div class="hidden md:fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-transform duration-300 hover:-translate-y-1">
     <div class="bg-white/80 backdrop-blur-lg shadow-lg rounded-full py-3 px-4 flex items-center space-x-2">
       <div class="flex items-center">
         <NuxtLink to="#" class="hover:opacity-80 transition-opacity">
