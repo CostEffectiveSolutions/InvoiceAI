@@ -23,14 +23,14 @@
       <div class="container mx-auto px-4 py-20">
         <div class="relative z-10 text-center max-w-4xl mx-auto">
           <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-6">
-            <Icon name="lucide:zap" class="w-4 h-4 mr-1" /> AI РЕШЕНИЯ ЗА КОРПОРАЦИИ
+            <Icon name="lucide:zap" class="w-4 h-4 mr-1" /> Бизнес решения с AI
           </Badge>
           
           <h1 class="text-5xl md:text-6xl font-bold mb-6 text-navy-900">
-            Бъдещето на<br />
-            Бизнеса Започва с<br />
+            Бъдещето е тук!<br />
+            Бизнес решения с<br />
             AI & Автоматизация
-            <Icon name="sparkles" class="inline-block w-8 h-8 text-blue-500 ml-2" />
+            <!-- <Icon name="sparkles" class="inline-block w-8 h-8 text-blue-500 ml-2" /> -->
           </h1>
           
           <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -40,12 +40,12 @@
 
           <div class="mb-20">
             <Button size="lg" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
-              Планирайте Бизнес Консултация
+              Заявете Безплатна Консултация
             </Button>
           </div>
 
           <div class="text-center">
-            <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">НА ДОВЕРИЕ ОТ ЛИДЕРИТЕ В ИНДУСТРИЯТА</p>
+            <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">Част от нашите клиенти</p>
             <Marquee class="marquee-logo-container" pauseOnHover>
               <img src="/images/logos/bezbroker.svg" alt="Bezbroker" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
               <img src="/images/logos/diana.png" alt="Diana" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
@@ -86,7 +86,7 @@
               </div>
               <h3 class="text-xl font-bold text-navy-900 mb-3">Ускорено Развитие</h3>
               <p class="text-gray-600">
-                Нашият усъвършенстван процес на разработка, базиран на AI, доставя бизнес решения с безпрецедентна скорост, поставяйки нови стандарти в индустрията.
+                Нашият усъвършенстван процес за разработка на софтуер, базиран на AI, доставя бизнес решения с безпрецедентна скорост, поставяйки нови стандарти в индустрията.
               </p>
             </div>
             <div class="mt-auto">
@@ -138,7 +138,7 @@
             Готови ли сте да ускорите вашата дигитална трансформация?
           </p>
           <Button size="lg" class="bg-black text-white hover:bg-gray-900" @click="scrollToSection('book-consultation')">
-            Планирайте Корпоративна Консултация
+            Заявете Безплатна Консултация
           </Button>
         </div>
       </div>
@@ -153,12 +153,12 @@
           <Icon name="lucide:boxes" class="w-4 h-4 mr-1" /> БИЗНЕС РЕШЕНИЯ
         </Badge>
         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
-          Стратегическо AI Внедряване<br/>
-          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Бизнес Съвършенство</span>
+          Дигитализация на бизнеса  <br/>
+          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text text-uppercase">водена от AI</span>
         </h2>
         
         <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
-          Трансформирайте бизнес операциите си с нашите AI решения от най-високо ниво,<br/>
+          Трансформирайте бизнес операциите си с нашите AI решения от най-високо ниво,
           проектирани за безпроблемна интеграция и максимална ефективност
         </p>
 
@@ -210,7 +210,7 @@
           <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
             <div class="flex items-center justify-center mb-8">
               <Icon name="lucide:clock" class="w-8 h-8 mr-3" />
-              <h3 class="text-2xl font-bold">Бързо Внедряване за Предприятия</h3>
+              <h3 class="text-2xl font-bold">Бързо Внедряване за Бизнеси</h3>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -243,7 +243,7 @@
           <div class="mt-12">
             <Button size="lg" class="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
               <Icon name="lucide:calendar" class="w-6 h-6 mr-2" />
-              Планирайте Бизнес Консултация
+              Заявете Бизнес Консултация
             </Button>
           </div>
         </div>
@@ -452,12 +452,12 @@
         <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center">
           <div class="flex items-center justify-center mb-6">
             <Icon name="lucide:clock-3" class="w-8 h-8 mr-3" />
-            <h3 class="text-2xl font-bold">График за Бизнес Внедряване</h3>
+            <h3 class="text-2xl font-bold">Внедряване на софтуер по-бързо от всякога</h3>
           </div>
-          <p class="text-lg mb-8 opacity-90">От първоначалната оценка до пълното внедряване само за 2 седмици</p>
+          <p class="text-lg mb-8 opacity-90">От първоначалната оценка до пълното внедряване само за няколко седмици</p>
           <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50" @click="scrollToSection('book-consultation')">
             <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
-            Планирайте Консултация за Внедряване
+            Заявете Консултация за Внедряване
           </Button>
         </div>
       </div>
@@ -570,11 +570,11 @@
         <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
           <div class="text-center mb-8">
             <Icon name="lucide:zap" class="w-12 h-12 mx-auto mb-4" />
-            <h3 class="text-2xl font-bold mb-4">Готови ли сте да Трансформирате Вашата Индустрия?</h3>
+            <h3 class="text-2xl font-bold mb-4">Готови ли сте да Трансформирате Своя Бизнес?</h3>
             <p class="text-lg opacity-90 mb-8">Започнете с AI решения от най-високо ниво, създадени за вашия сектор</p>
             <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50" @click="scrollToSection('book-consultation')">
               <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
-              Планирайте Индустриална Консултация
+              Заявете Безплатна Консултация
             </Button>
           </div>
         </div>
@@ -626,7 +626,7 @@
                   </div>
                 </AccordionTrigger>
                 <AccordionContent class="pt-4 pl-14">
-                  <p class="text-gray-600">Бизнес внедряването обикновено се извършва в рамките на 2 седмици, следвайки нашата оптимизирана методология. Това включва фази на оценка, разработка, тестване и внедряване, с ясни етапи и резултати на всеки етап.</p>
+                  <p class="text-gray-600">Бизнес внедряването обикновено се извършва в рамките на няколко седмици, следвайки нашата оптимизирана методология. Това включва фази на оценка, разработка, тестване и внедряване, с ясни етапи и резултати на всеки етап.</p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -640,7 +640,7 @@
                   </div>
                 </AccordionTrigger>
                 <AccordionContent class="pt-4 pl-14">
-                  <p class="text-gray-600">Нашите бизнес клиенти обикновено виждат възвръщаемост на инвестицията още през първото тримесечие чрез повишена ефективност и намалени оперативни разходи. Ние предоставяме подробни анализи и отчети за проследяване на подобренията в производителността и спестяванията на разходи.</p>
+                  <p class="text-gray-600">Нашите бизнес клиенти обикновено виждат възвръщаемост на инвестицията още през първото тримесечие чрез повишена ефективност и намалени оперативни разходи. Ние предоставяме подрочни анализи и отчети за проследяване на подобренията в производителността и спестяванията на разходи.</p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -654,7 +654,7 @@
                   </div>
                 </AccordionTrigger>
                 <AccordionContent class="pt-4 pl-14">
-                  <p class="text-gray-600">Ние поддържаме най-високите стандарти за сигурност с мерки за защита от бизнес клас. Нашите решения са напълно съвместими с индустриалните разпоредби, включително GDPR, HIPAA и SOC 2, гарантирайки, че вашите данни остават сигурни и защитени.</p>
+                  <p class="text-gray-600">Ние поддържаме най-високите стандарти за сигурност с мерки за защита от бизнес клас. Нашите решения са напълно съвместими с индустриалните разпоредби, включително GDPR, гарантирайки, че вашите данни остават сигурни и защитени.</p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -669,8 +669,125 @@
           <p class="text-lg text-gray-600 mb-8">Нашият екип за бизнес решения е тук, за да помогне</p>
           <Button size="lg" class="bg-gradient-to-r from-blue-600 to-blue-400 text-white" @click="scrollToSection('book-consultation')">
             <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
-            Планирайте Консултация
+            Заявете Консултация
           </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-blue-50" id="contacts">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:mail" class="w-4 h-4 mr-1" /> КОНТАКТИ
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Свържете се с нас<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Вашето AI Решение</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Имате въпроси или сте готови да започнете? Нашият екип е тук, за да ви помогне с вашите бизнес нужди.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <h3 class="text-xl font-bold text-navy-900 mb-6">Контакти</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                  <Icon name="lucide:mail" class="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 class="font-medium text-navy-900 mb-1">Имейл</h4>
+                  <a href="mailto:contact@empowerstudio.com" class="text-blue-600 hover:underline">info@empowerstudio.eu</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                  <Icon name="lucide:phone" class="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 class="font-medium text-navy-900 mb-1">Телефон</h4>
+                  <a href="tel:+359888123456" class="text-blue-600 hover:underline">+359 879 493 909</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                  <Icon name="lucide:map-pin" class="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 class="font-medium text-navy-900 mb-1">Адрес</h4>
+                  <p class="text-gray-600">WorkBetter, бул. Черни Връх 51,  <br/>София, България</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <h3 class="text-xl font-bold text-navy-900 mb-6">Изпратете съобщение</h3>
+            
+            <form class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Име</label>
+                <input 
+                  id="name" 
+                  type="text" 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                  placeholder="Вашето име"
+                />
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Имейл</label>
+                <input 
+                  id="email" 
+                  type="email" 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                  placeholder="вашият@имейл.com"
+                />
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Съобщение</label>
+                <textarea 
+                  id="message" 
+                  rows="4" 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                  placeholder="Вашето съобщение"
+                ></textarea>
+              </div>
+              
+              <div>
+                <Button class="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white hover:opacity-90 mt-2">
+                  <Icon name="lucide:send" class="w-4 h-4 mr-2" />
+                  Изпратете Съобщение
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0">
+              <h3 class="text-2xl font-bold mb-2">Бизнес Часове</h3>
+              <p class="opacity-90">Понеделник - Петък: 9:00 - 18:00</p>
+              
+            </div>
+            <div>
+              <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50" @click="scrollToSection('book-consultation')">
+                <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
+                Заявете Консултация
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -709,6 +826,84 @@
     </div>
   </section>
 
+  <!-- Team Section -->
+  <section class="py-24 bg-white" id="team">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:users" class="w-4 h-4 mr-1" /> УПРАВЛЯВАЩ ЕКИП
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Запознайте се с<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Нашия Екип</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Екип от професионалисти, посветени на създаването на иновативни AI решения за вашия бизнес
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <!-- Team Member 1 -->
+          <div class="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+                alt="Георги Кирилов" 
+                class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-navy-900 mb-1">Георги Кирилов</h3>
+              <p class="text-blue-600 font-medium mb-3">Основател & CTO</p>
+              <p class="text-gray-600 mb-4">Технологичен предприемач с над 10 години опит в разработката на софтуер и AI решения.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1598550874175-4d0ef436c909?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+                alt="Вергиния Накова" 
+                class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-navy-900 mb-1">Вергиния Накова</h3>
+              <p class="text-blue-600 font-medium mb-3">Съосновател & CЕO</p>
+              <p class="text-gray-600 mb-4">Експерт по бизнес операции и развитие с фокус върху оптимизация на процеси и растеж.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+                alt="Светлин Наков" 
+                class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-navy-900 mb-1">Светлин Наков</h3>
+              <p class="text-blue-600 font-medium mb-3">Стратегическо развитие</p>
+              <p class="text-gray-600 mb-4">Технологичен визионер и предприемач с над 20 години опит в образованието и софтуерната индустрия.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center">
+          <div class="flex flex-col items-center justify-center">
+            <Icon name="lucide:users" class="w-12 h-12 mb-4" />
+            <h3 class="text-2xl font-bold mb-4">Присъединете се към нашия екип</h3>
+            <p class="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+              Търсим талантливи професионалисти, които споделят нашата визия за иновации, базирани на AI
+            </p>
+            <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50 px-8">
+              <Icon name="lucide:briefcase" class="w-5 h-5 mr-2" />
+              Напишете ни съобщение
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Floating Bottom Navigation -->
   <div class="hidden md:fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-transform duration-300 hover:-translate-y-1">
     <div class="bg-white/80 backdrop-blur-lg shadow-lg rounded-full py-3 px-4 flex items-center space-x-2">
@@ -724,6 +919,8 @@
         <button @click="scrollToSection('services')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">УСЛУГИ</button>
         <button @click="scrollToSection('how-it-works')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">КАК РАБОТИМ</button>
         <button @click="scrollToSection('faq')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">ЧЗВ</button>
+        <button @click="scrollToSection('contacts')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">КОНТАКТИ</button>
+        <button @click="scrollToSection('team')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">ЕКИП</button>
       </nav>
 
       <div class="h-4 w-px bg-gray-300 mx-2"></div>
@@ -762,6 +959,8 @@ onMounted(() => {
     'services': 'services',
     'how-it-works': 'how-it-works',
     'faq': 'faq',
+    'contacts': 'contacts',
+    'team': 'team',
     'book-consultation': 'book-consultation'
   };
   
