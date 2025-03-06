@@ -13,7 +13,7 @@
     <header class="bg-transparent py-6 relative z-10">
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-center">
-          <img src="/logo.png" alt="Empower Studio" class="h-12 w-auto rounded-xl" />
+          <img src="/logo2.png" alt="Empower Studio" class="h-10 w-auto rounded-xl" />
         </div>
       </div>
     </header>
@@ -46,14 +46,18 @@
 
           <div class="text-center">
             <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">НА ДОВЕРИЕ ОТ ЛИДЕРИТЕ В ИНДУСТРИЯТА</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
-              <Icon name="logos:snowflake" class="h-6 w-auto mx-3" />
-              <Icon name="logos:cactus" class="h-6 w-auto mx-3" />
-              <Icon name="logos:vision" class="h-6 w-auto mx-3" />
-              <Icon name="logos:luminous" class="h-6 w-auto mx-3" />
-              <Icon name="logos:pronature" class="h-6 w-auto mx-3" />
-              <Icon name="logos:recharge" class="h-6 w-auto mx-3" />
-            </div>
+            <Marquee class="marquee-logo-container" pauseOnHover>
+              <img src="/images/logos/bezbroker.svg" alt="Bezbroker" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/diana.png" alt="Diana" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/flataway.svg" alt="FlatAway" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/intercars.svg" alt="InterCars" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/mck.png" alt="MCK" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/midland.png" alt="Midland" class="h-9 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/nauchi.png" alt="Nauchi" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/nibnab.svg" alt="NibNab" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/srv.svg" alt="SRV" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+              <img src="/images/logos/zazemiata.png" alt="Za Zemiata" class="h-8 w-auto grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" />
+            </Marquee>
           </div>
         </div>
       </div>
@@ -904,5 +908,20 @@ button:active, a:active {
   background: linear-gradient(to right, #2563eb, #38bdf8);
   z-index: 100;
   width: var(--scroll-width, 0%);
+}
+
+/* Marquee logo styles */
+.marquee-logo-container {
+  --duration: 40s;
+  padding: 1.5rem 0;
+}
+
+.marquee-logo-container img {
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  margin: 0 2rem;
+}
+
+.marquee-logo-container img:hover {
+  transform: scale(1.2);
 }
 </style>
