@@ -1,825 +1,908 @@
 <template>
-  <main class="min-h-screen bg-white relative">
-    <!-- Light Bar -->
-    <div class="absolute inset-0 w-full overflow-hidden pointer-events-none -translate-y-5">
-      <!-- <LightBar /> -->
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator"></div>
+
+  <!-- Combined Header and Hero Background -->
+  <div class="bg-gradient-to-b from-blue-50 to-white relative">
+    <!-- Dot pattern background -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0" style="background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 16px 16px;"></div>
     </div>
 
     <!-- Navigation -->
-    <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50">
-      <FloatingDock
-        :items="[
-          { title: 'Статистика', icon: 'lucide:chart-bar', href: '#stats' },
-          { title: 'Проблеми', icon: 'lucide:alert-circle', href: '#problems' },
-          { title: 'Решения', icon: 'lucide:lightbulb', href: '#solutions' },
-          { title: 'Примери', icon: 'lucide:folder', href: '#case-studies' },
-          { title: 'Процес', icon: 'lucide:git-branch', href: '#process' },
-          { title: 'Запазете консултация', icon: 'lucide:calendar', href: '#consultation' }
-        ]"
-        desktop-class-name="w-full"
-        mobile-class-name="fixed bottom-4 right-4"
-      />
+    <header class="bg-transparent py-6 relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-center">
+          <img src="/logo.png" alt="Empower Studio" class="h-12 w-auto rounded-xl" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+      <div class="container mx-auto px-4 py-20">
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-6">
+            <Icon name="lucide:zap" class="w-4 h-4 mr-1" /> AI РЕШЕНИЯ ЗА КОРПОРАЦИИ
+          </Badge>
+          
+          <h1 class="text-5xl md:text-6xl font-bold mb-6 text-navy-900">
+            Бъдещето на<br />
+            Бизнеса Започва с<br />
+            AI & Автоматизация
+            <Icon name="sparkles" class="inline-block w-8 h-8 text-blue-500 ml-2" />
+          </h1>
+          
+          <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Спестете време, подобрете ефективността и вземайте<br />
+            по-умни решения с AI решения, персонализирани за вашия бизнес
+          </p>
+
+          <div class="mb-20">
+            <Button size="lg" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
+              Планирайте Бизнес Консултация
+            </Button>
+          </div>
+
+          <div class="text-center">
+            <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">НА ДОВЕРИЕ ОТ ЛИДЕРИТЕ В ИНДУСТРИЯТА</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
+              <Icon name="logos:snowflake" class="h-6 w-auto mx-3" />
+              <Icon name="logos:cactus" class="h-6 w-auto mx-3" />
+              <Icon name="logos:vision" class="h-6 w-auto mx-3" />
+              <Icon name="logos:luminous" class="h-6 w-auto mx-3" />
+              <Icon name="logos:pronature" class="h-6 w-auto mx-3" />
+              <Icon name="logos:recharge" class="h-6 w-auto mx-3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Why Empower Studio Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:rocket" class="w-4 h-4 mr-1" /> УСКОРЕНО РАЗВИТИЕ
+          </Badge>
+          <h2 class="text-4xl font-bold text-navy-900">
+            Защо Empower Studio?<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Несравнима Скорост & Прецизност</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="glass-card p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                <Icon name="lucide:timer" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-3">Ускорено Развитие</h3>
+              <p class="text-gray-600">
+                Нашият усъвършенстван процес на разработка, базиран на AI, доставя бизнес решения с безпрецедентна скорост, поставяйки нови стандарти в индустрията.
+              </p>
+            </div>
+            <div class="mt-auto">
+              <div class="flex items-center text-sm text-blue-600">
+                <Icon name="lucide:trending-up" class="w-4 h-4 mr-2" />
+                <span>Традиционно: Месеци | Ние: Седмици</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                <Icon name="lucide:target" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-3">Корпоративна Прецизност</h3>
+              <p class="text-gray-600">
+                Разработката, подобрена с AI, гарантира както скорост, така и качество, предоставяйки решения, които отговарят на най-високите корпоративни стандарти.
+              </p>
+            </div>
+            <div class="mt-auto">
+              <div class="flex items-center text-sm text-blue-600">
+                <Icon name="lucide:shield-check" class="w-4 h-4 mr-2" />
+                <span>Качество на Корпоративно Ниво</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-2xl">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <h4 class="text-3xl font-bold mb-2">2x</h4>
+              <p class="text-sm opacity-90">По-Бързо Развитие</p>
+            </div>
+            <div class="text-center">
+              <h4 class="text-3xl font-bold mb-2">50%</h4>
+              <p class="text-sm opacity-90">Оптимизация на Ресурсите</p>
+            </div>
+            <div class="text-center">
+              <h4 class="text-3xl font-bold mb-2">24/7</h4>
+              <p class="text-sm opacity-90">Корпоративна Поддръжка</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-lg font-medium text-gray-600 mb-6">
+            Готови ли сте да ускорите вашата дигитална трансформация?
+          </p>
+          <Button size="lg" class="bg-black text-white hover:bg-gray-900" @click="scrollToSection('book-consultation')">
+            Планирайте Корпоративна Консултация
+          </Button>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Hero and Video Combined Section -->
-    <section class="relative z-10 overflow-hidden">
-      <!-- Background Pattern -->
-      <div class="absolute inset-0 w-full h-full">
-        <DotPattern :width="18" :height="18" :cy="1.5" :cr="1.5" class="opacity-[0.2] fill-zinc-400" />
-        <div class="absolute inset-0 h-[100%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0.95)_40%,rgba(255,255,255,0)_80%)]"></div>
-        <div class="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-zinc-100/80 to-transparent"></div>
-      </div>
-
-      <!-- Hero Content -->
-      <div class="pt-44 pb-20">
-        <div class="container mx-auto px-4 relative">
-          <div class="max-w-4xl mx-auto text-center">
-            <h1 class="bg-gradient-to-br from-zinc-600 via-zinc-800 to-zinc-400 bg-clip-text text-center text-4xl md:text-7xl font-medium mb-6 leading-tight tracking-tight text-transparent">
-              Автоматизирайте бизнес процесите си с изкуствен интелект
-            </h1>
-            <p class="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-12 leading-relaxed max-w-2xl mx-auto">
-              Помагаме на бизнесите да спестят време и да намалят разходите чрез автоматизиране на рутинни задачи с персонализирани решения, базирани на изкуствен интелект.
-            </p>
-            <GlowButton 
-              color="#silver" 
-              class="hover:scale-105 transition-transform duration-300"
-              @click.prevent="scrollToSection('consultation')"
-            >
-              <a href="#consultation" class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                  <Icon name="lucide:calendar" class="h-3 w-3" />
-                </div>
-                <span class="text-sm font-medium">Заявете безплатна консултация</span>
-              </a>
-            </GlowButton>
-          </div>
-        </div>
-      </div>
-
-      <ParticlesEffectSlim id="particles" />
-      <!-- Trusted By Section -->
-      <div class="py-12">
-        <div class="container mx-auto px-4">
-          <div class="max-w-6xl mx-auto">
-            <Marquee :pause-on-hover="true" class="py-4">
-              <a href="https://www.suera.com" target="_blank">
-                <img src="/images/logos/logo-stroke.svg" alt="suera" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.bezbroker.com" target="_blank">
-                <img src="/images/logos/bezbroker.svg" alt="bezbroker" class="h-6 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-
-              <a href="https://www.srv.bg" target="_blank">
-                <img src="/images/logos/srv.svg" alt="srv" class="h-6 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.midland.bg" target="_blank">
-                <img src="/images/logos/midland.png" alt="midland" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.mck.bg" target="_blank">
-                <img src="/images/logos/mck.png" alt="mck" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.diana-ltd.com" target="_blank">
-                <img src="/images/logos/diana.png" alt="diana" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.flataway.com" target="_blank">
-                <img src="/images/logos/flataway.svg" alt="flataway" class="h-6 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.nibnab.ai" target="_blank">
-                <img src="/images/logos/nibnab.svg" alt="nibnab" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.intercars.eu" target="_blank">
-                <img src="/images/logos/intercars.svg" alt="intercars" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <a href="https://www.garantburgas.com" target="_blank">
-                <span class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" >Garant Burgas </span>
-              </a>
-              <a href="https://www.zazemiata.org" target="_blank">
-                <img src="/images/logos/zazemiata.png" alt="zazemiata" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              </a>
-              <!-- 
-              <img src="/images/logos/apple-black-logo-svgrepo-com.svg" alt="Apple" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              <img src="/images/logos/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              <img src="/images/logos/youtube-icon-logo-svgrepo-com.svg" alt="YouTube" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              <img src="/images/logos/gmail-icon-logo-svgrepo-com.svg" alt="Gmail" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-              <img src="/images/logos/tiktok-icon-white-1-logo-svgrepo-com.svg" alt="TikTok" class="h-10 mx-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /> -->
-            </Marquee>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" ref="statsRef" class="py-20 bg-neutral-50 dark:bg-neutral-900">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-              <div class="flex items-start justify-between mb-4">
-                <Icon name="lucide:clock" class="size-10 text-neutral-600 my-auto" />
-                <div class="flex items-center gap-2 items-center">
-                  <h3 class="text-5xl font-bold">38%</h3>
-                  <Icon name="solar:arrow-right-up-bold" class="size-7 mt-1" />
-                </div>
-              </div>
-              <h4 class="font-medium mb-2 text-lg">Спестено време от рутинни задачи</h4>
-              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Автоматизирайте повтарящите се процеси и освободете екипа си за дейности с висока добавена стойност</p>
-            </div>
-            <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-              <div class="flex items-start justify-between mb-4">
-                <Icon name="lucide:trending-up" class="size-10 text-neutral-600 my-auto" />
-                <div class="flex items-center gap-2 items-center">
-                  <h3 class="text-5xl font-bold">23%</h3>
-                  <Icon name="solar:arrow-right-up-bold" class="size-7 mt-1" />
-                </div>
-              </div>
-              <h4 class="font-medium mb-2 text-lg">Повишен капацитет на екипа</h4>
-              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Генерирайте повече приходи със същия екип чрез интелигентна автоматизация</p>
-            </div>
-            <div class="p-8 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-black dark:via-neutral-900/50 dark:to-neutral-900 rounded-xl shadow-lg card-hover" @mousemove="cardHover">
-              <div class="flex items-start justify-between mb-4">
-                <Icon name="lucide:piggy-bank" class="size-10 text-neutral-600 my-auto" />
-                <div class="flex items-center gap-2 items-center">
-                  <h3 class="text-5xl font-bold">19%</h3>
-                  <Icon name="solar:arrow-right-up-bold" class="size-7 mt-1" />
-                </div>
-              </div>
-              <h4 class="font-medium mb-2 text-lg">Намалени разходи</h4>
-              <p class="text-neutral-600 dark:text-neutral-400 text-sm">Редуцирайте оперативните разходи чрез повишена ефективност и оптимизиране на софтуерните решения</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section id="problems" ref="problemRef">
-      <BusinessProblemsCarousel />
-    </section>
-
-    <!-- Solution Section -->
-    <section id="solutions">
-      <ServicesSection />
-    </section>
-
-    <!-- Case Studies Section -->
-    <section id="case-studies" ref="caseStudiesRef" class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-center">Резултати на нашите клиенти</h2>
-          
-          <!-- Bento Grid Layout -->
-          <div class="grid md:auto-rows-[20rem] grid-cols-1 md:grid-cols-3 gap-5 max-w-7xl mx-auto">
-            
-            <!-- MealMaster - Spans 2 columns -->
-            <div class="row-span-1 md:col-span-2 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
-              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-15-22-MealMaster-Home.png" alt="AI Персонализирани хранителни планове" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=MealMaster'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div class="p-4 text-white">
-                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
-                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
-                      <span>45%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="font-bold text-xl text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
-                    AI Персонализирани хранителни планове
-                  </div>
-                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
-                    Персонализирана диета според вашите нужди и предпочитания с акцент върху по-бързо създаване на хранителни планове
-                  </div>
-                </div>
-                
-                <a href="https://www.mealmasterbot.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
-                  <span>Посетете сайта</span>
-                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            
-            <!-- Икономически секторен анализ -->
-            <div class="row-span-1 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
-              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-20-24-Garant-Burgas-Анализи-Оценки-Контрол.png" alt="Икономически секторен анализ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Economic+Analysis'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div class="p-4 text-white">
-                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
-                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
-                      <span>85%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="font-bold text-lg text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
-                    Икономически секторен анализ
-                  </div>
-                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
-                    По-бързо извличане на данни и инсайти за икономически сектори и компании
-                  </div>
-                </div>
-                
-                <a href="https://borsa.garantburgas.com/sectorRanking?origin_code=bg" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
-                  <span>Посетете сайта</span>
-                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            
-            <!-- Социална мрежа за пенсионери -->
-            <div class="row-span-1 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
-              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/09/pensa.png" alt="Социална мрежа за пенсионери" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Pensa+Club'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div class="p-4 text-white">
-                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
-                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
-                      <span>78%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="font-bold text-lg text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
-                    Социална мрежа за пенсионери
-                  </div>
-                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
-                    Увеличение на социалните взаимодействия между възрастни хора
-                  </div>
-                </div>
-                
-                <a href="https://www.pensa.club/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
-                  <span>Посетете сайта</span>
-                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            
-            <!-- Рецептурник - Spans 2 columns -->
-            <div class="row-span-1 md:col-span-2 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
-              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/10/Screenshot-2024-10-17-at-19-22-29-Kitchen-Helper.png" alt="Рецептурник с ястия" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Kitchen+Helper'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div class="p-4 text-white">
-                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
-                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
-                      <span>42%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="font-bold text-xl text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
-                    Рецептурник с ястия за всеки ден
-                  </div>
-                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
-                    Колекция от рецепти с автоматизирано планиране на храненията, спестяващо време на потребителите
-                  </div>
-                </div>
-                
-                <a href="https://kitchenhelper.eognyanov.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
-                  <span>Посетете сайта</span>
-                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            
-            <!-- Календар за моторни спортове - Spans 2 columns -->
-            <div class="row-span-1 md:col-span-2 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
-              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/03/cars.png" alt="Календар за моторни спортове" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=RaceFanatic'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div class="p-4 text-white">
-                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
-                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
-                      <span>68%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="font-bold text-xl text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
-                    Календар за моторни спортове
-                  </div>
-                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
-                    Агрегатор на състезания и събития от света на моторния спорт, подобряващ информираността на феновете
-                  </div>
-                </div>
-                
-                <a href="https://racefanatic.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
-                  <span>Посетете сайта</span>
-                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            
-            <!-- Маркетплейс за настолни игри -->
-            <div class="row-span-1 rounded-xl group group/bento hover:shadow-xl transition duration-200 shadow-lg dark:shadow-none p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden card-hover" @mousemove="cardHover">
-              <div class="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
-                <img src="https://costeffective.software/wp-content/uploads/2024/03/cardflow.png" alt="Маркетплейс за настолни игри" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=CardFlow'; this.parentElement.classList.add('flex', 'items-center', 'justify-center');" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div class="p-4 text-white">
-                    <div class="inline-flex items-center gap-1.5 bg-primary-500 rounded-full px-3 py-1 text-xs font-medium text-white">
-                      <Icon name="lucide:arrow-up-right" class="h-3 w-3" />
-                      <span>93%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="group-hover/bento:translate-x-2 transition duration-200 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="font-bold text-lg text-neutral-800 dark:text-neutral-200 mb-2 mt-2">
-                    Маркетплейс за настолни игри
-                  </div>
-                  <div class="font-normal text-neutral-600 dark:text-neutral-300">
-                    По-ефективна размяна на карти и компоненти от настолни игри
-                  </div>
-                </div>
-                
-                <a href="https://cardflow.market/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
-                  <span>Посетете сайта</span>
-                  <Icon name="lucide:arrow-right" class="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" ref="processRef" class="py-20 bg-neutral-50 dark:bg-neutral-900 relative overflow-hidden">
-      <!-- Sophisticated spotlight effects in grayscale -->
-      <div class="absolute inset-0 w-full h-full pointer-events-none">
-        <!-- Main spotlight gradient in grayscale -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[50%] rounded-full bg-gradient-to-br from-zinc-200/40 via-zinc-300/30 to-zinc-100/20 dark:from-zinc-800/30 dark:via-zinc-700/20 dark:to-zinc-900/10 blur-[120px] opacity-70"></div>
-        <!-- Secondary diagonal spotlight for added depth -->
-        <div class="absolute top-[30%] right-[20%] w-[40%] h-[30%] rounded-full bg-zinc-200/30 dark:bg-zinc-700/20 blur-[80px] opacity-50"></div>
-        <!-- Subtle noise texture overlay -->
-        <div class="absolute inset-0 backdrop-filter backdrop-contrast-[1.01] mix-blend-overlay opacity-[0.03]" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMjAwdjIwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');"></div>
-      </div>
+  <!-- What We Do Section -->
+  <section class="py-24 bg-white" id="services">
+    <div class="container mx-auto px-4">
+      <div class="relative z-10 text-center max-w-4xl mx-auto">
+        <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+          <Icon name="lucide:boxes" class="w-4 h-4 mr-1" /> БИЗНЕС РЕШЕНИЯ
+        </Badge>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+          Стратегическо AI Внедряване<br/>
+          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Бизнес Съвършенство</span>
+        </h2>
         
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-6xl mx-auto">
-          <!-- Sophisticated gradient text with subtle shimmer effect -->
-          <h2 class="text-4xl font-bold mb-16 text-center relative">
-            <span class="bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-800 dark:from-white dark:via-zinc-300 dark:to-zinc-200 inline-block text-transparent bg-clip-text relative z-10">Как работим с вас</span>
-            <!-- Subtle shimmer effect overlay -->
-            <span class="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-transparent via-zinc-300/10 to-transparent dark:from-transparent dark:via-zinc-600/10 dark:to-transparent bg-[length:200%_100%] animate-shimmer-slow z-20"></span>
-          </h2>
-          
-            <div class="relative">
-            <!-- Timeline Line with Sophisticated Effects - Modified to start at first dot and end at last dot -->
-            <div class="absolute left-1/2 -translate-x-1/2 hidden md:block" style="top: 90px; bottom: 90px;">
-              <!-- Primary line with gradient -->
-              <div class="absolute inset-0 bg-gradient-to-b from-zinc-400/70 via-zinc-500/60 to-zinc-600/50 dark:from-zinc-500/50 dark:via-zinc-400/40 dark:to-zinc-300/30" style="width: 1px; left: 50%; transform: translateX(-50%);"></div>
-              
-              <!-- Glass effect layer -->
-              <div class="absolute inset-0 w-[2px] -left-[0.5px] backdrop-blur-[1px]"></div>
-              
-              <!-- Single, refined animated particle -->
-              <div class="absolute w-[8px] h-[8px] left-1/2 -translate-x-1/2 rounded-full bg-white dark:bg-zinc-100 
-                shadow-[0_0_15px_5px_rgba(255,255,255,0.8),0_0_20px_8px_rgba(125,125,128,0.3)] 
-                dark:shadow-[0_0_15px_5px_rgba(255,255,255,0.7),0_0_20px_8px_rgba(200,200,220,0.3)] 
-                animate-timelineFlow z-10"></div>
+        <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+          Трансформирайте бизнес операциите си с нашите AI решения от най-високо ниво,<br/>
+          проектирани за безпроблемна интеграция и максимална ефективност
+        </p>
+
+        <div class="grid gap-8">
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:workflow" class="w-8 h-8 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6 text-left">
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">AI Автоматизация на Работния Процес</h3>
+                <p class="text-gray-600">Трансформирайте бизнес процесите с интелигентни системи за автоматизация.</p>
+              </div>
             </div>
-            
-            <!-- Timeline Steps -->
-            <div class="space-y-12 md:space-y-32">
-              <!-- Step 1 -->
-              <div class="relative group">
-                <div class="flex flex-col md:flex-row items-center">
-                  <!-- Timeline Dot with sophisticated effects -->
-                  <div class="absolute left-1/2 w-12 h-12 bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-900 dark:to-black rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center -translate-x-1/2 z-10 hidden md:flex shadow-[0_0_15px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05),inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.25)] dark:group-hover:shadow-[0_0_25px_rgba(255,255,255,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)]">
-                    <!-- Glass effect rim -->
-                    <div class="absolute inset-0 rounded-full backdrop-blur-[0.5px] opacity-30"></div>
-                    
-                    <!-- Pulse animation with more realistic physics -->
-                    <div class="absolute inset-[2px] rounded-full border border-zinc-200/30 dark:border-zinc-700/30 opacity-0 group-hover:opacity-100 group-hover:animate-pulse-outward"></div>
-                    
-                    <!-- Number with subtle gradient and shadow -->
-                    <span class="text-xl font-bold relative bg-gradient-to-br from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 text-transparent bg-clip-text drop-shadow-sm">01</span>
-                    
-                    <!-- Inner subtle glow -->
-                    <div class="absolute inset-[4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10 dark:to-transparent"></div>
-                  </div>
-                  
-                  <!-- Left Content (for desktop) with slide-in animation and enhanced shadow -->
-                  <div class="hidden md:block md:w-1/2 pr-16 text-right transition-all duration-700 opacity-0 translate-x-[-20px] timeline-reveal">
-                    <h3 class="text-2xl font-bold mb-3 relative">
-                      <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Анализ</span>
-                      <!-- Subtle underline with animation -->
-                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 origin-left transition-all duration-500 ease-out"></span>
-                    </h3>
-                    <p class="text-zinc-600 dark:text-zinc-400">Задълбочен анализ на ключовите области за подобрение</p>
-                  </div>
-                  
-                  <!-- Mobile Content -->
-                  <div class="md:hidden w-full p-6 bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black rounded-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover transition-all duration-300 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
-                    <div class="flex items-center gap-4 mb-3">
-                      <div class="w-10 h-10 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_10px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.6)] dark:shadow-[0_0_10px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.1)]">
-                        <span class="text-lg font-bold text-zinc-800 dark:text-zinc-200">01</span>
-                      </div>
-                      <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Анализ</h3>
-                    </div>
-                    <p class="text-zinc-600 dark:text-zinc-400">Задълбочен анализ на ключовите области за подобрение</p>
-                  </div>
-                  
-                  <!-- Right Content with enhanced design -->
-                  <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
-                    <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
-                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
-                        <Icon name="lucide:search" class="h-10 w-10 text-zinc-600 dark:text-zinc-300 group-hover/card:text-zinc-800 dark:group-hover/card:text-zinc-100 transition-colors duration-300" />
-                      </div>
-                      <p class="text-zinc-600 dark:text-zinc-400 group-hover/card:text-zinc-700 dark:group-hover/card:text-zinc-300 transition-colors duration-300">Изследваме вашите работни процеси, идентифицираме проблемните звена и оценяваме възможностите за оптимизация</p>
-                    </div>
-                  </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:code-2" class="w-8 h-8 text-blue-600" />
                 </div>
               </div>
-              
-              <!-- Step 2 -->
-              <div class="relative group">
-                <div class="flex flex-col md:flex-row items-center">
-                  <!-- Timeline Dot with sophisticated effects -->
-                  <div class="absolute left-1/2 w-12 h-12 bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-900 dark:to-black rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center -translate-x-1/2 z-10 hidden md:flex shadow-[0_0_15px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05),inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.25)] dark:group-hover:shadow-[0_0_25px_rgba(255,255,255,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)]">
-                    <!-- Glass effect rim -->
-                    <div class="absolute inset-0 rounded-full backdrop-blur-[0.5px] opacity-30"></div>
-                    
-                    <!-- Pulse animation with more realistic physics -->
-                    <div class="absolute inset-[2px] rounded-full border border-zinc-200/30 dark:border-zinc-700/30 opacity-0 group-hover:opacity-100 group-hover:animate-pulse-outward"></div>
-                    
-                    <!-- Number with subtle gradient and shadow -->
-                    <span class="text-xl font-bold relative bg-gradient-to-br from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 text-transparent bg-clip-text drop-shadow-sm">02</span>
-                    
-                    <!-- Inner subtle glow -->
-                    <div class="absolute inset-[4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10 dark:to-transparent"></div>
-                  </div>
-                  
-                  <!-- Left Content with enhanced design -->
-                  <div class="hidden md:block md:w-1/2 pr-16 text-right transition-all duration-700 opacity-0 translate-x-[-20px] timeline-reveal">
-                    <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
-                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
-                        <Icon name="lucide:code" class="h-10 w-10 text-zinc-600 dark:text-zinc-300 group-hover/card:text-zinc-800 dark:group-hover/card:text-zinc-100 transition-colors duration-300" />
-                      </div>
-                      <p class="text-zinc-600 dark:text-zinc-400 group-hover/card:text-zinc-700 dark:group-hover/card:text-zinc-300 transition-colors duration-300">Разработваме персонализирано решение, което отговаря на конкретните нужди на вашия бизнес и измерваме първоначалните резултати</p>
-                    </div>
-                  </div>
-                  
-                  <!-- Mobile Content -->
-                  <div class="md:hidden w-full p-6 bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black rounded-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover transition-all duration-300 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
-                    <div class="flex items-center gap-4 mb-3">
-                      <div class="w-10 h-10 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_10px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.6)] dark:shadow-[0_0_10px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.1)]">
-                        <span class="text-lg font-bold text-zinc-800 dark:text-zinc-200">02</span>
-                      </div>
-                      <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Разработка</h3>
-                    </div>
-                    <p class="text-zinc-600 dark:text-zinc-400">Създаване на първоначално решение и измерване на резултатите</p>
-                  </div>
-                  
-                  <!-- Right Content (for desktop) with slide-in animation and enhanced shadow -->
-                  <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
-                    <h3 class="text-2xl font-bold mb-3 relative">
-                      <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Разработка</span>
-                      <!-- Subtle underline with animation -->
-                      <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 origin-left transition-all duration-500 ease-out"></span>
-                    </h3>
-                    <p class="text-zinc-600 dark:text-zinc-400">Създаване на първоначално решение и измерване на резултатите</p>
-                  </div>
+              <div class="ml-6 text-left">
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">Разработка на Персонализиран Софтуер</h3>
+                <p class="text-gray-600">Бизнес решения, проектирани специално за вашите нужди.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:git-merge" class="w-8 h-8 text-blue-600" />
                 </div>
               </div>
-              
-              <!-- Step 3 -->
-              <div class="relative group">
-                <div class="flex flex-col md:flex-row items-center">
-                  <!-- Timeline Dot with sophisticated effects -->
-                  <div class="absolute left-1/2 w-12 h-12 bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-900 dark:to-black rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center -translate-x-1/2 z-10 hidden md:flex shadow-[0_0_15px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05),inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.25)] dark:group-hover:shadow-[0_0_25px_rgba(255,255,255,0.1),inset_0_0_0_1px_rgba(255,255,255,0.1)]">
-                    <!-- Glass effect rim -->
-                    <div class="absolute inset-0 rounded-full backdrop-blur-[0.5px] opacity-30"></div>
-                    
-                    <!-- Pulse animation with more realistic physics -->
-                    <div class="absolute inset-[2px] rounded-full border border-zinc-200/30 dark:border-zinc-700/30 opacity-0 group-hover:opacity-100 group-hover:animate-pulse-outward"></div>
-                    
-                    <!-- Number with subtle gradient and shadow -->
-                    <span class="text-xl font-bold relative bg-gradient-to-br from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 text-transparent bg-clip-text drop-shadow-sm">03</span>
-                    
-                    <!-- Inner subtle glow -->
-                    <div class="absolute inset-[4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10 dark:to-transparent"></div>
-                  </div>
-                  
-                  <!-- Left Content (for desktop) with slide-in animation and enhanced shadow -->
-                  <div class="hidden md:block md:w-1/2 pr-16 text-right transition-all duration-700 opacity-0 translate-x-[-20px] timeline-reveal">
-                    <h3 class="text-2xl font-bold mb-3 relative">
-                      <span class="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Внедряване</span>
-                      <!-- Subtle underline with animation -->
-                      <span class="absolute bottom-0 right-0 w-0 h-[1px] bg-zinc-400 dark:bg-zinc-500 origin-left transition-all duration-500 ease-out"></span>
-                    </h3>
-                    <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работата на вашия екип и проследяване на ефективността</p>
-                  </div>
-                  
-                  <!-- Mobile Content -->
-                  <div class="md:hidden w-full p-6 bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black rounded-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover transition-all duration-300 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
-                    <div class="flex items-center gap-4 mb-3">
-                      <div class="w-10 h-10 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_10px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.6)] dark:shadow-[0_0_10px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.1)]">
-                        <span class="text-lg font-bold text-zinc-800 dark:text-zinc-200">03</span>
-                      </div>
-                      <h3 class="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-200 dark:to-zinc-400 inline-block text-transparent bg-clip-text">Внедряване</h3>
-                    </div>
-                    <p class="text-zinc-600 dark:text-zinc-400">Интегриране на решението в работния процес на вашия екип, обучаваме служителите и осигуряваме постоянно наблюдение и подобрения</p>
-                  </div>
-                  
-                  <!-- Right Content with enhanced design -->
-                  <div class="hidden md:block md:w-1/2 pl-16 transition-all duration-700 opacity-0 translate-x-[20px] timeline-reveal">
-                    <div class="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-black p-6 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.03)] card-hover group/card transition-all duration-300 hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.05)]" @mousemove="cardHover">
-                      <div class="bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_2px_8px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_8px_rgba(0,0,0,0.2)] group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_4px_12px_rgba(0,0,0,0.1)] dark:group-hover/card:shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_4px_12px_rgba(0,0,0,0.3)]">
-                        <Icon name="lucide:upload" class="h-10 w-10 text-zinc-600 dark:text-zinc-300 group-hover/card:text-zinc-800 dark:group-hover/card:text-zinc-100 transition-colors duration-300" />
-                      </div>
-                      <p class="text-zinc-600 dark:text-zinc-400 group-hover/card:text-zinc-700 dark:group-hover/card:text-zinc-300 transition-colors duration-300">Внедряваме решението в работния процес на вашия екип, обучаваме служителите и осигуряваме постоянно наблюдение и подобрения</p>
-                    </div>
-                  </div>
-                </div>
+              <div class="ml-6 text-left">
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">Системна Интеграция</h3>
+                <p class="text-gray-600">Безпроблемна интеграция с вашата съществуваща бизнес инфраструктура.</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Final CTA Section -->
-    <section id="consultation" class="py-24">
-      <div class="container mx-auto px-5 md:px-10">
-        <div class="max-w-4xl mx-auto mb-16">
-          <Badge variant="secondary" class="mb-4 mx-auto flex justify-center rounded-full w-24">ЗАПОЧНЕТЕ</Badge>
-          <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 text-center">
-            Трансформирайте бизнеса си с интелигентна автоматизация
+        <div class="mt-20">
+          <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+            <div class="flex items-center justify-center mb-8">
+              <Icon name="lucide:clock" class="w-8 h-8 mr-3" />
+              <h3 class="text-2xl font-bold">Бързо Внедряване за Предприятия</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4">
+                  <Icon name="lucide:clipboard-check" class="w-8 h-8" />
+                </div>
+                <h4 class="font-bold mb-2">Фаза на Проучване</h4>
+                <p class="text-sm opacity-90">Стратегически Анализ</p>
+              </div>
+              
+              <div class="text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4">
+                  <Icon name="lucide:code-2" class="w-8 h-8" />
+                </div>
+                <h4 class="font-bold mb-2">Разработка</h4>
+                <p class="text-sm opacity-90">Гъвкаво Внедряване</p>
+              </div>
+              
+              <div class="text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4">
+                  <Icon name="lucide:check-circle" class="w-8 h-8" />
+                </div>
+                <h4 class="font-bold mb-2">Внедряване</h4>
+                <p class="text-sm opacity-90">Бизнес Интеграция</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <Button size="lg" class="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
+              <Icon name="lucide:calendar" class="w-6 h-6 mr-2" />
+              Планирайте Бизнес Консултация
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem We Solve Section -->
+  <section class="py-24 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="relative z-10 text-center max-w-4xl mx-auto">
+        <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+          <Icon name="lucide:lightbulb" class="w-4 h-4 mr-1" /> ВЪЗМОЖНОСТИ ЗА ОПТИМИЗАЦИЯ
+        </Badge>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+          Трансформирайте Своя Бизнес<br/>
+          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Максимизирайте ROI с AI</span>
+        </h2>
+        
+        <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+          Остарелите системи и ръчните процеси забавят вашия бизнес.<br/>
+          Време е да прегърнете бъдещето на бизнес автоматизацията.
+        </p>
+
+        <div class="glass-card p-8 mb-12 hover:scale-[1.02] transition-transform duration-300">
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="text-left">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl mb-6 flex items-center justify-center">
+                <Icon name="lucide:alert-circle" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-2xl font-bold text-navy-900 mb-6">Текущи Предизвикателства</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Ресурсоемки ръчни процеси, намаляващи продуктивността</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Неефективни системи за управление и обработка на данни</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Ограничена мащабируемост със сегашната инфраструктура</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:x-circle" class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />
+                  <span>Оперативни затруднения, влияещи на растежа на бизнеса</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="text-left">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl mb-6 flex items-center justify-center">
+                <Icon name="lucide:sparkles" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-2xl font-bold text-navy-900 mb-6">Нашето Решение</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>AI автоматизация на повтарящи се задачи</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Интелигентна обработка на данни и анализи</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Мащабируема архитектура базирана в облака</span>
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <Icon name="lucide:check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Оптимизирани работни процеси</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center flex flex-col items-center">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Icon name="lucide:alert-circle" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 class="text-3xl font-bold mb-2">50%</h4>
+              <p class="text-sm opacity-90">Намаляване на Разходите</p>
+            </div>
+            <div class="text-center flex flex-col items-center">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Icon name="lucide:zap" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 class="text-3xl font-bold mb-2">10x</h4>
+              <p class="text-sm opacity-90">По-Бърза Обработка</p>
+            </div>
+            <div class="text-center flex flex-col items-center">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Icon name="lucide:clock" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 class="text-3xl font-bold mb-2">24/7</h4>
+              <p class="text-sm opacity-90">AI Поддръжка</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <Button size="lg" class="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
+            <Icon name="lucide:calendar" class="w-6 h-6 mr-2" />
+            Трансформирайте Своя Бизнес Днес
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-24 bg-white" id="how-it-works">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:git-branch" class="w-4 h-4 mr-1" /> ПРОЦЕС НА ВНЕДРЯВАНЕ
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Бизнес Внедряване<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Оптимизирано за Успех</span>
           </h2>
-          <p class="text-xl text-center text-neutral-700">
-            Развивайте бизнеса си по-бързо с решения на базата на изкуствен интелект от корпоративен клас, които ви спестяват време и средства.
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Нашата доказана методология осигурява бързо внедряване, запазвайки висококачествени бизнес стандарти
           </p>
         </div>
-        
-        <div class="max-w-5xl mx-auto">
-          <div class="bg-white rounded-3xl overflow-hidden">
-            <ClientOnly>
-              <iframe
-                src="https://calendly.com/gkkirilov/30?embed_domain=microsass&embed_type=Inline&hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=2563eb"
-                width="100%"
-                height="700"
-                frameborder="0"
-                title="Изберете дата и час - Empower Studio"
-                data-ready="true"
-              ></iframe>
-            </ClientOnly>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:search" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Стратегическа Оценка</h3>
+                <p class="text-gray-600">Обширен анализ на вашите бизнес изисквания и съществуваща инфраструктура.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Продължителност: 2-3 Дни</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                  <Icon name="lucide:clipboard-list" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Архитектура на Решението</h3>
+                <p class="text-gray-600">Детайлно техническо планиране и системен дизайн, оптимизиран за вашите нужди.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Продължителност: 2-3 Дни</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center">
+                  <Icon name="lucide:code-2" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Разработка & Тестване</h3>
+                <p class="text-gray-600">Бърза разработка с непрекъснато тестване и гарантиране на качеството.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Продължителност: 5-7 Дни</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center">
+                  <Icon name="lucide:rocket" class="w-6 h-6 text-blue-600" />
+                </div>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Внедряване & Интеграция</h3>
+                <p class="text-gray-600">Безпроблемно внедряване с цялостна системна оптимизация.</p>
+                <div class="mt-4 flex items-center text-sm text-blue-600">
+                  <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
+                  <span>Продължителност: 2-3 Дни</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center">
+          <div class="flex items-center justify-center mb-6">
+            <Icon name="lucide:clock-3" class="w-8 h-8 mr-3" />
+            <h3 class="text-2xl font-bold">График за Бизнес Внедряване</h3>
+          </div>
+          <p class="text-lg mb-8 opacity-90">От първоначалната оценка до пълното внедряване само за 2 седмици</p>
+          <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50" @click="scrollToSection('book-consultation')">
+            <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
+            Планирайте Консултация за Внедряване
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Can Benefit Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:users" class="w-4 h-4 mr-1" /> РЕШЕНИЯ ЗА ИНДУСТРИЯТА
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Бизнес Решения<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Всички Индустрии</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Персонализирани AI решения, проектирани за внедряване в бизнес мащаб в различни сектори
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:shopping-cart" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Електронна Търговия & Търговия на Дребно</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Автоматизирано управление на склада
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Оптимизация на обработката на поръчки
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Автоматизация на обслужването на клиенти
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:landmark" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Финансови Услуги</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Автоматизация на оценката на риска
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Обработка на транзакции
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Наблюдение на съответствието
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:heart-pulse" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Здравеопазване</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Управление на данните на пациентите
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Административна автоматизация
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                HIPAA съответствие
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
+              <Icon name="lucide:factory" class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Производство</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Оптимизация на производството
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Управление на веригата за доставки
+              </li>
+              <li class="flex items-center text-gray-600">
+                <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
+                Автоматизация на контрола на качеството
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+          <div class="text-center mb-8">
+            <Icon name="lucide:zap" class="w-12 h-12 mx-auto mb-4" />
+            <h3 class="text-2xl font-bold mb-4">Готови ли сте да Трансформирате Вашата Индустрия?</h3>
+            <p class="text-lg opacity-90 mb-8">Започнете с AI решения от най-високо ниво, създадени за вашия сектор</p>
+            <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50" @click="scrollToSection('book-consultation')">
+              <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
+              Планирайте Индустриална Консултация
+            </Button>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-white" id="faq">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:help-circle" class="w-4 h-4 mr-1" /> ЧЕСТО ЗАДАВАНИ ВЪПРОСИ
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
+            Често Задавани Въпроси<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Бизнес AI</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Получете отговори на често задавани въпроси за нашите AI бизнес решения
+          </p>
+        </div>
+
+        <div class="space-y-6 mb-16">
+          <div class="glass-card">
+            <Accordion type="single" collapsible class="divide-y divide-gray-100">
+              <AccordionItem value="item-1" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:git-merge" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">Процес на Интеграция</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">Нашите решения се интегрират безпроблемно с вашата съществуваща бизнес инфраструктура чрез нашата доказана интеграционна рамка. Ние се грижим за всички аспекти на процеса на интеграция, от първоначалната оценка до окончателното внедряване, осигурявайки минимално прекъсване на вашите операции.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:clock" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">График за Внедряване</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">Бизнес внедряването обикновено се извършва в рамките на 2 седмици, следвайки нашата оптимизирана методология. Това включва фази на оценка, разработка, тестване и внедряване, с ясни етапи и резултати на всеки етап.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:trending-up" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">ROI & Производителност</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">Нашите бизнес клиенти обикновено виждат възвръщаемост на инвестицията още през първото тримесечие чрез повишена ефективност и намалени оперативни разходи. Ние предоставяме подробни анализи и отчети за проследяване на подобренията в производителността и спестяванията на разходи.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" class="px-8 py-6">
+                <AccordionTrigger class="hover:no-underline">
+                  <div class="flex items-center text-left">
+                    <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
+                      <Icon name="lucide:shield" class="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span class="text-lg font-semibold text-navy-900">Сигурност & Съответствие</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent class="pt-4 pl-14">
+                  <p class="text-gray-600">Ние поддържаме най-високите стандарти за сигурност с мерки за защита от бизнес клас. Нашите решения са напълно съвместими с индустриалните разпоредби, включително GDPR, HIPAA и SOC 2, гарантирайки, че вашите данни остават сигурни и защитени.</p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 text-center">
+          <div class="flex items-center justify-center mb-6">
+            <Icon name="lucide:message-circle" class="w-8 h-8 text-blue-600 mr-3" />
+            <h3 class="text-2xl font-bold text-navy-900">Имате още въпроси?</h3>
+          </div>
+          <p class="text-lg text-gray-600 mb-8">Нашият екип за бизнес решения е тук, за да помогне</p>
+          <Button size="lg" class="bg-gradient-to-r from-blue-600 to-blue-400 text-white" @click="scrollToSection('book-consultation')">
+            <Icon name="lucide:calendar" class="w-5 h-5 mr-2" />
+            Планирайте Консултация
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-24 bg-gradient-to-b from-blue-50 to-white" id="book-consultation">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="mb-12">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:rocket" class="w-4 h-4 mr-1" /> ЗАПОЧНЕТЕ СЕГА
+          </Badge>
+          <h2 class="text-4xl font-bold text-navy-900">
+            Трансформирайте Вашия Бизнес<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">С Интелигентна Автоматизация</span>
+          </h2>
+        </div>
+        
+        <p class="text-xl mb-12 flex items-center justify-center">
+          <Icon name="lucide:trending-up" class="w-6 h-6 text-blue-600 mr-2" />
+          Ускорете растежа с AI решения от най-високо ниво
+        </p>
+
+        <div class="glass-card">
+          <iframe
+            src="https://calendly.com/gkkirilov/30?embed_domain=microsass&embed_type=Inline&hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=2563eb"
+            width="100%"
+            height="700"
+            frameborder="0"
+            title="Планирайте Бизнес Консултация - Empower Studio"
+            data-ready="true"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Bottom Navigation -->
+  <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-transform duration-300 hover:-translate-y-1">
+    <div class="bg-white/80 backdrop-blur-lg shadow-lg rounded-full py-3 px-4 flex items-center space-x-2">
+      <div class="flex items-center">
+        <NuxtLink to="#" class="hover:opacity-80 transition-opacity">
+          <img src="/logo.png" alt="Empower Studio" class="h-6 w-auto mr-2" />
+        </NuxtLink>
+      </div>
+
+      <div class="h-4 w-px bg-gray-300 mx-2"></div>
+
+      <nav class="flex items-center space-x-6">
+        <button @click="scrollToSection('services')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">УСЛУГИ</button>
+        <button @click="scrollToSection('how-it-works')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">КАК РАБОТИМ</button>
+        <button @click="scrollToSection('faq')" class="text-xs font-medium text-gray-600 hover:text-blue-600 transition-colors">ЧЗВ</button>
+      </nav>
+
+      <div class="h-4 w-px bg-gray-300 mx-2"></div>
+
+      <Button variant="default" class="bg-black text-white hover:bg-gray-900 text-xs px-4 py-2 transition-all duration-300 hover:scale-105" @click="scrollToSection('book-consultation')">
+        <Icon name="lucide:calendar" class="w-4 h-4 mr-1" />
+        Да поговорим
+      </Button>
+    </div>
+  </div>
 </template>
 
-<script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useIntersectionObserver } from '@vueuse/core'
+<script setup>
+// Initialize smooth scroll functionality
+import { onMounted, ref } from 'vue';
 
-// Navigation menu state
-const isMenuOpen = ref(false)
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
-
-// Mobile menu items with animation
-const menuItems = [
-  { label: 'Нашата работа', href: '/work' },
-  { label: 'Цени', href: '/pricing' },
-  { label: 'За нас', href: '/about' },
-  { label: 'Блог', href: '/blog' },
-  { label: 'Свържете се с нас', href: '/contact' },
-]
-
-// Intersection observer for animations
-const targetRef = ref<HTMLElement | null>(null)
-const isVisible = ref(false)
-
-useIntersectionObserver(targetRef, ([{ isIntersecting }]) => {
-  isVisible.value = isIntersecting
-  if (isIntersecting) {
-    targetRef.value?.classList.add('animate-in')
-  }
-})
-
-// Hover effects for cards
-const cardHover = (event: MouseEvent) => {
-  const card = event.currentTarget as HTMLElement
-  const rect = card.getBoundingClientRect()
-  const x = event.clientX - rect.left
-  const y = event.clientY - rect.top
-
-  card.style.setProperty('--mouse-x', `${x}px`)
-  card.style.setProperty('--mouse-y', `${y}px`)
-}
-
-// Scroll to section smoothly
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id)
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ 
-      behavior: 'smooth', 
-      block: 'start' 
-    })
+    // Add offset to account for any fixed headers
+    const offset = 100;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   }
-}
+};
 
-// Add intersection observer to elements
+// Add IDs to sections that don't have them yet
 onMounted(() => {
-  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-    useIntersectionObserver(el as HTMLElement, ([{ isIntersecting }]) => {
-      if (isIntersecting) {
-        (el as HTMLElement).classList.add('animate-in')
-      }
-    })
-  })
+  // Ensure all sections referenced in the buttons have corresponding IDs
+  const sections = {
+    'services': 'services',
+    'how-it-works': 'how-it-works',
+    'faq': 'faq',
+    'book-consultation': 'book-consultation'
+  };
   
-  // Initialize timeline reveal animations
-  document.querySelectorAll('.timeline-reveal').forEach((el) => {
-    useIntersectionObserver(el as HTMLElement, ([{ isIntersecting }]) => {
-      if (isIntersecting) {
-        (el as HTMLElement).style.opacity = '1'
-        ;(el as HTMLElement).style.transform = 'translateX(0)'
+  // Check for any missing IDs and add them
+  Object.entries(sections).forEach(([id, selector]) => {
+    const element = document.getElementById(id);
+    if (!element) {
+      // If the section doesn't have an ID, find it by another means (like a class or position)
+      // and add the ID
+      const sectionElement = document.querySelector(`section[id="${selector}"]`);
+      if (sectionElement && !sectionElement.id) {
+        sectionElement.id = id;
       }
-    }, { threshold: 0.2 })
-  })
-})
+    }
+  });
+
+  // Implement scroll indicator
+  const updateScrollIndicator = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.style.setProperty('--scroll-width', `${scrollPercent}%`);
+    }
+  };
+
+  // Add scroll event listener for scroll indicator
+  window.addEventListener('scroll', updateScrollIndicator);
+  
+  // Initialize scroll indicator
+  updateScrollIndicator();
+});
 </script>
 
 <style>
-/* Base styles */
-:root {
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+/* Move scroll-behavior from html to body for better compatibility */
+body {
+  scroll-behavior: smooth;
+  overflow-y: scroll; /* Ensure scrollbar is always present to prevent layout shifts */
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  letter-spacing: -0.02em;
+.text-navy-900 {
+  color: #0A2540;
 }
 
-/* Animations */
-.animate-in {
-  animation: fadeIn 0.6s ease-out forwards;
+.glass-card {
+  @apply bg-white/50 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-3xl;
 }
 
-@keyframes fadeIn {
+Badge {
+  @apply rounded-full;
+}
+
+Button {
+  @apply rounded-full;
+}
+
+.bg-blue-100\/50 {
+  @apply rounded-2xl;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Add responsive styles */
+@screen sm {
+  .container {
+    @apply px-6;
+  }
+}
+
+@screen md {
+  .container {
+    @apply px-8;
+  }
+}
+
+@screen lg {
+  .container {
+    @apply px-0;
+  }
+}
+
+/* Hide floating navigation when footer is in view */
+@media (max-height: 800px) {
+  .floating-nav {
+    display: none;
+  }
+}
+
+/* Floating navbar animations */
+.floating-nav {
+  transition: all 0.3s ease-in-out;
+}
+
+.floating-nav:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes slideIn {
   from {
+    transform: translateY(100%);
     opacity: 0;
-    transform: translateY(10px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* Timeline animations */
-@keyframes timelineFlow {
-  0% {
-    top: 0;
     opacity: 1;
   }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
 }
 
-.animate-timelineFlow {
-  animation: timelineFlow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.fixed.bottom-8 {
+  animation: slideIn 0.5s ease-out;
 }
 
-/* Animation delays for smooth particle flow */
-.animation-delay-100 {
-  animation-delay: 100ms;
+/* Button interactions */
+button, a {
+  transition: all 0.2s ease;
 }
 
-.animation-delay-300 {
-  animation-delay: 300ms;
+button:focus, a:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.5);
+  outline-offset: 2px;
 }
 
-.animation-delay-600 {
-  animation-delay: 600ms;
+button:active, a:active {
+  transform: scale(0.98);
 }
 
-.animation-delay-1000 {
-  animation-delay: 1000ms;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2000ms;
-}
-
-/* Button hover effects */
-.button-hover {
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.button-hover:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
-}
-
-/* Card hover effects */
-.card-hover {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-2px);
-}
-
-.card-hover::before {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card-hover:hover::before {
-  opacity: 1;
-  left: var(--mouse-x);
-  top: var(--mouse-y);
-}
-
-/* Link hover effects */
-.link-hover {
-  position: relative;
-  transition: color 0.2s ease;
-}
-
-.link-hover::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
+/* Scroll indicator for long pages */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.link-hover:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Selection */
-::selection {
-  background: rgba(0, 0, 0, 0.1);
-  color: inherit;
-}
-
-.dark ::selection {
-  background: rgba(255, 255, 255, 0.1);
+  height: 3px;
+  background: linear-gradient(to right, #2563eb, #38bdf8);
+  z-index: 100;
+  width: var(--scroll-width, 0%);
 }
 </style>
