@@ -22,25 +22,24 @@
     <section class="overflow-hidden bg-gradient-to-b from-blue-50 to-white">
       <div class="container mx-auto px-4 py-20">
         <div class="relative z-10 text-center max-w-4xl mx-auto">
-          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-6">
-            <Icon name="lucide:zap" class="w-4 h-4 mr-1" /> Бизнес решения с AI
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
+            <Icon name="lucide:zap" class="w-4 h-4 mr-1" /> Оптимизация на Продажби с AI
           </Badge>
           
           <h1 class="text-5xl md:text-6xl font-bold mb-6 text-navy-900">
-            Бъдещето е тук!<br />
-            Бизнес решения с<br />
-            AI & Автоматизация
-            <!-- <Icon name="sparkles" class="inline-block w-8 h-8 text-blue-500 ml-2" /> -->
+            Автоматизирайте<br />
+            Вашите Продажби и<br />
+            Маркетинг с AI
           </h1>
           
           <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Спестете време, подобрете ефективността и вземайте<br />
-            по-умни решения с AI решения, персонализирани за вашия бизнес
+            Оптимизираме целия процес по продажби, маркетинг и обслужване на клиенти.
+            От първия контакт до успешно затваряне на сделката и последваща грижа.
           </p>
 
           <div class="mb-20">
             <Button size="lg" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full" @click="scrollToSection('book-consultation')">
-              Заявете Безплатна Консултация
+              Оптимизирайте Вашите Продажби
             </Button>
           </div>
 
@@ -70,11 +69,11 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
           <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
-            <Icon name="lucide:rocket" class="w-4 h-4 mr-1" /> УСКОРЕНО РАЗВИТИЕ
+            <Icon name="lucide:rocket" class="w-4 h-4 mr-1" /> УВЕЛИЧЕТЕ ПРОДАЖБИТЕ
           </Badge>
           <h2 class="text-4xl font-bold text-navy-900">
             Защо Empower Studio?<br/>
-            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Несравнима Скорост & Прецизност</span>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Оптимизация на Всяка Стъпка</span>
           </h2>
         </div>
 
@@ -84,15 +83,15 @@
               <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
                 <Icon name="lucide:timer" class="w-8 h-8 text-blue-600" />
               </div>
-              <h3 class="text-xl font-bold text-navy-900 mb-3">Ускорено Развитие</h3>
+              <h3 class="text-xl font-bold text-navy-900 mb-3">Автоматизация на Продажбите</h3>
               <p class="text-gray-600">
-                Нашият усъвършенстван процес за разработка на софтуер, базиран на AI, доставя бизнес решения с безпрецедентна скорост, поставяйки нови стандарти в индустрията.
+                Автоматизираме рутинните задачи в продажбения процес, позволявайки на вашия екип да се фокусира върху затваряне на сделки.
               </p>
             </div>
             <div class="mt-auto">
               <div class="flex items-center text-sm text-blue-600">
                 <Icon name="lucide:trending-up" class="w-4 h-4 mr-2" />
-                <span>Традиционно: Месеци | Ние: Седмици</span>
+                <span>До 70% по-ефективен процес</span>
               </div>
             </div>
           </div>
@@ -102,15 +101,15 @@
               <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
                 <Icon name="lucide:target" class="w-8 h-8 text-blue-600" />
               </div>
-              <h3 class="text-xl font-bold text-navy-900 mb-3">Корпоративна Прецизност</h3>
+              <h3 class="text-xl font-bold text-navy-900 mb-3">Персонализиран Подход</h3>
               <p class="text-gray-600">
-                Разработката, подобрена с AI, гарантира както скорост, така и качество, предоставяйки решения, които отговарят на най-високите корпоративни стандарти.
+                Анализираме вашата търговска фуния и създаваме персонализирани решения за всеки етап от процеса на продажби.
               </p>
             </div>
             <div class="mt-auto">
               <div class="flex items-center text-sm text-blue-600">
                 <Icon name="lucide:shield-check" class="w-4 h-4 mr-2" />
-                <span>Качество на Корпоративно Ниво</span>
+                <span>Оптимизация на всяка стъпка</span>
               </div>
             </div>
           </div>
@@ -119,16 +118,16 @@
         <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-2xl">
           <div class="grid md:grid-cols-3 gap-6">
             <div class="text-center">
-              <h4 class="text-3xl font-bold mb-2">2x</h4>
-              <p class="text-sm opacity-90">По-Бързо Развитие</p>
+              <h4 class="text-3xl font-bold mb-2">3x</h4>
+              <p class="text-sm opacity-90">Повече Затворени Сделки</p>
             </div>
             <div class="text-center">
               <h4 class="text-3xl font-bold mb-2">50%</h4>
-              <p class="text-sm opacity-90">Оптимизация на Ресурсите</p>
+              <p class="text-sm opacity-90">По-кратък Цикъл на Продажби</p>
             </div>
             <div class="text-center">
               <h4 class="text-3xl font-bold mb-2">24/7</h4>
-              <p class="text-sm opacity-90">Корпоративна Поддръжка</p>
+              <p class="text-sm opacity-90">Автоматизирана Комуникация</p>
             </div>
           </div>
         </div>
@@ -150,16 +149,16 @@
     <div class="container mx-auto px-4">
       <div class="relative z-10 text-center max-w-4xl mx-auto">
         <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
-          <Icon name="lucide:boxes" class="w-4 h-4 mr-1" /> БИЗНЕС РЕШЕНИЯ
+          <Icon name="lucide:boxes" class="w-4 h-4 mr-1" /> НАШИТЕ УСЛУГИ
         </Badge>
         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
-          Дигитализация на бизнеса  <br/>
-          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text text-uppercase">водена от AI</span>
+          Оптимизация на Продажби<br/>
+          <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">от Начало до Край</span>
         </h2>
         
         <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
-          Трансформирайте бизнес операциите си с нашите AI решения от най-високо ниво,
-          проектирани за безпроблемна интеграция и максимална ефективност
+          Анализираме и оптимизираме всяка стъпка от вашата търговска фуния,
+          от първия контакт до успешно затваряне на сделката
         </p>
 
         <div class="grid gap-8">
@@ -167,12 +166,12 @@
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
-                  <Icon name="lucide:workflow" class="w-8 h-8 text-blue-600" />
+                  <Icon name="lucide:users" class="w-8 h-8 text-blue-600" />
                 </div>
               </div>
               <div class="ml-6 text-left">
-                <h3 class="text-2xl font-bold text-navy-900 mb-2">AI Автоматизация на Работния Процес</h3>
-                <p class="text-gray-600">Трансформирайте бизнес процесите с интелигентни системи за автоматизация.</p>
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">Привличане на потенциални клиенти</h3>
+                <p class="text-gray-600">Автоматизирано привличане и оценка на потенциални клиенти с AI.</p>
               </div>
             </div>
           </div>
@@ -181,12 +180,12 @@
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
-                  <Icon name="lucide:code-2" class="w-8 h-8 text-blue-600" />
+                  <Icon name="lucide:trending-up" class="w-8 h-8 text-blue-600" />
                 </div>
               </div>
               <div class="ml-6 text-left">
-                <h3 class="text-2xl font-bold text-navy-900 mb-2">Разработка на Персонализиран Софтуер</h3>
-                <p class="text-gray-600">Бизнес решения, проектирани специално за вашите нужди.</p>
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">Подобряване на Продажбения Процес</h3>
+                <p class="text-gray-600">Оптимизация на всички етапи от продажбената фуния и увеличаване на конверсиите.</p>
               </div>
             </div>
           </div>
@@ -195,12 +194,12 @@
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
-                  <Icon name="lucide:git-merge" class="w-8 h-8 text-blue-600" />
+                  <Icon name="lucide:star" class="w-8 h-8 text-blue-600" />
                 </div>
               </div>
               <div class="ml-6 text-left">
-                <h3 class="text-2xl font-bold text-navy-900 mb-2">Системна Интеграция</h3>
-                <p class="text-gray-600">Безпроблемна интеграция с вашата съществуваща бизнес инфраструктура.</p>
+                <h3 class="text-2xl font-bold text-navy-900 mb-2">5 Звездно Клиентско Обслужване</h3>
+                <p class="text-gray-600">Изключително внимание към детайлите и персонализиран подход към всеки клиент.</p>
               </div>
             </div>
           </div>
@@ -364,14 +363,14 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
           <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
-            <Icon name="lucide:git-branch" class="w-4 h-4 mr-1" /> ПРОЦЕС НА ВНЕДРЯВАНЕ
+            <Icon name="lucide:git-branch" class="w-4 h-4 mr-1" /> ПРОЦЕС НА ОПТИМИЗАЦИЯ
           </Badge>
           <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
-            Бизнес Внедряване<br/>
-            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Оптимизирано за Успех</span>
+            Как Работим<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Методология за Успех</span>
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Нашата доказана методология осигурява бързо внедряване, запазвайки висококачествени бизнес стандарти
+            Нашият процес е създаден да идентифицира и оптимизира всички възможности за подобрение във вашата продажбена фуния
           </p>
         </div>
 
@@ -384,11 +383,11 @@
                 </div>
               </div>
               <div class="ml-6">
-                <h3 class="text-xl font-bold text-navy-900 mb-3">Стратегическа Оценка</h3>
-                <p class="text-gray-600">Обширен анализ на вашите бизнес изисквания и съществуваща инфраструктура.</p>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Анализ на Фунията</h3>
+                <p class="text-gray-600">Задълбочен анализ на вашия текущ процес по продажби и идентифициране на възможности за оптимизация.</p>
                 <div class="mt-4 flex items-center text-sm text-blue-600">
                   <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
-                  <span>Продължителност: 2-3 Дни</span>
+                  <span>Продължителност: 3-5 Дни</span>
                 </div>
               </div>
             </div>
@@ -402,11 +401,11 @@
                 </div>
               </div>
               <div class="ml-6">
-                <h3 class="text-xl font-bold text-navy-900 mb-3">Архитектура на Решението</h3>
-                <p class="text-gray-600">Детайлно техническо планиране и системен дизайн, оптимизиран за вашите нужди.</p>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Стратегия за Оптимизация</h3>
+                <p class="text-gray-600">Разработване на персонализирана стратегия за автоматизация на всеки етап от продажбения процес.</p>
                 <div class="mt-4 flex items-center text-sm text-blue-600">
                   <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
-                  <span>Продължителност: 2-3 Дни</span>
+                  <span>Продължителност: 3-5 Дни</span>
                 </div>
               </div>
             </div>
@@ -416,15 +415,15 @@
             <div class="flex items-start">
               <div class="flex-shrink-0">
                 <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center">
-                  <Icon name="lucide:code-2" class="w-6 h-6 text-blue-600" />
+                  <Icon name="lucide:settings" class="w-6 h-6 text-blue-600" />
                 </div>
               </div>
               <div class="ml-6">
-                <h3 class="text-xl font-bold text-navy-900 mb-3">Разработка & Тестване</h3>
-                <p class="text-gray-600">Бърза разработка с непрекъснато тестване и гарантиране на качеството.</p>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Внедряване на Автоматизации</h3>
+                <p class="text-gray-600">Поетапно внедряване на автоматизации и AI решения във вашия продажбен процес.</p>
                 <div class="mt-4 flex items-center text-sm text-blue-600">
                   <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
-                  <span>Продължителност: 5-7 Дни</span>
+                  <span>Продължителност: 5-10 Дни</span>
                 </div>
               </div>
             </div>
@@ -434,15 +433,15 @@
             <div class="flex items-start">
               <div class="flex-shrink-0">
                 <div class="w-12 h-12 bg-blue-100/50 rounded-xl flex items-center justify-center">
-                  <Icon name="lucide:rocket" class="w-6 h-6 text-blue-600" />
+                  <Icon name="lucide:trending-up" class="w-6 h-6 text-blue-600" />
                 </div>
               </div>
               <div class="ml-6">
-                <h3 class="text-xl font-bold text-navy-900 mb-3">Внедряване & Интеграция</h3>
-                <p class="text-gray-600">Безпроблемно внедряване с цялостна системна оптимизация.</p>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Оптимизация и Мониторинг</h3>
+                <p class="text-gray-600">Постоянно наблюдение и подобрение на резултатите от автоматизацията.</p>
                 <div class="mt-4 flex items-center text-sm text-blue-600">
                   <Icon name="lucide:clock" class="w-4 h-4 mr-2" />
-                  <span>Продължителност: 2-3 Дни</span>
+                  <span>Продължителност: Текущо</span>
                 </div>
               </div>
             </div>
@@ -470,14 +469,14 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
           <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200">
-            <Icon name="lucide:users" class="w-4 h-4 mr-1" /> РЕШЕНИЯ ЗА ИНДУСТРИЯТА
+            <Icon name="lucide:users" class="w-4 h-4 mr-1" /> ИНДУСТРИИ
           </Badge>
           <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
-            Бизнес Решения<br/>
-            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Всички Индустрии</span>
+            Оптимизация на Продажби<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Всеки Бизнес</span>
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Персонализирани AI решения, проектирани за внедряване в бизнес мащаб в различни сектори
+            Персонализирани решения за оптимизация на продажби, адаптирани към спецификите на вашата индустрия
           </p>
         </div>
 
@@ -486,82 +485,82 @@
             <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
               <Icon name="lucide:shopping-cart" class="w-8 h-8 text-blue-600" />
             </div>
-            <h3 class="text-xl font-bold text-navy-900 mb-4">Електронна Търговия & Търговия на Дребно</h3>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">E-commerce & Търговия</h3>
             <ul class="space-y-3">
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Автоматизирано управление на склада
+                Автоматизация на последващи продажби
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Оптимизация на обработката на поръчки
+                Персонализирани предложения към клиенти
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Автоматизация на обслужването на клиенти
+                Оптимизация на кошницата за пазаруване
               </li>
             </ul>
           </div>
 
           <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
             <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
-              <Icon name="lucide:landmark" class="w-8 h-8 text-blue-600" />
+              <Icon name="lucide:briefcase" class="w-8 h-8 text-blue-600" />
             </div>
-            <h3 class="text-xl font-bold text-navy-900 mb-4">Финансови Услуги</h3>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">B2B Продажби</h3>
             <ul class="space-y-3">
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Автоматизация на оценката на риска
+                Автоматизирана лийд квалификация
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Обработка на транзакции
+                Проследяване на сделки
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Наблюдение на съответствието
+                Интелигентно насрочване на срещи
               </li>
             </ul>
           </div>
 
           <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
             <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
-              <Icon name="lucide:heart-pulse" class="w-8 h-8 text-blue-600" />
+              <Icon name="lucide:building" class="w-8 h-8 text-blue-600" />
             </div>
-            <h3 class="text-xl font-bold text-navy-900 mb-4">Здравеопазване</h3>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Недвижими Имоти</h3>
             <ul class="space-y-3">
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Управление на данните на пациентите
+                Автоматизирано проследяване на клиенти
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Административна автоматизация
+                Персонализирани имейл кампании
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                HIPAA съответствие
+                Управление на оферти
               </li>
             </ul>
           </div>
 
           <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
             <div class="inline-block p-3 bg-blue-100/50 rounded-xl mb-6">
-              <Icon name="lucide:factory" class="w-8 h-8 text-blue-600" />
+              <Icon name="lucide:graduation-cap" class="w-8 h-8 text-blue-600" />
             </div>
-            <h3 class="text-xl font-bold text-navy-900 mb-4">Производство</h3>
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Образование</h3>
             <ul class="space-y-3">
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Оптимизация на производството
+                Автоматизиран процес на записване
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Управление на веригата за доставки
+                Проследяване на кандидати
               </li>
               <li class="flex items-center text-gray-600">
                 <Icon name="lucide:check" class="w-5 h-5 text-green-500 mr-3" />
-                Автоматизация на контрола на качеството
+                Комуникация с родители
               </li>
             </ul>
           </div>
@@ -591,11 +590,11 @@
             <Icon name="lucide:help-circle" class="w-4 h-4 mr-1" /> ЧЕСТО ЗАДАВАНИ ВЪПРОСИ
           </Badge>
           <h2 class="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
-            Често Задавани Въпроси<br/>
-            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">За Бизнес AI</span>
+            Въпроси за<br/>
+            <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Оптимизация на Продажби</span>
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Получете отговори на често задавани въпроси за нашите AI бизнес решения
+            Отговори на често задавани въпроси за нашите решения за оптимизация на продажби
           </p>
         </div>
 
@@ -608,11 +607,11 @@
                     <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
                       <Icon name="lucide:git-merge" class="w-5 h-5 text-blue-600" />
                     </div>
-                    <span class="text-lg font-semibold text-navy-900">Процес на Интеграция</span>
+                    <span class="text-lg font-semibold text-navy-900">Как работи процесът на оптимизация?</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent class="pt-4 pl-14">
-                  <p class="text-gray-600">Нашите решения се интегрират безпроблемно с вашата съществуваща бизнес инфраструктура чрез нашата доказана интеграционна рамка. Ние се грижим за всички аспекти на процеса на интеграция, от първоначалната оценка до окончателното внедряване, осигурявайки минимално прекъсване на вашите операции.</p>
+                  <p class="text-gray-600">Започваме с анализ на вашата текуща продажбена фуния, идентифицираме възможности за подобрение и внедряваме автоматизации на всеки етап. Процесът включва оптимизация на лийд генерацията, автоматизация на комуникацията и подобряване на процеса по затваряне на сделки.</p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -622,11 +621,11 @@
                     <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
                       <Icon name="lucide:clock" class="w-5 h-5 text-blue-600" />
                     </div>
-                    <span class="text-lg font-semibold text-navy-900">График за Внедряване</span>
+                    <span class="text-lg font-semibold text-navy-900">Колко време отнема да видим резултати?</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent class="pt-4 pl-14">
-                  <p class="text-gray-600">Бизнес внедряването обикновено се извършва в рамките на няколко седмици, следвайки нашата оптимизирана методология. Това включва фази на оценка, разработка, тестване и внедряване, с ясни етапи и резултати на всеки етап.</p>
+                  <p class="text-gray-600">Първите резултати се виждат още през първия месец след внедряване. Пълният ефект от оптимизацията става видим след 2-3 месеца, когато всички автоматизации са напълно интегрирани и оптимизирани за вашия бизнес.</p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -636,11 +635,11 @@
                     <div class="w-10 h-10 bg-blue-100/50 rounded-xl flex items-center justify-center mr-4">
                       <Icon name="lucide:trending-up" class="w-5 h-5 text-blue-600" />
                     </div>
-                    <span class="text-lg font-semibold text-navy-900">ROI & Производителност</span>
+                    <span class="text-lg font-semibold text-navy-900">Какви резултати можем да очакваме?</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent class="pt-4 pl-14">
-                  <p class="text-gray-600">Нашите бизнес клиенти обикновено виждат възвръщаемост на инвестицията още през първото тримесечие чрез повишена ефективност и намалени оперативни разходи. Ние предоставяме подрочни анализи и отчети за проследяване на подобренията в производителността и спестяванията на разходи.</p>
+                  <p class="text-gray-600">Нашите клиенти обикновено виждат 2-3 пъти повече затворени сделки, 50% съкращаване на времето за затваряне на сделка и значително подобрение в ефективността на продажбения екип. Предоставяме детайлни отчети за всички подобрения и ROI.</p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -802,14 +801,14 @@
             <Icon name="lucide:rocket" class="w-4 h-4 mr-1" /> ЗАПОЧНЕТЕ СЕГА
           </Badge>
           <h2 class="text-4xl font-bold text-navy-900">
-            Трансформирайте Вашия Бизнес<br/>
+            Оптимизирайте Вашите Продажби<br/>
             <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">С Интелигентна Автоматизация</span>
           </h2>
         </div>
         
         <p class="text-xl mb-12 flex items-center justify-center">
           <Icon name="lucide:trending-up" class="w-6 h-6 text-blue-600 mr-2" />
-          Ускорете растежа с AI решения от най-високо ниво
+          Увеличете продажбите и ефективността на вашия екип
         </p>
 
         <div>
@@ -818,7 +817,7 @@
             width="100%"
             class="md:h-[700px] h-[1100px]"
             frameborder="0"
-            title="Планирайте Бизнес Консултация - Empower Studio"
+            title="Планирайте Консултация за Оптимизация на Продажби - Empower Studio"
             data-ready="true"
           ></iframe>
         </div>
@@ -847,7 +846,7 @@
           <!-- Team Member 1 -->
           <div class="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
             <div class="relative h-64 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+              <img src="/images/georgi.png" 
                 alt="Георги Кирилов" 
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
             </div>
@@ -861,7 +860,7 @@
           <!-- Team Member 2 -->
           <div class="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
             <div class="relative h-64 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1598550874175-4d0ef436c909?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+              <img src="/images/verginia.jpg" 
                 alt="Вергиния Накова" 
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
             </div>
@@ -875,7 +874,7 @@
           <!-- Team Member 3 -->
           <div class="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
             <div class="relative h-64 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+              <img src="/images/nakov.jpg" 
                 alt="Светлин Наков" 
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
             </div>

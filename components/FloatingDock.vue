@@ -46,14 +46,14 @@ watch(scrollY, handleScroll)
     >
       <div class="dock-container">
         <!-- Logo -->
-        <div class="flex items-center mr-3 md:mr-8">
+        <!-- <div class="flex items-center mr-3 md:mr-8">
           <NuxtLink to="/" class="flex items-center">
             <img src="/logo.png" alt="Empower Studio" class="h-5 md:h-8 w-auto" />
           </NuxtLink>
-        </div>
+        </div> -->
 
         <!-- Divider -->
-        <div class="h-6 md:h-8 w-px bg-neutral-200 dark:bg-neutral-800 mr-3 md:mr-8"></div>
+        <!-- <div class="h-6 md:h-8 w-px bg-neutral-200 dark:bg-neutral-800 mr-3 md:mr-8"></div> -->
 
         <!-- Navigation Items -->
         <div class="flex items-center gap-1 md:gap-2 overflow-visible">
