@@ -1068,8 +1068,15 @@ const handleSubmit = async () => {
       body: {
         from: formData.value.email,
         to: 'gkkirilov@gmail.com',
-        subject: `Ново съобщение от ${formData.value.name}`,
-        text: `Име: ${formData.value.name}\nИмейл: ${formData.value.email}\n\nСъобщение:\n${formData.value.message}`
+        subject: `Ново съобщение от ${formData.value.name} - Empower Studio EU`,
+        text: `Ново съобщение от формата за контакт на Empower Studio EU\n\n` +
+              `Име: ${formData.value.name}\n` +
+              `Имейл: ${formData.value.email}\n\n` +
+              `Съобщение:\n${formData.value.message}\n\n` +
+              `--\nEmpower Studio EU\n` +
+              `WorkBetter, бул. Черни Връх 51, София\n` +
+              `info@empowerstudio.eu\n` +
+              `+359 879 493 909`
       }
     });
 
