@@ -732,12 +732,15 @@
           <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
             <h3 class="text-xl font-bold text-navy-900 mb-6">Изпратете съобщение</h3>
             
-            <form class="space-y-4">
+            <form class="space-y-4" @submit.prevent="handleSubmit">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Име</label>
                 <input 
                   id="name" 
                   type="text" 
+                  v-model="formData.name"
+                  :disabled="isSubmitting"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                   placeholder="Вашето име"
                 />
@@ -748,6 +751,9 @@
                 <input 
                   id="email" 
                   type="email" 
+                  v-model="formData.email"
+                  :disabled="isSubmitting"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                   placeholder="вашият@имейл.com"
                 />
@@ -758,16 +764,36 @@
                 <textarea 
                   id="message" 
                   rows="4" 
+                  v-model="formData.message"
+                  :disabled="isSubmitting"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                   placeholder="Вашето съобщение"
                 ></textarea>
               </div>
               
               <div>
-                <Button class="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white hover:opacity-90 mt-2">
-                  <Icon name="lucide:send" class="w-4 h-4 mr-2" />
-                  Изпратете Съобщение
+                <Button 
+                  type="submit"
+                  :disabled="isSubmitting"
+                  class="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white hover:opacity-90 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <template v-if="!isSubmitting">
+                    <Icon name="lucide:send" class="w-4 h-4 mr-2" />
+                    Изпратете Съобщение
+                  </template>
+                  <template v-else>
+                    <Icon name="lucide:loader-2" class="w-4 h-4 mr-2 animate-spin" />
+                    Изпращане...
+                  </template>
                 </Button>
+              </div>
+              
+              <div v-if="submitStatus" :class="[
+                'mt-4 p-4 rounded-xl text-sm',
+                submitStatus.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
+              ]">
+                {{ submitStatus.message }}
               </div>
             </form>
           </div>
@@ -850,10 +876,19 @@
                 alt="Георги Кирилов" 
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-navy-900 mb-1">Георги Кирилов</h3>
-              <p class="text-blue-600 font-medium mb-3">Основател & CTO</p>
-              <p class="text-gray-600 mb-4">Технологичен предприемач с над 10 години опит в разработката на софтуер и AI решения.</p>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex-grow">
+                <h3 class="text-xl font-bold text-navy-900 mb-1">Георги Кирилов</h3>
+                <p class="text-blue-600 font-medium mb-3">Съосновател & CTO</p>
+                <p class="text-gray-600">Технологичен предприемач с над 10 години опит в разработката на софтуер и AI решения.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <button @click="scrollToSection('consultation')" 
+                  class="w-full bg-blue-50 hover:bg-blue-100 text-blue-600 py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <Icon name="lucide:message-circle" class="w-4 h-4" />
+                  <span>Свържете се с мен</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -864,10 +899,19 @@
                 alt="Вергиния Накова" 
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-navy-900 mb-1">Вергиния Накова</h3>
-              <p class="text-blue-600 font-medium mb-3">Съосновател & CЕO</p>
-              <p class="text-gray-600 mb-4">Експерт по бизнес операции и развитие с фокус върху оптимизация на процеси и растеж.</p>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex-grow">
+                <h3 class="text-xl font-bold text-navy-900 mb-1">Вергиния Накова</h3>
+                <p class="text-blue-600 font-medium mb-3">Съосновател & CЕO</p>
+                <p class="text-gray-600">Експерт по бизнес операции и развитие с фокус върху оптимизация на процеси и растеж.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <button @click="scrollToSection('consultation')" 
+                  class="w-full bg-blue-50 hover:bg-blue-100 text-blue-600 py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <Icon name="lucide:message-circle" class="w-4 h-4" />
+                  <span>Свържете се с мен</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -878,14 +922,24 @@
                 alt="Светлин Наков" 
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" />
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-navy-900 mb-1">Светлин Наков</h3>
-              <p class="text-blue-600 font-medium mb-3">Стратегическо развитие</p>
-              <p class="text-gray-600 mb-4">Технологичен визионер и предприемач с над 20 години опит в образованието и софтуерната индустрия.</p>
+            <div class="p-6 flex flex-col h-[calc(100%-16rem)]">
+              <div class="flex-grow">
+                <h3 class="text-xl font-bold text-navy-900 mb-1">Светлин Наков</h3>
+                <p class="text-blue-600 font-medium mb-3">Стратегическо развитие</p>
+                <p class="text-gray-600">Технологичен визионер и предприемач с над 20 години опит в образованието и софтуерната индустрия.</p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <button @click="scrollToSection('consultation')" 
+                  class="w-full bg-blue-50 hover:bg-blue-100 text-blue-600 py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <Icon name="lucide:message-circle" class="w-4 h-4" />
+                  <span>Свържете се с мен</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- Join Our Team Card -->
         <div class="glass-card p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center">
           <div class="flex flex-col items-center justify-center">
             <Icon name="lucide:users" class="w-12 h-12 mb-4" />
@@ -893,7 +947,7 @@
             <p class="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
               Търсим талантливи професионалисти, които споделят нашата визия за иновации, базирани на AI
             </p>
-            <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50 px-8">
+            <Button size="lg" class="bg-white text-blue-600 hover:bg-blue-50 px-8" @click="scrollToSection('contacts')">
               <Icon name="lucide:briefcase" class="w-5 h-5 mr-2" />
               Напишете ни съобщение
             </Button>
@@ -994,6 +1048,56 @@ onMounted(() => {
   // Initialize scroll indicator
   updateScrollIndicator();
 });
+
+const formData = ref({
+  name: '',
+  email: '',
+  message: ''
+});
+
+const isSubmitting = ref(false);
+const submitStatus = ref(null);
+
+const handleSubmit = async () => {
+  isSubmitting.value = true;
+  submitStatus.value = null;
+
+  try {
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: {
+        from: formData.value.email,
+        to: 'gkkirilov@gmail.com',
+        subject: `Ново съобщение от ${formData.value.name}`,
+        text: `Име: ${formData.value.name}\nИмейл: ${formData.value.email}\n\nСъобщение:\n${formData.value.message}`
+      }
+    });
+
+    if (response.success) {
+      submitStatus.value = {
+        type: 'success',
+        message: 'Съобщението е изпратено успешно!'
+      };
+
+      // Reset form
+      formData.value = {
+        name: '',
+        email: '',
+        message: ''
+      };
+    } else {
+      throw new Error('Failed to send message');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    submitStatus.value = {
+      type: 'error',
+      message: 'Възникна грешка при изпращането на съобщението. Моля, опитайте отново.'
+    };
+  } finally {
+    isSubmitting.value = false;
+  }
+};
 </script>
 
 <style>
