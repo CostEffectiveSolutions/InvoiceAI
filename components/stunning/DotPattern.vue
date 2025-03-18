@@ -4,9 +4,9 @@
     class="pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/60"
     v-bind="$attrs"
   >
-    <defs>
-      <pattern
-        :id="id"
+  <defs>
+    <pattern
+    :id="'pattern-' + id"
         :width="width"
         :height="height"
         :patternUnits="userSpaceOnUse"
@@ -22,8 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-const id = `pattern-${Math.random().toString(36).substr(2, 9)}`
-
+const id = useId()
 withDefaults(
   defineProps<{
     width?: number

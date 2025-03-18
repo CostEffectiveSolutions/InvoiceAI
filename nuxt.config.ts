@@ -14,13 +14,6 @@ export default defineNuxtConfig({
     '~/assets/css/transitions.css',
   ],
 
-  site: {
-    url: 'https://empowerstudio.eu',
-    name: 'Empower Studio',
-    description: 'Автоматизирайте бизнес процесите си с изкуствен интелект. Спестете време и намалете разходи с персонализирани AI решения.',
-    defaultLocale: 'bg',
-  },
-
   // @ts-ignore - Lenis module configuration
   lenis: {
     root: true,
@@ -35,13 +28,25 @@ export default defineNuxtConfig({
     enabled: false,
   },
 
+  components:[
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+
   shadcn: {
     prefix: '',
     componentDir: './components/ui',
   },
   supabase: {
-    url: 'https://lmestjkqmdxeqwmkwrwa.supabase.co',
-    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtZXN0amtxbWR4ZXF3bWt3cndhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3OTU0MzIsImV4cCI6MjAyNjM3MTQzMn0.l8RUi4QGwGdti58UAbSobmyUSp9SuPxgRNGKGSVduhs',
-    redirect: false,
+    url: 'https://qsjarfrkydcmvtigeiqh.supabase.co',
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzamFyZnJreWRjbXZ0aWdlaXFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIyOTA3MzgsImV4cCI6MjA1Nzg2NjczOH0.n7HsRsnx0fYPyop-05YJGitywxEN2tTW7-Xljan6-2A',
+    serviceKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzamFyZnJreWRjbXZ0aWdlaXFoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MjI5MDczOCwiZXhwIjoyMDU3ODY2NzM4fQ.vbD7j_YOg99U0FzgRTZu1VFH-I2o9_zhimN4V88R0Ak',
+    redirectOptions: {
+      login: '/login',
+      callback: '/confirm',
+      exclude: ['/', '/admin/*'],
+    }
   }
 })

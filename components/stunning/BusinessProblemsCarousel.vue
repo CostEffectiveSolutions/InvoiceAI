@@ -1,5 +1,5 @@
 <script setup>
-import { Card, Carousel } from '~/components/ui/Apple'
+import { Card, Carousel } from '~/components/stunning/Apple'
 import { ref, h } from 'vue'
 
 // Data for the carousel
