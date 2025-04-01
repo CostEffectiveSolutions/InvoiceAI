@@ -19,6 +19,9 @@ Create [Supabase](https://supabase.com)
 Update nuxt.config.ts with Supabase credentials (Project Settings -> Data API) with URL, public key and service key ( we have demo credentials there )
 
 
+## npm install
+## Go to Run and Debug Panel and click Run
+
 Setup the URLs for redirecting in Supabase
 Go to **Authenitcation** -> **URL Configuration**
     Add http://localhost/** as url
