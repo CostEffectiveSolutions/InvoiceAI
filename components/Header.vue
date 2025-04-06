@@ -3,14 +3,9 @@
     <div class="bg-white backdrop-blur-md shadow-sm transition-all duration-300 border-b border-white/10">
       <div class="container mx-auto flex h-20 items-center justify-between px-4">
         <!-- Logo -->
-        <NuxtLink to="/" class="relative flex items-center space-x-2">
-          <div class="flex items-center">
-            <div class="bg-blue-100 p-2 rounded-full">
-              <Icon name="lucide:zap" class="h-6 w-6 text-blue-600" />
-            </div>
-            <span class="text-xl font-bold text-blue-600 ml-2">JoroAI</span>
-          </div>
-          <span class="text-lg font-semibold text-navy-900">AI Starter Kit</span>
+        <NuxtLink to="/" class="relative flex items-center space-x-3">
+          <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">JoroAI</span>
+          <span class="text-base font-medium text-gray-700">AI Starter Kit</span>
         </NuxtLink>
 
         <!-- Desktop navigation - simplified -->
@@ -32,10 +27,7 @@
             to="/login" 
             class="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600"
           >
-            <div class="flex items-center">
-              <Icon name="lucide:log-in" class="w-4 h-4 mr-2" />
-              <span>Login</span>
-            </div>
+            <span>Login</span>
           </NuxtLink>
           
           <!-- Profile dropdown when logged in -->
@@ -46,12 +38,11 @@
                   <button 
                     class="flex items-center text-sm font-medium text-gray-700 hover:text-blue-600"
                   >
-                    <div class="bg-blue-100 p-1 rounded-full mr-2">
-                      <Icon v-if="!user.avatar_url" name="lucide:user" class="w-5 h-5 text-blue-600" />
-                      <img v-else :src="user.avatar_url" class="w-6 h-6 rounded-full" alt="Profile" />
+                    <div class="relative mr-2">
+                      <img v-if="user.avatar_url" :src="user.avatar_url" class="w-6 h-6 rounded-full" alt="Profile" />
                     </div>
                     <span>{{ user.username || user.email || 'Profile' }}</span>
-                    <Icon name="lucide:chevron-down" class="w-4 h-4 ml-1" />
+                    <span class="ml-1">▼</span>
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent class="w-56">
@@ -59,7 +50,6 @@
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <NuxtLink to="/profile" class="flex items-center cursor-pointer">
-                      <Icon name="lucide:user" class="w-4 h-4 mr-2" />
                       <span>Profile</span>
                     </NuxtLink>
                   </DropdownMenuItem>
@@ -68,7 +58,6 @@
                     variant="destructive"
                     @click="logout"
                   >
-                    <Icon name="lucide:log-out" class="w-4 h-4 mr-2" />
                     <span>Logout</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -82,8 +71,7 @@
             to="#contact" 
             @click="(e) => handleClick(e, '#contact')"
           >
-            <Button class="bg-blue-600/90 backdrop-blur-sm text-white hover:bg-blue-700 rounded-full">
-              <Icon name="lucide:sparkles" class="w-4 h-4 mr-2" />
+            <Button class="bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:bg-blue-700 rounded-full">
               Get Started
             </Button>
           </NuxtLink>
@@ -101,81 +89,65 @@
             </Button>
           </SheetTrigger>
           
-          <SheetContent side="right" class="bg-white shadow-md border-l border-gray-200">
+          <SheetContent side="right" class="bg-white shadow-md border-l border-gray-200 p-8">
             <SheetHeader>
-              <SheetTitle class="text-xl text-blue-600 flex items-center">
-                <div class="bg-blue-100 p-1 rounded-full mr-2">
-                  <Icon name="lucide:zap" class="h-5 w-5 text-blue-600" />
-                </div>
-                JoroAI
+              <SheetTitle class="text-xl">
+                <span class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">JoroAI</span>
               </SheetTitle>
             </SheetHeader>
             
-            <div class="mt-6">
+            <div class="mt-10">
               <!-- Navigation links -->
-              <div class="space-y-1">
+              <div class="space-y-4">
                 <NuxtLink
                   v-for="(item, index) in navigationItems"
                   :key="index"
                   :to="item.href"
-                  class="flex items-center px-3 py-3 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg"
+                  class="block px-2 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg"
                   @click="(e) => handleClick(e, item.href)"
                 >
                   {{ item.name }}
                 </NuxtLink>
               </div>
               
-              <hr class="my-4 border-gray-100" />
+              <hr class="my-8 border-gray-100" />
               
               <!-- Auth links -->
-              <div class="space-y-2">
+              <div class="space-y-4">
                 <NuxtLink 
                   v-if="!user"
                   to="/login"
-                  class="flex items-center px-3 py-3 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg"
+                  class="block px-2 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg"
                 >
-                  <Icon name="lucide:log-in" class="w-4 h-4 mr-2" />
                   Login
                 </NuxtLink>
                 
                 <NuxtLink 
                   v-if="!user"
                   to="#contact"
-                  class="flex items-center px-3 py-3 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg mt-2"
+                  class="block text-center px-2 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg mt-4"
                   @click="(e) => handleClick(e, '#contact')"
                 >
-                  <Icon name="lucide:sparkles" class="w-4 h-4 mr-2" />
                   Get Started
                 </NuxtLink>
                 
                 <NuxtLink 
                   v-if="user"
                   to="/profile"
-                  class="flex items-center px-3 py-3 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg"
+                  class="block px-2 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg"
                 >
-                  <Icon name="lucide:user" class="w-4 h-4 mr-2" />
                   Profile
                 </NuxtLink>
                 
                 <button 
                   v-if="user"
                   @click="logout"
-                  class="flex items-center w-full text-left px-3 py-3 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50/30 rounded-lg"
+                  class="w-full text-left px-2 py-3 text-base font-medium text-red-600 hover:text-red-700 hover:bg-red-50/30 rounded-lg"
                 >
-                  <Icon name="lucide:log-out" class="w-4 h-4 mr-2" />
                   Logout
                 </button>
               </div>
             </div>
-            
-            <SheetFooter class="mt-auto pt-4">
-              <SheetClose asChild>
-                <Button class="w-full rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">
-                  <Icon name="lucide:x" class="w-4 h-4 mr-2" />
-                  Close Menu
-                </Button>
-              </SheetClose>
-            </SheetFooter>
           </SheetContent>
         </Sheet>
       </div>
