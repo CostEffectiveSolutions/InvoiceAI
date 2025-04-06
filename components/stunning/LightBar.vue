@@ -36,7 +36,42 @@
 </template>
 
 <script setup lang="ts">
-import { formatThemeColors, type colorType } from '~/lib/tailwind-theme'
+// Define types and functions directly in component
+import type { DefaultColors } from 'tailwindcss/types/generated/colors'
+
+type ColorType = keyof DefaultColors
+type colorType = 'emerald' | 'blue' | 'purple' | 'orange' | 'red' | 'zinc'
+
+function formatThemeColors(color: colorType) {
+  const colors = {
+    emerald: {
+      '400': '#34d399',
+      '500': '#10b981'
+    },
+    blue: {
+      '400': '#60a5fa',
+      '500': '#3b82f6'
+    },
+    purple: {
+      '400': '#c084fc',
+      '500': '#a855f7'
+    },
+    orange: {
+      '400': '#fb923c',
+      '500': '#f97316'
+    },
+    red: {
+      '400': '#f87171',
+      '500': '#ef4444'
+    },
+    zinc: {
+      '400': '#a1a1aa',
+      '500': '#71717a'
+    }
+  }
+
+  return colors[color]
+}
 
 const props = withDefaults(defineProps<{ theme?: colorType }>(), {
   theme: 'zinc'

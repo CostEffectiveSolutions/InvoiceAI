@@ -1,8 +1,5 @@
 <template>
   
-  <div class="scroll-indicator"></div>
-
-  
   <div class="bg-gradient-to-b from-blue-50 to-white relative">
     
     <div class="absolute inset-0">
@@ -222,34 +219,36 @@
           <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
             <h3 class="text-xl font-bold text-navy-900 mb-6">Dialog Component</h3>
             <div class="flex justify-center">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button class="rounded-full">Open Dialog</Button>
-                </DialogTrigger>
-                <DialogContent class="rounded-3xl bg-white/90 backdrop-blur-md border border-white/30">
-                  <DialogHeader>
-                    <DialogTitle>Edit Profile</DialogTitle>
-                    <DialogDescription>
-                      Make changes to your profile here. Click save when you're done.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div class="py-4">
-                    <div class="space-y-4">
-                      <div class="space-y-2">
-                        <Label for="name">Name</Label>
-                        <Input id="name" placeholder="Your name" class="rounded-full" />
-                      </div>
-                      <div class="space-y-2">
-                        <Label for="username">Username</Label>
-                        <Input id="username" placeholder="@username" class="rounded-full" />
+              <ClientOnly>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button class="rounded-full">Open Dialog</Button>
+                  </DialogTrigger>
+                  <DialogContent class="rounded-3xl bg-white/90 backdrop-blur-md border border-white/30">
+                    <DialogHeader>
+                      <DialogTitle>Edit Profile</DialogTitle>
+                      <DialogDescription>
+                        Make changes to your profile here. Click save when you're done.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div class="py-4">
+                      <div class="space-y-4">
+                        <div class="space-y-2">
+                          <Label for="name">Name</Label>
+                          <Input id="name" placeholder="Your name" class="rounded-full" />
+                        </div>
+                        <div class="space-y-2">
+                          <Label for="username">Username</Label>
+                          <Input id="username" placeholder="@username" class="rounded-full" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <DialogFooter>
-                    <Button type="submit" class="rounded-full">Save changes</Button>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
+                    <DialogFooter>
+                      <Button type="submit" class="rounded-full">Save changes</Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
+              </ClientOnly>
             </div>
           </div>
 
@@ -308,6 +307,277 @@
             <Icon name="lucide:plus" class="w-5 h-5 mr-2" />
             View All Components
           </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional UI Components Section -->
+  <section id="more-ui-components" class="py-24 bg-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-4 py-2">
+            <Icon name="lucide:grid" class="w-4 h-4 mr-1" /> MORE UI COMPONENTS
+          </Badge>
+          <h2 class="text-4xl font-bold text-navy-900">
+            Advanced <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">UI Components</span>
+          </h2>
+          <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            Explore more sophisticated UI components available in this starter kit
+          </p>
+        </div>
+
+        <div class="space-y-16">
+          <!-- Card Component -->
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
+            <h3 class="text-xl font-bold text-navy-900 mb-6">Cards</h3>
+            <div class="grid sm:grid-cols-2 gap-8">
+              <Card class="rounded-2xl shadow-md">
+                <CardHeader>
+                  <CardTitle>Card Title</CardTitle>
+                  <CardDescription>Card description or subtitle</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>This is the main content area of the card where you can place your main information.</p>
+                </CardContent>
+                <CardFooter class="flex justify-end">
+                  <Button variant="outline" class="rounded-full mr-2">Cancel</Button>
+                  <Button class="rounded-full">Submit</Button>
+                </CardFooter>
+              </Card>
+
+              <Card class="rounded-2xl shadow-md bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+                <CardHeader>
+                  <CardTitle>Feature Card</CardTitle>
+                  <CardDescription>With gradient background</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div class="flex items-center space-x-4">
+                    <div class="bg-blue-100 rounded-full p-2">
+                      <Icon name="lucide:sparkles" class="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <p class="text-sm">Cards are versatile containers for displaying content and actions on a single topic.</p>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button variant="ghost" class="rounded-full text-blue-600" @click="showComponentsToast">
+                    Learn more <Icon name="lucide:arrow-right" class="ml-2 h-4 w-4" />
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </div>
+
+          <!-- Avatar & Alert Components -->
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
+            <div class="grid sm:grid-cols-2 gap-8">
+              <!-- Avatar Section -->
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-6">Avatars</h3>
+                <div class="space-y-6">
+                  <div class="flex space-x-4 items-center">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" alt="User" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <Avatar>
+                      <AvatarImage src="https://github.com/radix-vue.png" alt="User" />
+                      <AvatarFallback>RV</AvatarFallback>
+                    </Avatar>
+                    <Avatar>
+                      <AvatarImage src="https://github.com/nuxt.png" alt="User" />
+                      <AvatarFallback>NX</AvatarFallback>
+                    </Avatar>
+                    <Avatar>
+                      <AvatarFallback class="bg-blue-100 text-blue-800">JD</AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <div class="flex -space-x-2">
+                    <Avatar class="border-2 border-white">
+                      <AvatarImage src="https://github.com/shadcn.png" alt="User" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <Avatar class="border-2 border-white">
+                      <AvatarImage src="https://github.com/radix-vue.png" alt="User" />
+                      <AvatarFallback>RV</AvatarFallback>
+                    </Avatar>
+                    <Avatar class="border-2 border-white">
+                      <AvatarImage src="https://github.com/nuxt.png" alt="User" />
+                      <AvatarFallback>NX</AvatarFallback>
+                    </Avatar>
+                    <Avatar class="border-2 border-white bg-blue-500 text-white">
+                      <AvatarFallback>+3</AvatarFallback>
+                    </Avatar>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alert Section -->
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-6">Alerts</h3>
+                <div class="space-y-4">
+                  <Alert>
+                    <Icon name="lucide:info" class="h-4 w-4 mr-2" />
+                    <AlertTitle>Information</AlertTitle>
+                    <AlertDescription>This is an informative alert message.</AlertDescription>
+                  </Alert>
+                  <Alert variant="destructive">
+                    <Icon name="lucide:alert-triangle" class="h-4 w-4 mr-2" />
+                    <AlertTitle>Error</AlertTitle>
+                    <AlertDescription>An error has occurred while processing your request.</AlertDescription>
+                  </Alert>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dropdown Menu & Sheet -->
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
+            <div class="grid sm:grid-cols-2 gap-8">
+              <!-- Dropdown Menu Section -->
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-6">Dropdown Menu</h3>
+                <div class="flex justify-center">
+                  <ClientOnly>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="outline" class="rounded-full">
+                          Options <Icon name="lucide:chevron-down" class="ml-2 h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent class="w-56 rounded-xl">
+                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <Icon name="lucide:user" class="mr-2 h-4 w-4" />
+                          <span>Profile</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Icon name="lucide:settings" class="mr-2 h-4 w-4" />
+                          <span>Settings</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <Icon name="lucide:log-out" class="mr-2 h-4 w-4" />
+                          <span>Logout</span>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </ClientOnly>
+                </div>
+              </div>
+
+              <!-- Sheet Section -->
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-6">Sheet</h3>
+                <div class="flex justify-center">
+                  <ClientOnly>
+                    <Sheet>
+                      <SheetTrigger asChild>
+                        <Button variant="outline" class="rounded-full">
+                          <Icon name="lucide:panel-right" class="mr-2 h-4 w-4" />
+                          Open Sheet
+                        </Button>
+                      </SheetTrigger>
+                      <SheetContent class="bg-white/90 backdrop-blur-md border-l border-white/50">
+                        <SheetHeader>
+                          <SheetTitle>Edit Profile</SheetTitle>
+                          <SheetDescription>
+                            Make changes to your profile here. Click save when you're done.
+                          </SheetDescription>
+                        </SheetHeader>
+                        <div class="py-4">
+                          <div class="space-y-4">
+                            <div class="space-y-2">
+                              <Label>Name</Label>
+                              <Input placeholder="Your name" class="rounded-full" />
+                            </div>
+                            <div class="space-y-2">
+                              <Label>Email</Label>
+                              <Input placeholder="your@email.com" class="rounded-full" />
+                            </div>
+                          </div>
+                        </div>
+                        <SheetFooter>
+                          <SheetClose asChild>
+                            <Button type="submit" class="rounded-full">Save changes</Button>
+                          </SheetClose>
+                        </SheetFooter>
+                      </SheetContent>
+                    </Sheet>
+                  </ClientOnly>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table & Skeleton -->
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
+            <div class="grid sm:grid-cols-2 gap-8">
+              <!-- Table Section -->
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-6">Data Table</h3>
+                <div class="rounded-xl overflow-hidden border">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Status</TableHead>
+                        <TableHead>Role</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell class="font-medium">John Doe</TableCell>
+                        <TableCell>
+                          <Badge variant="outline" class="bg-green-100 text-green-800 border-green-200">Active</Badge>
+                        </TableCell>
+                        <TableCell>Developer</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell class="font-medium">Jane Smith</TableCell>
+                        <TableCell>
+                          <Badge variant="outline" class="bg-yellow-100 text-yellow-800 border-yellow-200">Away</Badge>
+                        </TableCell>
+                        <TableCell>Designer</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell class="font-medium">Mike Johnson</TableCell>
+                        <TableCell>
+                          <Badge variant="outline" class="bg-gray-100 text-gray-800 border-gray-200">Offline</Badge>
+                        </TableCell>
+                        <TableCell>Manager</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </div>
+              </div>
+
+              <!-- Skeleton Section -->
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-6">Skeleton Loaders</h3>
+                <div class="space-y-4">
+                  <div class="flex items-center space-x-4">
+                    <Skeleton class="h-12 w-12 rounded-full" />
+                    <div class="space-y-2">
+                      <Skeleton class="h-4 w-[250px]" />
+                      <Skeleton class="h-4 w-[200px]" />
+                    </div>
+                  </div>
+                  <Skeleton class="h-4 w-full" />
+                  <Skeleton class="h-4 w-full" />
+                  <Skeleton class="h-4 w-3/4" />
+                  <div class="flex space-x-2">
+                    <Skeleton class="h-10 w-24 rounded-full" />
+                    <Skeleton class="h-10 w-24 rounded-full" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -470,6 +740,19 @@
 
 <script setup>
 // import DotPattern from '~/components/stunning/DotPattern.vue'
+
+// Add specific meta tags for the homepage
+useHead({
+  title: 'AI Starter Kit - Modern Development with Nuxt & Supabase',
+  meta: [
+    { 
+      name: 'description', 
+      content: 'Jump-start your AI applications with this powerful starter kit featuring Nuxt 3, Supabase, Shadcn UI components, and stunning visual effects.' 
+    }
+  ]
+})
+
+// Basic scroll functionality without DOM manipulation
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
@@ -477,7 +760,7 @@ const scrollToSection = (sectionId) => {
   }
 };
 
-// Toast notification examples
+// Simple toast notification examples without conditions
 function showWelcomeToast() {
   toast.success('Welcome!', {
     description: 'Thanks for checking out our AI Starter Kit',
@@ -555,13 +838,5 @@ const stunningEffects = [
   100% { transform: translateY(0px); }
 }
 
-.scroll-indicator {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: linear-gradient(to right, #3b82f6, #60a5fa);
-  z-index: 100;
-  width: var(--scroll-width, 0%);
-}
+/* Remove scroll indicator styles */
 </style>

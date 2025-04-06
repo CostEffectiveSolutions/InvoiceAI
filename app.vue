@@ -16,6 +16,24 @@
 import { Toaster } from '@/components/ui/sonner'
 // import { useLenis } from 'lenis/vue'
 
+// Add site-wide meta tags for SEO
+useHead({
+  title: 'AI Starter Kit - Modern Development with Nuxt & Supabase',
+  meta: [
+    { name: 'description', content: 'Jump-start your AI applications with this powerful starter kit featuring Nuxt 3, Supabase, Shadcn UI components, and stunning visual effects.' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'og:type', content: 'website' },
+    { name: 'og:title', content: 'AI Starter Kit - Modern Development with Nuxt & Supabase' },
+    { name: 'og:description', content: 'Jump-start your AI applications with this powerful starter kit featuring Nuxt 3, Supabase, Shadcn UI components, and stunning visual effects.' },
+    { name: 'og:image', content: '/og-image.jpg' },
+    { name: 'twitter:card', content: 'summary_large_image' }
+  ],
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+  ]
+})
+
 // const lenis = useLenis((lenis) => {
 //   console.log('page callback', lenis)
 // })
@@ -26,8 +44,8 @@ import { Toaster } from '@/components/ui/sonner'
 </script>
 <style>
 body {
-  font-family: Inter, serif;
-  font-weight: 500;
+  font-family: Nunito, serif;
+  font-weight: 600;
 }
 
 .font-courier {
