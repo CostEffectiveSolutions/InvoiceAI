@@ -27,6 +27,16 @@ export default defineNuxtConfig({
     },
   ],
 
+  // Auto-import the toast function globally
+  imports: {
+    imports: [
+      {
+        from: 'vue-sonner',
+        name: 'toast'
+      }
+    ]
+  },
+
   shadcn: {
     prefix: '',
     componentDir: './components/ui',

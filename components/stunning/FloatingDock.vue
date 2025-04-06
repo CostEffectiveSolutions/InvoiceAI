@@ -38,7 +38,7 @@ watch(scrollY, handleScroll)
     <!-- Universal Dock (Desktop & Mobile) -->
     <div
       :class="[
-        'mx-auto flex h-12 md:h-16 rounded-xl md:rounded-2xl bg-white/5 dark:bg-neutral-900/5 backdrop-blur-xl border border-white/10 dark:border-neutral-800/10 shadow-lg shadow-black/5 dark:shadow-white/5 px-2 md:px-4 transition-all duration-300',
+        'mx-auto flex h-12 md:h-16 rounded-xl md:rounded-2xl bg-white opacity-5 dark:bg-neutral-900/5 backdrop-blur-xl border border-white/10 dark:border-neutral-800/10 shadow-lg shadow-black/5 dark:shadow-white/5 px-2 md:px-4 transition-all duration-300',
         isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0',
         'w-[calc(100%-2rem)] md:max-w-none',
         desktopClassName

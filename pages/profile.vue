@@ -4,7 +4,7 @@
       <div class="max-w-3xl mx-auto">
         <!-- Page Header -->
         <div class="text-center mb-12">
-          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-4 py-2">
+          <Badge variant="secondary" class="mb-6 bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-4 py-2 animate-[float_3s_ease-in-out_infinite]">
             <Icon name="lucide:user" class="w-4 h-4 mr-1" /> PROFILE
           </Badge>
           <h1 class="text-4xl font-bold text-navy-900">
@@ -12,7 +12,7 @@
           </h1>
         </div>
 
-        <div v-if="!user" class="glass-morphic p-8 rounded-3xl text-center">
+        <div v-if="!user" class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 text-center">
           <Icon name="lucide:user-x" class="w-16 h-16 mx-auto mb-4 text-gray-400" />
           <h2 class="text-2xl font-bold text-gray-700 mb-4">Not Logged In</h2>
           <p class="text-gray-600 mb-6">Please log in to view your profile</p>
@@ -26,7 +26,7 @@
 
         <div v-else>
           <!-- Profile Section -->
-          <div class="glass-morphic p-8 rounded-3xl mb-8">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8">
             <div class="flex flex-col md:flex-row items-center gap-8">
               <!-- Avatar -->
               <div class="relative">
@@ -57,7 +57,7 @@
           </div>
 
           <!-- Account Details -->
-          <div class="glass-morphic p-8 rounded-3xl mb-8">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8">
             <div class="flex justify-between items-center mb-6">
               <h3 class="text-xl font-bold text-navy-900">Account Details</h3>
               <Button variant="outline" class="rounded-full" @click="isEditing = !isEditing">
@@ -123,7 +123,7 @@
           </div>
 
           <!-- Danger Zone -->
-          <div class="glass-morphic p-8 rounded-3xl border border-red-100 bg-white/50">
+          <div class="bg-white/50 backdrop-blur-lg border border-red-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8">
             <h3 class="text-xl font-bold text-red-600 mb-6">Danger Zone</h3>
             
             <div class="space-y-6">
@@ -188,9 +188,6 @@
 const user = useState('user')
 const supabase = useSupabaseClient()
 const router = useRouter()
-import { useToast } from '@/components/ui/toast/use-toast'
-
-const { toast } = useToast()
 
 // State for editing mode
 const isEditing = ref(false)
@@ -244,7 +241,7 @@ const updateAvatarInProfile = async () => {
     toast({
       title: 'Profile updated',
       description: 'Your profile picture has been updated.',
-      variant: 'success'
+      variant: 'default'
     })
   } catch (error) {
     console.error('Error updating avatar:', error)
@@ -285,7 +282,7 @@ const updateProfile = async () => {
     toast({
       title: 'Profile updated',
       description: 'Your profile has been successfully updated.',
-      variant: 'success'
+      variant: 'default'
     })
   } catch (error) {
     console.error('Error updating profile:', error)
@@ -333,7 +330,7 @@ const deleteAccount = async () => {
     toast({
       title: 'Account deleted',
       description: 'Your account has been successfully deleted.',
-      variant: 'success'
+      variant: 'default'
     })
   } catch (error) {
     console.error('Error deleting account:', error)
@@ -369,21 +366,4 @@ useHead({
     { name: 'description', content: 'Manage your profile settings and account details' }
   ]
 })
-</script>
-
-<style scoped>
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.glass-morphic {
-  @apply bg-white backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
-}
-</style> 
+</script> 

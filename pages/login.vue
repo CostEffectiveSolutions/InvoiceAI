@@ -123,13 +123,6 @@
 </template>
 
 <script setup lang="ts">
-import { useToast } from '@/components/ui/toast/use-toast'
-
-const { toast } = useToast()
-useHead({
-  title: 'Вход - НАУЧИ.БГ',
-})
-
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 

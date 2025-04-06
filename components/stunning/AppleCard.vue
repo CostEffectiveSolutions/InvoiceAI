@@ -92,7 +92,7 @@ const handleClose = () => {
               
               <!-- Floating Close Button -->
               <button
-                class="absolute top-6 right-6 h-10 w-10 bg-black/20 backdrop-blur-md hover:bg-black/40 dark:bg-white/10 dark:hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 z-20"
+                class="absolute top-6 right-6 h-10 w-10 bg-black/20 backdrop-blur-md hover:bg-black/40 dark:bg-white dark:hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 z-20"
                 @click="handleClose"
               >
                 <Icon name="lucide:x" class="h-5 w-5 text-white" />

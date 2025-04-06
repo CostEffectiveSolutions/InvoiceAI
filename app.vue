@@ -3,13 +3,17 @@
     <div class="flex min-h-screen flex-col">
       <div class="flex-1">
         <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
       </div>
     </div>
   </vue-lenis>
+  <ClientOnly>
+    <Toaster class="pointer-events-auto" />
+  </ClientOnly>
 </template>
 <script setup>
+import { Toaster } from '@/components/ui/sonner'
 // import { useLenis } from 'lenis/vue'
 
 // const lenis = useLenis((lenis) => {
@@ -21,7 +25,6 @@
 // })
 </script>
 <style>
-
 body {
   font-family: Inter, serif;
   font-weight: 500;
@@ -93,6 +96,7 @@ body {
   0% {
     background-position: -100% 0;
   }
+
   100% {
     background-position: 100% 0;
   }
@@ -101,5 +105,5 @@ body {
 .animate-shimmer {
   animation: shimmer 2s linear infinite;
   background-size: 200% 100%;
-} 
+}
 </style>

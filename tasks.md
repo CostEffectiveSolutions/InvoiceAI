@@ -10,8 +10,8 @@
 
 [X] Avatar Component
 
-[] Toasts
+[X] Toasts
 
-[] Supabase MCP
+[X] Supabase MCP
 
 [] Speed test with Lighthouse and mobile
