@@ -21,14 +21,15 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <ContextMenuSubTrigger
+    data-slot="context-menu-sub-trigger"
+    :data-inset="inset ? '' : undefined"
     v-bind="forwardedProps"
     :class="cn(
-      'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-zinc-100 focus:text-zinc-900 data-[state=open]:bg-zinc-100 data-[state=open]:text-zinc-900 dark:focus:bg-zinc-800 dark:focus:text-zinc-50 dark:data-[state=open]:bg-zinc-800 dark:data-[state=open]:text-zinc-50',
-      inset && 'pl-8',
+      `focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4`,
       props.class,
     )"
   >
     <slot />
-    <ChevronRight class="ml-auto h-4 w-4" />
+    <ChevronRight class="ml-auto" />
   </ContextMenuSubTrigger>
 </template>

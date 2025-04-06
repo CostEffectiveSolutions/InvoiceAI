@@ -28,11 +28,11 @@
         </p>
 
         <div class="mb-12">
-          <GlowButton size="lg" class="mr-4 rounded-full">
+          <GlowButton size="lg" class="mr-4 rounded-full" @click="showWelcomeToast">
             <Icon name="lucide:download" class="w-5 h-5 mr-2" />
             Get Started
           </GlowButton>
-          <Button size="lg" variant="outline" class="bg-white/50 backdrop-blur-sm rounded-full border border-white/30">
+          <Button size="lg" variant="outline" class="bg-white/50 backdrop-blur-sm rounded-full border border-white/30" @click="showDocToast">
             <Icon name="lucide:book-open" class="w-5 h-5 mr-2" />
             Documentation
           </Button>
@@ -304,7 +304,7 @@
         </div>
 
         <div class="mt-12 text-center">
-          <Button size="lg" variant="outline" class="bg-white bg-opacity-80 backdrop-blur-sm rounded-full">
+          <Button size="lg" variant="outline" class="bg-white bg-opacity-80 backdrop-blur-sm rounded-full" @click="showComponentsToast">
             <Icon name="lucide:plus" class="w-5 h-5 mr-2" />
             View All Components
           </Button>
@@ -452,11 +452,11 @@
             This starter kit provides everything you need to build modern AI-powered applications
           </p>
           <div class="flex items-center justify-center space-x-4">
-            <GlowButton size="lg" class="bg-white text-blue-600 hover:bg-blue-50 rounded-full">
+            <GlowButton size="lg" class="bg-white text-blue-600 hover:bg-blue-50 rounded-full" @click="showGithubToast">
               <Icon name="lucide:github" class="w-5 h-5 mr-2" />
               GitHub Repository
             </GlowButton>
-            <Button size="lg" variant="outline" class="bg-blue-700 text-white hover:bg-blue-800 border-white/20 rounded-full">
+            <Button size="lg" variant="outline" class="bg-blue-700 text-white hover:bg-blue-800 border-white/20 rounded-full" @click="showPromiseToast">
               <Icon name="lucide:book-open" class="w-5 h-5 mr-2" />
               Documentation
             </Button>
@@ -476,6 +476,53 @@ const scrollToSection = (sectionId) => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
+
+// Toast notification examples
+function showWelcomeToast() {
+  toast.success('Welcome!', {
+    description: 'Thanks for checking out our AI Starter Kit',
+    duration: 3000
+  })
+}
+
+function showDocToast() {
+  toast('Documentation', {
+    description: 'Comprehensive guides and API references',
+    action: {
+      label: 'Open',
+      onClick: () => toast('Opening documentation...')
+    }
+  })
+}
+
+function showComponentsToast() {
+  toast({
+    title: 'UI Components',
+    description: '50+ accessible and customizable UI components',
+    icon: '📚'
+  })
+}
+
+function showGithubToast() {
+  toast({
+    title: 'GitHub Repository',
+    description: 'View source code and contribute to the project',
+    icon: '🚀'
+  })
+}
+
+function showPromiseToast() {
+  toast.promise(
+    new Promise((resolve) => {
+      setTimeout(() => resolve({ name: 'docs.pdf' }), 2000)
+    }),
+    {
+      loading: 'Downloading documentation...',
+      success: (data) => `Downloaded ${data.name} successfully!`,
+      error: 'Download failed. Please try again.'
+    }
+  )
+}
 
 // UI components list based on the ui folder
 const uiComponents = [

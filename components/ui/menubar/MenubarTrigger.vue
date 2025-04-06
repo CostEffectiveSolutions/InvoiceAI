@@ -16,10 +16,11 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <MenubarTrigger
+    data-slot="menubar-trigger"
     v-bind="forwardedProps"
     :class="
       cn(
-        'flex cursor-default select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-none focus:bg-zinc-100 focus:text-zinc-900 data-[state=open]:bg-zinc-100 data-[state=open]:text-zinc-900 dark:focus:bg-zinc-800 dark:focus:text-zinc-50 dark:data-[state=open]:bg-zinc-800 dark:data-[state=open]:text-zinc-50',
+        'focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none',
         props.class,
       )
     "

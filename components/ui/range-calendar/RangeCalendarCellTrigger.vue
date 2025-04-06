@@ -4,7 +4,9 @@ import { buttonVariants } from '@/components/ui/button'
 import { RangeCalendarCellTrigger, type RangeCalendarCellTriggerProps, useForwardProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<RangeCalendarCellTriggerProps & { class?: HTMLAttributes['class'] }>()
+const props = withDefaults(defineProps<RangeCalendarCellTriggerProps & { class?: HTMLAttributes['class'] }>(), {
+  as: 'button',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -17,20 +19,21 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <RangeCalendarCellTrigger
+    data-slot="range-calendar-trigger"
     :class="cn(
       buttonVariants({ variant: 'ghost' }),
       'h-8 w-8 p-0 font-normal data-[selected]:opacity-100',
-      '[&[data-today]:not([data-selected])]:bg-zinc-100 [&[data-today]:not([data-selected])]:text-zinc-900 dark:[&[data-today]:not([data-selected])]:bg-zinc-800 dark:[&[data-today]:not([data-selected])]:text-zinc-50',
+      '[&[data-today]:not([data-selected])]:bg-accent [&[data-today]:not([data-selected])]:text-accent-foreground',
       // Selection Start
-      'data-[selection-start]:bg-zinc-900 data-[selection-start]:text-zinc-50 data-[selection-start]:hover:bg-zinc-900 data-[selection-start]:hover:text-zinc-50 data-[selection-start]:focus:bg-zinc-900 data-[selection-start]:focus:text-zinc-50 dark:data-[selection-start]:bg-zinc-50 dark:data-[selection-start]:text-zinc-900 dark:data-[selection-start]:hover:bg-zinc-50 dark:data-[selection-start]:hover:text-zinc-900 dark:data-[selection-start]:focus:bg-zinc-50 dark:data-[selection-start]:focus:text-zinc-900',
+      'data-[selection-start]:bg-primary data-[selection-start]:text-primary-foreground data-[selection-start]:hover:bg-primary data-[selection-start]:hover:text-primary-foreground data-[selection-start]:focus:bg-primary data-[selection-start]:focus:text-primary-foreground',
       // Selection End
-      'data-[selection-end]:bg-zinc-900 data-[selection-end]:text-zinc-50 data-[selection-end]:hover:bg-zinc-900 data-[selection-end]:hover:text-zinc-50 data-[selection-end]:focus:bg-zinc-900 data-[selection-end]:focus:text-zinc-50 dark:data-[selection-end]:bg-zinc-50 dark:data-[selection-end]:text-zinc-900 dark:data-[selection-end]:hover:bg-zinc-50 dark:data-[selection-end]:hover:text-zinc-900 dark:data-[selection-end]:focus:bg-zinc-50 dark:data-[selection-end]:focus:text-zinc-900',
+      'data-[selection-end]:bg-primary data-[selection-end]:text-primary-foreground data-[selection-end]:hover:bg-primary data-[selection-end]:hover:text-primary-foreground data-[selection-end]:focus:bg-primary data-[selection-end]:focus:text-primary-foreground',
       // Outside months
-      'data-[outside-view]:text-zinc-500 data-[outside-view]:opacity-50 [&[data-outside-view][data-selected]]:text-zinc-500 [&[data-outside-view][data-selected]]:opacity-30 dark:data-[outside-view]:text-zinc-400 dark:[&[data-outside-view][data-selected]]:text-zinc-400',
+      'data-[outside-view]:text-muted-foreground',
       // Disabled
-      'data-[disabled]:text-zinc-500 data-[disabled]:opacity-50 dark:data-[disabled]:text-zinc-400',
+      'data-[disabled]:text-muted-foreground data-[disabled]:opacity-50',
       // Unavailable
-      'data-[unavailable]:text-zinc-50 data-[unavailable]:line-through dark:data-[unavailable]:text-zinc-50',
+      'data-[unavailable]:text-destructive-foreground data-[unavailable]:line-through',
       props.class,
     )"
     v-bind="forwardedProps"
