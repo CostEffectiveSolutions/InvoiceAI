@@ -30,15 +30,11 @@
             target="_blank"
             rel="noopener"
           >
-            <GlowButton size="lg" class="mr-4 rounded-full">
+            <GlowButton size="lg" class="rounded-full">
               <Icon name="lucide:download" class="w-5 h-5 mr-2" />
               Get Started - $200 OFF
             </GlowButton>
           </NuxtLink>
-          <Button size="lg" variant="outline" class="bg-white/50 backdrop-blur-sm rounded-full border border-white/30" @click="showDocToast">
-            <Icon name="lucide:book-open" class="w-5 h-5 mr-2" />
-            Documentation
-          </Button>
         </div>
 
         <div class="text-center">
@@ -339,10 +335,16 @@
         </div>
 
         <div class="mt-12 text-center">
-          <Button size="lg" variant="outline" class="bg-white bg-opacity-80 backdrop-blur-sm rounded-full" @click="showComponentsToast">
-            <Icon name="lucide:plus" class="w-5 h-5 mr-2" />
-            View All Components
-          </Button>
+          <NuxtLink 
+            to="https://aikit.lemonsqueezy.com/buy/19a29e38-031b-4c6f-9042-f8fb1c98b8e2?checkout[discount_code]=EARLY"
+            target="_blank"
+            rel="noopener"
+          >
+            <Button size="lg" variant="outline" class="bg-white bg-opacity-80 backdrop-blur-sm rounded-full">
+              <Icon name="lucide:plus" class="w-5 h-5 mr-2" />
+              Get Started - $200 OFF
+            </Button>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -766,14 +768,16 @@
             This starter kit provides everything you need to build modern AI-powered applications
           </p>
           <div class="flex items-center justify-center space-x-4">
-            <GlowButton size="lg" class="bg-white text-blue-600 hover:bg-blue-50 rounded-full" @click="showGithubToast">
-              <Icon name="lucide:github" class="w-5 h-5 mr-2" />
-              GitHub Repository
-            </GlowButton>
-            <Button size="lg" variant="outline" class="bg-blue-700 text-white hover:bg-blue-800 border-white/20 rounded-full" @click="showPromiseToast">
-              <Icon name="lucide:book-open" class="w-5 h-5 mr-2" />
-              Documentation
-            </Button>
+            <NuxtLink 
+              to="https://aikit.lemonsqueezy.com/buy/19a29e38-031b-4c6f-9042-f8fb1c98b8e2?checkout[discount_code]=EARLY"
+              target="_blank"
+              rel="noopener"
+            >
+              <GlowButton size="lg" class="bg-white text-blue-600 hover:bg-blue-50 rounded-full">
+                <Icon name="lucide:download" class="w-5 h-5 mr-2" />
+                Get Started - $200 OFF
+              </GlowButton>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -858,9 +862,6 @@
             Build complex applications in record time using AI-powered tools and our optimized starter kit
           </p>
           <div class="flex items-center justify-center space-x-4 flex-wrap">
-            <Button size="lg" variant="outline" class="bg-white text-blue-600 hover:bg-blue-50 rounded-full mb-2 sm:mb-0" @click="showCursorGuideToast">
-              Cursor Documentation
-            </Button>
             <NuxtLink 
               to="https://aikit.lemonsqueezy.com/buy/19a29e38-031b-4c6f-9042-f8fb1c98b8e2?checkout[discount_code]=EARLY"
               target="_blank"
@@ -909,16 +910,6 @@ function showWelcomeToast() {
   })
 }
 
-function showDocToast() {
-  toast('Documentation', {
-    description: 'Comprehensive guides and API references',
-    action: {
-      label: 'Open',
-      onClick: () => toast('Opening documentation...')
-    }
-  })
-}
-
 function showComponentsToast() {
   toast({
     title: 'UI Components',
@@ -935,33 +926,12 @@ function showGithubToast() {
   })
 }
 
-function showPromiseToast() {
-  toast.promise(
-    new Promise((resolve) => {
-      setTimeout(() => resolve({ name: 'docs.pdf' }), 2000)
-    }),
-    {
-      loading: 'Downloading documentation...',
-      success: (data) => `Downloaded ${data.name} successfully!`,
-      error: 'Download failed. Please try again.'
-    }
-  )
-}
-
 // New toast functions for Cursor section
 function showCursorToast() {
   toast({
     title: 'Cursor IDE',
     description: 'Redirecting to download page...',
     icon: '💻'
-  })
-}
-
-function showCursorGuideToast() {
-  toast({
-    title: 'Cursor Guide',
-    description: 'Opening Cursor documentation...',
-    icon: '📖'
   })
 }
 
