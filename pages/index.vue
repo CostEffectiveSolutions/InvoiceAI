@@ -419,16 +419,24 @@
               <div>
                 <h3 class="text-xl font-bold text-navy-900 mb-6">Alerts</h3>
                 <div class="space-y-4">
-                  <Alert>
-                    <Icon name="lucide:info" class="h-4 w-4 mr-2" />
-                    <AlertTitle>Information</AlertTitle>
-                    <AlertDescription>This is an informative alert message.</AlertDescription>
-                  </Alert>
-                  <Alert variant="destructive">
-                    <Icon name="lucide:alert-triangle" class="h-4 w-4 mr-2" />
-                    <AlertTitle>Error</AlertTitle>
-                    <AlertDescription>An error has occurred while processing your request.</AlertDescription>
-                  </Alert>
+                  <AlertCustom>
+                    <template #icon>
+                      <Icon name="lucide:info" class="h-4 w-4 text-blue-600" />
+                    </template>
+                    <div>
+                      <div class="font-medium">Information</div>
+                      <div class="text-sm text-gray-600">This is an informative alert message.</div>
+                    </div>
+                  </AlertCustom>
+                  <AlertCustom variant="error">
+                    <template #icon>
+                      <Icon name="lucide:alert-triangle" class="h-4 w-4" />
+                    </template>
+                    <div>
+                      <div class="font-medium">Error</div>
+                      <div class="text-sm">An error has occurred while processing your request.</div>
+                    </div>
+                  </AlertCustom>
                 </div>
               </div>
             </div>
@@ -740,6 +748,7 @@
 
 <script setup>
 // import DotPattern from '~/components/stunning/DotPattern.vue'
+import AlertCustom from '~/components/ui/alert/AlertCustom.vue'
 
 // Add specific meta tags for the homepage
 useHead({

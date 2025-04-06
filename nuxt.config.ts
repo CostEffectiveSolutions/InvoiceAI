@@ -41,6 +41,7 @@ export default defineNuxtConfig({
     prefix: '',
     componentDir: './components/ui',
   },
+
   supabase: {
     url: 'https://qsjarfrkydcmvtigeiqh.supabase.co',
     key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzamFyZnJreWRjbXZ0aWdlaXFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIyOTA3MzgsImV4cCI6MjA1Nzg2NjczOH0.n7HsRsnx0fYPyop-05YJGitywxEN2tTW7-Xljan6-2A',
@@ -50,5 +51,7 @@ export default defineNuxtConfig({
       callback: '/confirm',
       exclude: ['/', '/admin/*'],
     }
-  }
+  },
+
+  compatibilityDate: '2025-04-06'
 })

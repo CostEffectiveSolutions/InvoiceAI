@@ -8,7 +8,7 @@
           <div class="bg-blue-100 p-2 rounded-full">
             <Icon name="lucide:zap" class="h-6 w-6 text-blue-600" />
           </div>
-          <span class="text-xl font-bold text-blue-600 ml-2">znAI</span>
+          <span class="text-xl font-bold text-blue-600 ml-2">JoroAI</span>
         </div>
         <h2
           class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
