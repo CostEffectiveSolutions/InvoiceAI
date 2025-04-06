@@ -383,7 +383,7 @@ useHead({
 }
 
 .glass-morphic {
-  @apply bg-white/70 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl;
+  @apply bg-white backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
 }
 </style> 

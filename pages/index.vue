@@ -81,7 +81,7 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 mb-12">
-          <div class="glass-morphic p-8 flex flex-col">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 flex flex-col">
             <div class="mb-6">
               <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
                 <Icon name="lucide:database" class="w-8 h-8 text-blue-600" />
@@ -93,7 +93,7 @@
             </div>
           </div>
 
-          <div class="glass-morphic p-8 flex flex-col">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 flex flex-col">
             <div class="mb-6">
               <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
                 <Icon name="lucide:layout" class="w-8 h-8 text-blue-600" />
@@ -105,7 +105,7 @@
             </div>
           </div>
 
-          <div class="glass-morphic p-8 flex flex-col">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 flex flex-col">
             <div class="mb-6">
               <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
                 <Icon name="lucide:sparkles" class="w-8 h-8 text-blue-600" />
@@ -117,7 +117,7 @@
             </div>
           </div>
 
-          <div class="glass-morphic p-8 flex flex-col">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 flex flex-col">
             <div class="mb-6">
               <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
                 <Icon name="lucide:code" class="w-8 h-8 text-blue-600" />
@@ -130,7 +130,7 @@
           </div>
         </div>
 
-        <div class="glass-morphic p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-3xl">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-3xl">
           <div class="grid md:grid-cols-3 gap-6">
             <div class="text-center">
               <h4 class="text-3xl font-bold mb-2">50+</h4>
@@ -169,7 +169,7 @@
         
         <div class="space-y-16">
           
-          <div class="glass-morphic p-8 rounded-3xl">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
             <h3 class="text-xl font-bold text-navy-900 mb-4">Buttons</h3>
             <div class="flex flex-wrap gap-4">
               <Button class="rounded-full">Default</Button>
@@ -182,7 +182,7 @@
           </div>
 
           
-          <div class="glass-morphic p-8 rounded-3xl">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
             <h3 class="text-xl font-bold text-navy-900 mb-6">Form Controls</h3>
             <div class="grid sm:grid-cols-2 gap-8">
               <div class="space-y-4">
@@ -219,7 +219,7 @@
           </div>
 
           
-          <div class="glass-morphic p-8 rounded-3xl">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
             <h3 class="text-xl font-bold text-navy-900 mb-6">Dialog Component</h3>
             <div class="flex justify-center">
               <Dialog>
@@ -254,7 +254,7 @@
           </div>
 
           
-          <div class="glass-morphic p-8 rounded-3xl">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
             <h3 class="text-xl font-bold text-navy-900 mb-6">Accordion</h3>
             <Accordion type="single" collapsible class="w-full">
               <AccordionItem value="item-1" class="border-b border-blue-100/50">
@@ -279,7 +279,7 @@
           </div>
 
           
-          <div class="glass-morphic p-8 rounded-3xl">
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl">
             <h3 class="text-xl font-bold text-navy-900 mb-6">Tabs</h3>
             <Tabs default-value="account" class="w-full">
               <TabsList class="grid w-full grid-cols-3 rounded-full p-1 bg-blue-100/30">
@@ -304,7 +304,7 @@
         </div>
 
         <div class="mt-12 text-center">
-          <Button size="lg" variant="outline" class="bg-white/80 backdrop-blur-sm rounded-full">
+          <Button size="lg" variant="outline" class="bg-white bg-opacity-80 backdrop-blur-sm rounded-full">
             <Icon name="lucide:plus" class="w-5 h-5 mr-2" />
             View All Components
           </Button>
@@ -330,7 +330,7 @@
         </div>
 
         
-        <div class="glass-morphic p-8 rounded-3xl mb-12">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl mb-12">
           <h3 class="text-xl font-bold text-navy-900 mb-6">Tyndall Effect</h3>
           <div class="relative aspect-video bg-gradient-to-br from-blue-900 to-indigo-800 rounded-2xl overflow-hidden">
             <TyndallEffect streakColor="rgb(255, 255, 255)" />
@@ -342,7 +342,7 @@
         </div>
 
         
-        <div class="glass-morphic p-8 rounded-3xl mb-12">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl mb-12">
           <h3 class="text-xl font-bold text-navy-900 mb-6">Glow Button</h3>
           <div class="flex justify-center py-8 bg-gray-900 rounded-2xl">
             <GlowButton size="lg" class="rounded-full">
@@ -354,7 +354,7 @@
         </div>
 
         
-        <div class="glass-morphic p-8 rounded-3xl mb-12">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl mb-12">
           <h3 class="text-xl font-bold text-navy-900 mb-6">Marquee</h3>
           <div class="py-6 bg-gray-100 rounded-2xl">
             <Marquee class="py-4">
@@ -370,7 +370,7 @@
         </div>
 
         
-        <div class="glass-morphic p-8 rounded-3xl mb-12">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl mb-12">
           <h3 class="text-xl font-bold text-navy-900 mb-6">Dot Pattern</h3>
           <div class="relative h-48 bg-blue-50 rounded-2xl overflow-hidden">
             <DotPattern />
@@ -382,7 +382,7 @@
         </div>
 
         
-        <div class="glass-morphic p-8 rounded-3xl mb-12">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 rounded-3xl mb-12">
           <h3 class="text-xl font-bold text-navy-900 mb-6">Light Bar</h3>
           <div class="relative h-64 bg-gray-900 rounded-2xl overflow-hidden">
             <LightBar />
@@ -412,21 +412,21 @@
           </p>
         </div>
         
-        <div class="glass-morphic p-8 mb-8 rounded-3xl">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8 rounded-3xl">
           <h3 class="text-xl font-bold text-navy-900 mb-6">1. Clone the repository</h3>
           <div class="bg-gray-900/90 text-gray-200 p-4 rounded-xl overflow-x-auto">
             <code>git clone https://github.com/yourusername/ai-starter.git</code>
           </div>
         </div>
         
-        <div class="glass-morphic p-8 mb-8 rounded-3xl">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8 rounded-3xl">
           <h3 class="text-xl font-bold text-navy-900 mb-6">2. Install dependencies</h3>
           <div class="bg-gray-900/90 text-gray-200 p-4 rounded-xl overflow-x-auto">
             <code>cd ai-starter<br />npm install</code>
           </div>
         </div>
         
-        <div class="glass-morphic p-8 mb-8 rounded-3xl">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8 rounded-3xl">
           <h3 class="text-xl font-bold text-navy-900 mb-6">3. Set up Supabase</h3>
           <p class="text-gray-600 mb-4">Create a new Supabase project and update the credentials in your .env file:</p>
           <div class="bg-gray-900/90 text-gray-200 p-4 rounded-xl overflow-x-auto">
@@ -438,14 +438,14 @@
           </div>
         </div>
         
-        <div class="glass-morphic p-8 mb-8 rounded-3xl">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8 rounded-3xl">
           <h3 class="text-xl font-bold text-navy-900 mb-6">4. Run the development server</h3>
           <div class="bg-gray-900/90 text-gray-200 p-4 rounded-xl overflow-x-auto">
             <code>npm run dev</code>
           </div>
         </div>
         
-        <div class="glass-morphic p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center rounded-3xl border border-white/20">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center rounded-3xl border border-white/20">
           <Icon name="lucide:rocket" class="w-12 h-12 mx-auto mb-4" />
           <h3 class="text-2xl font-bold mb-4">Ready to Build Something Amazing?</h3>
           <p class="text-lg opacity-90 mb-8">
@@ -516,14 +516,5 @@ const stunningEffects = [
   background: linear-gradient(to right, #3b82f6, #60a5fa);
   z-index: 100;
   width: var(--scroll-width, 0%);
-}
-
-.glass-card {
-  @apply bg-white/80 backdrop-blur-sm border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
-}
-
-.glass-morphic {
-  @apply bg-white/70 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
 }
 </style>

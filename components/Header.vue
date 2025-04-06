@@ -1,6 +1,6 @@
 <template>
   <header class="w-full z-50">
-    <div class="glass-header border-b border-white/10">
+    <div class="bg-white backdrop-blur-md shadow-sm transition-all duration-300 border-b border-white/10">
       <div class="container mx-auto flex h-20 items-center justify-between px-4">
         <!-- Logo -->
         <NuxtLink to="/" class="relative flex items-center space-x-2">
@@ -82,7 +82,7 @@
               >
                 <div 
                   v-if="isProfileMenuOpen" 
-                  class="glass-menu absolute right-0 mt-2 w-48 rounded-2xl shadow-lg z-50"
+                  class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm transition-all duration-300 shadow-[0_8px_32px_rgba(31,38,135,0.07)] absolute right-0 mt-2 w-48 rounded-2xl shadow-lg z-50"
                   v-click-outside="closeProfileMenu"
                   @click.stop
                   data-profile-menu
@@ -146,7 +146,7 @@
         class="md:hidden absolute top-full left-0 right-0"
         v-click-outside="closeMenu"
       >
-        <div class="glass-menu m-2 rounded-3xl shadow-lg">
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm transition-all duration-300 shadow-[0_8px_32px_rgba(31,38,135,0.07)] m-2 rounded-3xl shadow-lg">
           <div class="space-y-1 px-4 py-5">
             <NuxtLink
               v-for="item in navigationItems"
@@ -316,12 +316,4 @@ const vClickOutside = clickOutside
 </script>
 
 <style scoped>
-.glass-header {
-  @apply bg-white/70 backdrop-blur-md shadow-sm transition-all duration-300;
-}
-
-.glass-menu {
-  @apply bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm transition-all duration-300;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
-}
 </style>

@@ -17,13 +17,13 @@
         </h2>
       </div>
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px] px-4">
-        <div class="glass-morphic px-6 py-12 shadow-sm sm:rounded-3xl sm:px-12">
+        <div class="bg-white backdrop-blur-lg border border-white/50 shadow-sm transition-all duration-300 px-6 py-12 sm:rounded-3xl sm:px-12 shadow-[0_8px_32px_rgba(31,38,135,0.07)]">
           <div>
             <div class="flex justify-center">
               <button
                 type="button"
                 :disabled="loading"
-                class="flex w-full max-w-[240px] items-center justify-center gap-3 rounded-full bg-white/80 backdrop-blur-sm px-4 py-2.5 text-sm font-bold text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 transition-all duration-200"
+                class="flex w-full max-w-[240px] items-center justify-center gap-3 rounded-full bg-white bg-opacity-80 backdrop-blur-sm px-4 py-2.5 text-sm font-bold text-gray-900 shadow-sm ring-1 ring-inset ring-white/30 hover:bg-white focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 transition-all duration-200"
                 @click="loginWithGoogle"
               >
                 <Icon name="logos:google-icon" class="w-5 h-5" />
@@ -40,7 +40,7 @@
               <div
                 class="relative flex justify-center text-sm font-normal leading-6"
               >
-                <span class="bg-white/50 backdrop-blur-sm px-6 text-gray-900 rounded-full"
+                <span class="bg-white backdrop-blur-sm px-6 text-gray-900 rounded-full"
                   >Или продължи с имейл</span
                 >
               </div>
@@ -245,10 +245,5 @@ function scrollToLocalSignIn() {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-}
-
-.glass-morphic {
-  @apply bg-white/70 backdrop-blur-lg border border-white/50 shadow-sm transition-all duration-300;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
 }
 </style>

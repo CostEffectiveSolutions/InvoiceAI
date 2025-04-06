@@ -4,11 +4,11 @@
 
 [X] update dependencies
 
-[] Update Shadcn to V4 Tailwind
+[X] Update Shadcn to V4 Tailwind
 
-[] Pinia and global login
+[X] Pinia and global login
 
-[] Avatar Component
+[X] Avatar Component
 
 [] Toasts
 

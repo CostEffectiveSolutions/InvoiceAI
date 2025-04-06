@@ -15,13 +15,13 @@
               A modern starter kit for building AI-powered applications with Nuxt 3, Supabase, and Shadcn UI
             </p>
             <div class="flex space-x-4">
-              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors bg-white/70 p-2 rounded-full">
+              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors bg-white p-2 rounded-full">
                 <Icon name="lucide:github" class="w-5 h-5" />
               </a>
-              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors bg-white/70 p-2 rounded-full">
+              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors bg-white p-2 rounded-full">
                 <Icon name="lucide:twitter" class="w-5 h-5" />
               </a>
-              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors bg-white/70 p-2 rounded-full">
+              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors bg-white p-2 rounded-full">
                 <Icon name="lucide:linkedin" class="w-5 h-5" />
               </a>
             </div>

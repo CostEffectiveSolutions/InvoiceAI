@@ -37,7 +37,7 @@ Do not import any components
       
       Key Conventions
       - Use VueUse for common composables and utility functions.
-      - Use Pinia for state management.
+      - Use Nuxt state for management for state management.
       - Optimize Web Vitals (LCP, CLS, FID).
       - Utilize Nuxt's auto-imports feature for components and composables.
       
@@ -66,7 +66,7 @@ Do not import any components
 # Your rule content
 
 Use [logged.global.js](mdc:middleware/logged.global.js) middleware, dont implement new ones.
-use the user that is stored in Pinia. not the one that is coming from useSupabaseUser()
+use the user that is stored in state. not the one that is coming from useSupabaseUser()
 Always use JavaScript, NOT TypeScript
 
 Don't IMPORT COMPOSABLES or SUPABASE
