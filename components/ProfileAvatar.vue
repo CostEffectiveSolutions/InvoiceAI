@@ -11,7 +11,6 @@ const { path } = toRefs(props)
 const emit = defineEmits(['update:path', 'upload'])
 
 const supabase = useSupabaseClient()
-const { toast } = useToast()
 
 const uploading = ref(false)
 const src = ref('')

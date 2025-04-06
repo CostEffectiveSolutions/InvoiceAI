@@ -64,17 +64,18 @@
               </template>
             </MenubarMenu>
             
-            <!-- Get Started Button -->
-            <MenubarMenu v-if="!user">
-              <MenubarTrigger>
-                <NuxtLink to="#contact" @click="(e) => handleClick(e, '#contact')">
-                  <Button class="bg-blue-600/90 backdrop-blur-sm text-white hover:bg-blue-700 transition-all border border-blue-500/20 shadow-sm rounded-full">
-                    <Icon name="lucide:sparkles" class="w-4 h-4 mr-2" />
-                    Get Started
-                  </Button>
-                </NuxtLink>
-              </MenubarTrigger>
-            </MenubarMenu>
+            <!-- Get Started Button - Don't render if already in navigation items -->
+            <NuxtLink 
+              v-if="!user && !navigationItems.some(item => item.name === 'Get Started')" 
+              to="#contact" 
+              @click="(e) => handleClick(e, '#contact')"
+              class="ml-2"
+            >
+              <Button class="bg-blue-600/90 backdrop-blur-sm text-white hover:bg-blue-700 transition-all border border-blue-500/20 shadow-sm rounded-full">
+                <Icon name="lucide:sparkles" class="w-4 h-4 mr-2" />
+                Get Started
+              </Button>
+            </NuxtLink>
           </Menubar>
         </div>
 
