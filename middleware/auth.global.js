@@ -22,17 +22,4 @@ export default defineNuxtRouteMiddleware(async (to) => {
     // Clear user profile if user is not logged in
     user.value = null
   }
-
-  // Skip middleware for public routes
-  if (
-    to.path === '/login' ||
-    to.path === '/confirm'
-  ) {
-    return
-  }
-
-  // if (!supabaseUser.value) {
-  //   const redirectTo = to.fullPath
-  //   return navigateTo(`/login?redirect=${encodeURIComponent(redirectTo)}`)
-  // }
 }) 

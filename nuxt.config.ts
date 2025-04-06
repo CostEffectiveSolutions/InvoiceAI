@@ -10,10 +10,6 @@ export default defineNuxtConfig({
     },
   },
 
-  css: [
-    '~/assets/css/transitions.css',
-  ],
-
   // @ts-ignore - Lenis module configuration
   lenis: {
     root: true,
@@ -22,10 +18,6 @@ export default defineNuxtConfig({
       smoothWheel: true,
       autoRaf:true
     }
-
-  },
-  ogImage: {
-    enabled: false,
   },
 
   components:[
