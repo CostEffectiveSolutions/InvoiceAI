@@ -15,9 +15,13 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
 
   vite: {
-    plugins: [
+  plugins: [
       tailwindcss(),
     ],
+  },
+
+  app: {
+    pageTransition: { name: 'fade' },
   },
 
   components:[

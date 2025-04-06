@@ -201,10 +201,8 @@ const handleClick = (e, hash) => {
 }
 
 const navigationItems = [
-  { name: 'Features', href: '#features' },
   { name: 'UI Components', href: '#ui-components' },
   { name: 'Visual Effects', href: '#stunning-effects' },
-  { name: 'Get Started', href: '#getting-started' },
 ]
 
 // Logout function
