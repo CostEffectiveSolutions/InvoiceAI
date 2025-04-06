@@ -65,6 +65,12 @@
               <span class="font-medium text-gray-800">Tailwind</span>
             </div>
           </div>
+          <p class="text-sm text-gray-500 mt-6">
+            A project by 
+            <a href="https://costeffective.software/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+              Cost Effective Software
+            </a>
+          </p>
         </div>
       </div>
     </div>
