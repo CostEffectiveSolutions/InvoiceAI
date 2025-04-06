@@ -1,10 +1,8 @@
 export default defineNuxtRouteMiddleware(async (to) => {
-  console.log('auth.global.js')
   const supabaseUser = useSupabaseUser()
   const supabase = useSupabaseClient()
   const user = useState('user', () => null)
 
-  console.log('supabaseUser', supabaseUser.value)
   if (supabaseUser.value) {
     // Only fetch profile if not already in state
     if (!user.value) {
