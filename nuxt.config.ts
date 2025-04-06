@@ -1,3 +1,5 @@
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
   modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', "@nuxt/fonts", '@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/seo', 'lenis/nuxt'],
 
@@ -10,14 +12,12 @@ export default defineNuxtConfig({
     },
   },
 
-  // @ts-ignore - Lenis module configuration
-  lenis: {
-    root: true,
-    options: {
-      smooth: true,
-      smoothWheel: true,
-      autoRaf:true
-    }
+  css: ['~/assets/css/tailwind.css'],
+
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
   },
 
   components:[

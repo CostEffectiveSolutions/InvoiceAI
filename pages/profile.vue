@@ -30,7 +30,7 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
               <!-- Avatar -->
               <div class="relative">
-                <Avatar 
+                <ProfileAvatar 
                   v-model:path="avatarPath" 
                   size="8rem"
                   @upload="updateAvatarInProfile"
