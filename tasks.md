@@ -14,4 +14,4 @@
 
 [X] Supabase MCP
 
-[] Speed test with Lighthouse and mobile
+[X] Speed test with Lighthouse and mobile

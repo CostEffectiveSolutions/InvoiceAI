@@ -68,11 +68,12 @@
           <!-- Get Started button -->
           <NuxtLink 
             v-if="!user && !navigationItems.some(item => item.name === 'Get Started')" 
-            to="#contact" 
-            @click="(e) => handleClick(e, '#contact')"
+            to="https://aikit.lemonsqueezy.com/buy/19a29e38-031b-4c6f-9042-f8fb1c98b8e2?checkout[discount_code]=EARLY"
+            target="_blank"
+            rel="noopener"
           >
             <Button class="bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:bg-blue-700 rounded-full">
-              Get Started
+              Get Started - $200 OFF
             </Button>
           </NuxtLink>
         </div>
@@ -124,11 +125,12 @@
                 
                 <NuxtLink 
                   v-if="!user"
-                  to="#contact"
+                  to="https://aikit.lemonsqueezy.com/buy/19a29e38-031b-4c6f-9042-f8fb1c98b8e2?checkout[discount_code]=EARLY"
+                  target="_blank"
+                  rel="noopener"
                   class="block text-center px-2 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg mt-4"
-                  @click="(e) => handleClick(e, '#contact')"
                 >
-                  Get Started
+                  Get Started - $200 OFF
                 </NuxtLink>
                 
                 <NuxtLink 

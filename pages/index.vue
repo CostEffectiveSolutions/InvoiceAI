@@ -25,10 +25,16 @@
         </p>
 
         <div class="mb-12">
-          <GlowButton size="lg" class="mr-4 rounded-full" @click="showWelcomeToast">
-            <Icon name="lucide:download" class="w-5 h-5 mr-2" />
-            Get Started
-          </GlowButton>
+          <NuxtLink 
+            to="https://aikit.lemonsqueezy.com/buy/19a29e38-031b-4c6f-9042-f8fb1c98b8e2?checkout[discount_code]=EARLY"
+            target="_blank"
+            rel="noopener"
+          >
+            <GlowButton size="lg" class="mr-4 rounded-full">
+              <Icon name="lucide:download" class="w-5 h-5 mr-2" />
+              Get Started - $200 OFF
+            </GlowButton>
+          </NuxtLink>
           <Button size="lg" variant="outline" class="bg-white/50 backdrop-blur-sm rounded-full border border-white/30" @click="showDocToast">
             <Icon name="lucide:book-open" class="w-5 h-5 mr-2" />
             Documentation
@@ -125,6 +131,30 @@
               </p>
             </div>
           </div>
+          
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                <Icon name="lucide:file-code" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mt-4 mb-3">Pre-configured Cursor Rules</h3>
+              <p class="text-gray-600">
+                Optimized cursor rules included to help AI generate code that follows project conventions and best practices.
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center">
+                <Icon name="lucide:server" class="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mt-4 mb-3">MCP Servers Ready</h3>
+              <p class="text-gray-600">
+                MCP (Multi-Cloud Platform) servers setup is included, making deployment and scaling effortless.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-3xl">
@@ -139,7 +169,7 @@
             </div>
             <div class="text-center">
               <h4 class="text-3xl font-bold mb-2">100%</h4>
-              <p class="text-sm opacity-90">Open Source</p>
+              <p class="text-sm opacity-90">Production Ready</p>
             </div>
           </div>
         </div>
@@ -744,6 +774,102 @@
     </div>
   </section>
 
+  <!-- Cursor Development Guide Section -->
+  <section id="cursor-guide" class="py-24 bg-gradient-to-b from-white to-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <Badge variant="secondary" class="mb-6 animate-float bg-blue-100/50 text-blue-700 border-blue-200 rounded-full px-4 py-2">
+            <Icon name="lucide:cpu" class="w-4 h-4 mr-1" /> DEVELOPMENT GUIDE
+          </Badge>
+          <h2 class="text-4xl font-bold text-navy-900">
+            Build <span class="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Ultra Fast</span> with Cursor
+          </h2>
+          <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            Accelerate your development process with Cursor, the AI-powered IDE
+          </p>
+        </div>
+        
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-navy-900 mb-6">1. Cursor AI-Powered IDE</h3>
+          <p class="text-gray-600 mb-4">Cursor is the world's best IDE with built-in AI capabilities to help you write, understand, and transform code faster.</p>
+          <div class="bg-gray-900/90 text-gray-200 p-4 rounded-xl overflow-x-auto mb-4">
+            <code>// Ask Cursor to generate a Vue component<br />// Just describe what you need in natural language</code>
+          </div>
+          <Button size="sm" variant="outline" class="bg-white bg-opacity-80 backdrop-blur-sm rounded-full" @click="showCursorToast">
+            <Icon name="lucide:download" class="w-4 h-4 mr-2" />
+            Download Cursor
+          </Button>
+        </div>
+        
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-navy-900 mb-6">2. Development Best Practices</h3>
+          <div class="space-y-4">
+            <div class="flex">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                <span class="text-blue-600 font-bold">1</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-navy-900">Composition API Over Options API</h4>
+                <p class="text-gray-600">Use Vue 3's Composition API with <code class="text-blue-600 bg-blue-100/40 px-1 rounded">script setup</code> for cleaner, more maintainable code.</p>
+              </div>
+            </div>
+            
+            <div class="flex">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                <span class="text-blue-600 font-bold">2</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-navy-900">Auto-imports</h4>
+                <p class="text-gray-600">Leverage Nuxt 3's auto-imports for components, composables, and Vue functions to reduce boilerplate.</p>
+              </div>
+            </div>
+            
+            <div class="flex">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                <span class="text-blue-600 font-bold">3</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-navy-900">Component Reusability</h4>
+                <p class="text-gray-600">Create small, reusable components to maintain DRY principles and improve development speed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 mb-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-navy-900 mb-6">3. Cursor AI Prompting</h3>
+          <p class="text-gray-600 mb-4">Effective prompts for working with Cursor AI:</p>
+          <div class="bg-gray-900/90 text-gray-200 p-4 rounded-xl overflow-x-auto">
+            <code>// For new components<br />"Create a [component name] component that [functionality] with [specific features]"<br /><br />// For debugging<br />"Debug this code: [paste problematic code]"<br /><br />// For refactoring<br />"Refactor this code to use Composition API: [paste code]"</code>
+          </div>
+        </div>
+        
+        <div class="bg-white/80 backdrop-blur-lg border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-8 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center rounded-3xl border border-white/20">
+          <Icon name="lucide:zap" class="w-12 h-12 mx-auto mb-4" />
+          <h3 class="text-2xl font-bold mb-4">Accelerate Your Development</h3>
+          <p class="text-lg opacity-90 mb-8">
+            Build complex applications in record time using AI-powered tools and our optimized starter kit
+          </p>
+          <div class="flex items-center justify-center space-x-4 flex-wrap">
+            <Button size="lg" variant="outline" class="bg-white text-blue-600 hover:bg-blue-50 rounded-full mb-2 sm:mb-0" @click="showCursorGuideToast">
+              Cursor Documentation
+            </Button>
+            <NuxtLink 
+              to="https://aikit.lemonsqueezy.com/buy/19a29e38-031b-4c6f-9042-f8fb1c98b8e2?checkout[discount_code]=EARLY"
+              target="_blank"
+              rel="noopener"
+            >
+              <Button size="lg" class="bg-blue-500 text-white hover:bg-blue-600 border-white/20 rounded-full">
+                Get Started - $200 OFF
+              </Button>
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </template>
 
 <script setup>
@@ -814,6 +940,23 @@ function showPromiseToast() {
       error: 'Download failed. Please try again.'
     }
   )
+}
+
+// New toast functions for Cursor section
+function showCursorToast() {
+  toast({
+    title: 'Cursor IDE',
+    description: 'Redirecting to download page...',
+    icon: '💻'
+  })
+}
+
+function showCursorGuideToast() {
+  toast({
+    title: 'Cursor Guide',
+    description: 'Opening Cursor documentation...',
+    icon: '📖'
+  })
 }
 
 // UI components list based on the ui folder
