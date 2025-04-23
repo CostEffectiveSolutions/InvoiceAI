@@ -6,8 +6,7 @@ Install [Cursor](https://cursor.com) and add [Vue - Official](https://marketplac
 
 ## Setup
 Add cursor Rules
-Add indexing for these docs
-Supabase, shadcn, stunning ui
+Add indexing for these docs - Supabase, shadcn, stunning ui, nuxt
 
 
 #### Steps
